@@ -11,3 +11,7 @@ The Capacitor App Center SDK consists of a several plugins so you can use any or
 2. App Center Crashes: App Center Crashes will automatically generate a crash log every time your app crashes. The log is first written to the device's storage and when the user starts the app again, the crash report will be sent to App Center. Collecting crashes works for both beta and live apps, i.e. those submitted to the App Store. Crash logs contain valuable information for you to help fix the crash.
 
 3. App Center Push: App Center Push enables you to send push notifications to users of your app from the App Center portal. We use APNs for iOS apps and FCM for Android. You can also segment your user base based on a set of properties and send them targeted notifications.
+
+## Example application
+
+You can get familiar with SDK quickly by cloning this repository and running sample app in `example` directory. For further instructions please refer to [example's README](example/README.md)
