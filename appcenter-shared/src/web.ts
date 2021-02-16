@@ -6,7 +6,7 @@ export class AppCenterWeb extends WebPlugin implements AppCenterPlugin {
   getInstallId(): Promise<string> {
     throw this.unimplemented('Not supported on web.');
   }
-  setUserId(options: {userId: string}): Promise<void> {
+  setUserId(): Promise<void> {
     throw this.unimplemented('Not supported on web.');
   }
 }

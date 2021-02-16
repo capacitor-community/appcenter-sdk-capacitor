@@ -10,7 +10,7 @@ end
 target 'Plugin' do
   capacitor_pods
 
-  pod 'AppCenter'
+  pod 'AppCenter', '4.1.0'
 end
 
 target 'PluginTests' do
