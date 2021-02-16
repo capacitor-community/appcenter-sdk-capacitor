@@ -14,4 +14,10 @@ export interface AppCenterPlugin {
    * @since 0.0.1
    */
   setUserId(options: {userId: string}): Promise<void>;
+  
+  // future additions
+  // enable(options: {enabled: boolean}): Promise<void>;
+  // isEnabled(): Promise<boolean>;
+  // sdkVersion(): Promise<string>;
+  // customProperties(options: CustomProperties): Promise<void>
 }
