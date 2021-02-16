@@ -11,7 +11,7 @@
     "android/build.gradle",
     "dist/",
     "ios/Plugin/",
-    "AppcenterShared.podspec"
+    "CapacitorCommunityAppcenterShared.podspec"
   ],
   "author": "johnborges",
   "license": "MIT",
