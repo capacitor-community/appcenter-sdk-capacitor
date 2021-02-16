@@ -1,6 +1,6 @@
 # App Center SDK for Capacitor
 
-> 🚨 🛠 🚧 This project is currently in active development and is not ready to be used. Check back later. 🚧 🚨 🛠
+> 🚧  This project is currently in active development and is not ready to be used. Check back later.
 
 App Center is mission control for mobile apps. Get faster release cycles, higher-quality apps, and the insights to build what users want.
 
@@ -42,7 +42,7 @@ Example:
 
 ```json
 {
-  //...
+  ...
   "plugins": {
     "AppCenterPlugin": {
       "IOS_APP_SECRET": "0000-0000-0000-0000-000000000000",
