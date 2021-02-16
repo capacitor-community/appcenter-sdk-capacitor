@@ -9,7 +9,7 @@ export class AppHome {
     return [
       <ion-header>
         <ion-toolbar color="primary">
-          <ion-title>AppCenter Capacitor SDK Demo</ion-title>
+          <ion-title>AppCenter Capacitor</ion-title>
         </ion-toolbar>
       </ion-header>,
 
@@ -18,6 +18,12 @@ export class AppHome {
         <ion-button href="/crashes" expand="block">Test Crashes</ion-button>
         <ion-button href="/other" expand="block">Test Other APIs</ion-button>
       </ion-content>,
+
+      <ion-footer>
+        <ion-toolbar>
+          <ion-title>appcenter-sdk-capacitor 0.0.1</ion-title>
+        </ion-toolbar>
+      </ion-footer>
     ];
   }
 }

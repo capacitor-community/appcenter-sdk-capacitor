@@ -2,5 +2,11 @@
 	"appId": "com.example.app",
 	"appName": "example",
 	"webDir": "www",
-	"bundledWebRuntime": false
+	"bundledWebRuntime": false,
+	"plugins": {
+		"AppCenterPlugin": {
+			"IOS_APP_SECRET": "0000-0000-0000-0000-000000000000",
+			"ANDROID_APP_SECRET": "0000-0000-0000-0000-000000000000"
+		}
+	}
 }

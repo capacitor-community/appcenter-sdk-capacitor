@@ -1,5 +1,4 @@
-import { Component, Prop, State, h } from '@stencil/core';
-import { sayHello } from '../../helpers/utils';
+import { Component, State, h } from '@stencil/core';
 
 @Component({
   tag: 'app-analytics',

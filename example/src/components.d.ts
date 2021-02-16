@@ -6,26 +6,41 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
+    interface AppAnalytics {
+    }
+    interface AppCrashes {
+    }
     interface AppHome {
     }
-    interface AppProfile {
-        "name": string;
+    interface AppOther {
     }
     interface AppRoot {
     }
 }
 declare global {
+    interface HTMLAppAnalyticsElement extends Components.AppAnalytics, HTMLStencilElement {
+    }
+    var HTMLAppAnalyticsElement: {
+        prototype: HTMLAppAnalyticsElement;
+        new (): HTMLAppAnalyticsElement;
+    };
+    interface HTMLAppCrashesElement extends Components.AppCrashes, HTMLStencilElement {
+    }
+    var HTMLAppCrashesElement: {
+        prototype: HTMLAppCrashesElement;
+        new (): HTMLAppCrashesElement;
+    };
     interface HTMLAppHomeElement extends Components.AppHome, HTMLStencilElement {
     }
     var HTMLAppHomeElement: {
         prototype: HTMLAppHomeElement;
         new (): HTMLAppHomeElement;
     };
-    interface HTMLAppProfileElement extends Components.AppProfile, HTMLStencilElement {
+    interface HTMLAppOtherElement extends Components.AppOther, HTMLStencilElement {
     }
-    var HTMLAppProfileElement: {
-        prototype: HTMLAppProfileElement;
-        new (): HTMLAppProfileElement;
+    var HTMLAppOtherElement: {
+        prototype: HTMLAppOtherElement;
+        new (): HTMLAppOtherElement;
     };
     interface HTMLAppRootElement extends Components.AppRoot, HTMLStencilElement {
     }
@@ -34,22 +49,29 @@ declare global {
         new (): HTMLAppRootElement;
     };
     interface HTMLElementTagNameMap {
+        "app-analytics": HTMLAppAnalyticsElement;
+        "app-crashes": HTMLAppCrashesElement;
         "app-home": HTMLAppHomeElement;
-        "app-profile": HTMLAppProfileElement;
+        "app-other": HTMLAppOtherElement;
         "app-root": HTMLAppRootElement;
     }
 }
 declare namespace LocalJSX {
+    interface AppAnalytics {
+    }
+    interface AppCrashes {
+    }
     interface AppHome {
     }
-    interface AppProfile {
-        "name"?: string;
+    interface AppOther {
     }
     interface AppRoot {
     }
     interface IntrinsicElements {
+        "app-analytics": AppAnalytics;
+        "app-crashes": AppCrashes;
         "app-home": AppHome;
-        "app-profile": AppProfile;
+        "app-other": AppOther;
         "app-root": AppRoot;
     }
 }
@@ -57,8 +79,10 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "app-analytics": LocalJSX.AppAnalytics & JSXBase.HTMLAttributes<HTMLAppAnalyticsElement>;
+            "app-crashes": LocalJSX.AppCrashes & JSXBase.HTMLAttributes<HTMLAppCrashesElement>;
             "app-home": LocalJSX.AppHome & JSXBase.HTMLAttributes<HTMLAppHomeElement>;
-            "app-profile": LocalJSX.AppProfile & JSXBase.HTMLAttributes<HTMLAppProfileElement>;
+            "app-other": LocalJSX.AppOther & JSXBase.HTMLAttributes<HTMLAppOtherElement>;
             "app-root": LocalJSX.AppRoot & JSXBase.HTMLAttributes<HTMLAppRootElement>;
         }
     }
