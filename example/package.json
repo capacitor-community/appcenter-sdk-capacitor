@@ -20,8 +20,12 @@
   },
   "dependencies": {
     "@capacitor-community/appcenter-shared": "file:../appcenter-shared",
+    "@capacitor/app": "^0.3.3",
     "@capacitor/cli": "^3.0.0-beta.2",
     "@capacitor/core": "^3.0.0-beta.2",
-    "@capacitor/ios": "^3.0.0-beta.2"
+    "@capacitor/device": "^0.5.3",
+    "@capacitor/haptics": "^0.3.3",
+    "@capacitor/ios": "^3.0.0-beta.2",
+    "@capacitor/keyboard": "^0.5.3"
   }
 }
