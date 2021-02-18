@@ -38,5 +38,6 @@ export interface AppCenterPlugin {
   enable(options: {enableFlag: boolean}): Promise<void>;
 
   // customProperties(options: CustomProperties): Promise<void>
+  // logLevel
   // setMaxStorageSize
 }
