@@ -1,23 +1,21 @@
 # App Center SDK for Capacitor
 
-> 🚧  This project is currently in active development and is not ready to be used. Check back later.
+> ### :rotating_light: This project is currently in active development and is not ready to be used. Check back later. :rotating_light:
 
 App Center is mission control for mobile apps. Get faster release cycles, higher-quality apps, and the insights to build what users want.
 
-The Capacitor App Center SDK consists of a several plugins so you can use any or all of the following services:
+## Plugins
 
-1. App Center Analytics: App Center Analytics helps you understand user behavior and customer engagement to improve your app. The SDK automatically captures session count, device properties like model, OS version, etc. You can define your own custom events to measure things that matter to you. All the information captured is available in the App Center portal for you to analyze the data.
+The Capacitor App Center SDK consists of a several plugins so you can use any or all of the supported App Center services:
 
-2. App Center Crashes: App Center Crashes will automatically generate a crash log every time your app crashes. The log is first written to the device's storage and when the user starts the app again, the crash report will be sent to App Center. Collecting crashes works for both beta and live apps, i.e. those submitted to the App Store. Crash logs contain valuable information for you to help fix the crash.
+| Package | Source | Version |
+| --- | --- | --- |
+| [`@capacitor-community/appcenter-shared`](https://capacitorjs.com/docs/v3/apis/action-sheet) | [`./appcenter-shared`](./appcenter-shared) | [![npm badge](https://img.shields.io/npm/v/@capacitor-community/appcenter-shared?style=flat-square)](https://www.npmjs.com/package/@capacitor-community/appcenter-shared)
+| [`@capacitor-community/appcenter-analytics`](https://capacitorjs.com/docs/v3/apis/appcenter-analytics) | [`./appcenter-analytics`](./appcenter-analytics) | [![npm badge](https://img.shields.io/npm/v/@capacitor-community/appcenter-analytics?style=flat-square)](https://www.npmjs.com/package/@capacitor-community/appcenter-analytics)
+| [`@capacitor-community/appcenter-crashes`](https://capacitorjs.com/docs/v3/apis/appcenter-crashes) | [`./appcenter-crashes`](./appcenter-crashes) | [![npm badge](https://img.shields.io/npm/v/@capacitor-community/appcenter-crashes?style=flat-square)](https://www.npmjs.com/package/@capacitor-community/appcenter-crashes)
+| 
 
-3. App Center Shared: Contains additional APIs suitable for some projects: 
-> `@capacitor-community/appcenter-shared` is used as a dependancy for the other App Center plugins and does not need to be installed manually.
-- Adjusting the Log Level
-- Identify Users and Instalations
-- Control SDK Services
-- Custom Properties
-
-## Example application
+## Example Mobile App
 
 You can get familiar with SDK quickly by cloning this repository and running sample app in `example` directory. For further instructions please refer to [example's README](example/README.md)
 
@@ -26,7 +24,7 @@ You can get familiar with SDK quickly by cloning this repository and running sam
 Add the App Center plugin(s) that fit your needs directly from the CLI:
 
 ```bash
-npm i @capacitor-community/appcenter-analytics @capacitor-community/appcenter-crashes 
+npm i @capacitor-community/appcenter-analytics @capacitor-community/appcenter-shared
 npx cap sync
 ```
 

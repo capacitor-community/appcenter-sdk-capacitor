@@ -3,7 +3,7 @@
 <h3 align="center">App Center Shared</h3>
 <p align="center"><strong><code>@capacitor-community/appcenter-shared</code></strong></p>
 <p align="center">
-  Capacitor Plugin for Microsoft's Visual Studio App Center SDK. Contains additional APIs suitable for some projects. This plugin is used as a dependancy for the other App Center plugins and should not need to be installed manually.
+  Capacitor Plugin for Microsoft's Visual Studio App Center SDK. Contains additional helper APIs suitable for some projects.
 </p>
 
 <p align="center">
