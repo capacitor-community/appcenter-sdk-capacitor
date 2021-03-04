@@ -13,7 +13,6 @@ The Capacitor App Center SDK consists of a several plugins so you can use any or
 | [`@capacitor-community/appcenter-shared`](https://capacitorjs.com/docs/v3/apis/action-sheet) | [`./appcenter-shared`](./appcenter-shared) | [![npm badge](https://img.shields.io/npm/v/@capacitor-community/appcenter-shared?style=flat-square)](https://www.npmjs.com/package/@capacitor-community/appcenter-shared)
 | [`@capacitor-community/appcenter-analytics`](https://capacitorjs.com/docs/v3/apis/appcenter-analytics) | [`./appcenter-analytics`](./appcenter-analytics) | [![npm badge](https://img.shields.io/npm/v/@capacitor-community/appcenter-analytics?style=flat-square)](https://www.npmjs.com/package/@capacitor-community/appcenter-analytics)
 | [`@capacitor-community/appcenter-crashes`](https://capacitorjs.com/docs/v3/apis/appcenter-crashes) | [`./appcenter-crashes`](./appcenter-crashes) | [![npm badge](https://img.shields.io/npm/v/@capacitor-community/appcenter-crashes?style=flat-square)](https://www.npmjs.com/package/@capacitor-community/appcenter-crashes)
-| 
 
 ## Example Mobile App
 
