@@ -7,6 +7,9 @@ public class AnalyticsPlugin: CAPPlugin {
     
     public override func load() {
         let appSecret = self.bridge!.config.getPluginConfigValue("AppCenterPlugin", "IOS_APP_SECRET") ?? ""
+        let logInterval = self.bridge!.config.getPluginConfigValue("AppCenterPlugin", "transmissionInterval") as? UInt ?? 3
+        
+        implementation.setTransmissionInterval(logInterval)
         implementation.configureWithSettings(appSecret as! String)
     }
     

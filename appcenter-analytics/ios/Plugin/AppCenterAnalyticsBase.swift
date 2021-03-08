@@ -9,6 +9,10 @@ import AppCenterAnalytics
     var logUrl: String?
     var wrapperSdk: WrapperSdk?
     
+    public func setTransmissionInterval(_ seconds: UInt) {
+        Analytics.transmissionInterval = seconds
+    }
+    
     public func pause() {
         Analytics.pause();
     }
@@ -32,13 +36,13 @@ import AppCenterAnalytics
             return
         }
         
-        AppCenter.logLevel = .verbose
+        AppCenter.logLevel = .info
         
         let wrapperSdk = WrapperSdk(wrapperSdkVersion: "0.0.1", wrapperSdkName: "appcenter.capacitor", wrapperRuntimeVersion: nil, liveUpdateReleaseLabel: nil, liveUpdateDeploymentKey: nil, liveUpdatePackageHash: nil)
         
         
         self.wrapperSdk = wrapperSdk
-        AppCenter.configure(withAppSecret: self.getAppSecretWithSettings("e82b1032-9c72-4206-812e-f63823d9da13"))
+        AppCenter.configure(withAppSecret: self.getAppSecretWithSettings("0000-0000-0000-0000-000000000000"))
 
     }
     
