@@ -8,4 +8,5 @@ CAP_PLUGIN(AnalyticsPlugin, "Analytics",
            CAP_PLUGIN_METHOD(isEnabled, CAPPluginReturnPromise);
            CAP_PLUGIN_METHOD(pause, CAPPluginReturnPromise);
            CAP_PLUGIN_METHOD(resume, CAPPluginReturnPromise);
+           CAP_PLUGIN_METHOD(trackEvent, CAPPluginReturnPromise);
 )

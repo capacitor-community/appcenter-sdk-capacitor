@@ -1,3 +1,11 @@
+export interface AnalyticsEvent {
+  /** 256 character limit */
+  name: string,
+  /** Only 20 properties allowed per event */
+  properties?: {[key: string]: string},
+  flag?: 'normal' | 'critical'
+}
+
 export interface AnalyticsPlugin {
   /**
    * You can enable and disable App Center Analytics at runtime. If you disable it, the SDK won't collect any more analytics information for the app.
@@ -21,4 +29,13 @@ export interface AnalyticsPlugin {
    * @since 0.1.0
    */
   resume(): Promise<void>;
+  /**
+   * Track an event with optional custom properties to know what's happening in your app, understand user actions, and see the aggregates in the App Center portal.
+   * @param {AnalyticsEvent} options
+   * @example
+   * Analytics.trackEvent("Video Clicked")
+   * Analytics.trackEvent('Video Clicked', {"Category" : "Music", "FileName" : "favorite.avi"}, flag: 'critical')
+   * @since 0.1.0
+   */
+  trackEvent(options: AnalyticsEvent): Promise<void>
 }
