@@ -9,9 +9,15 @@ public class AnalyticsPlugin: CAPPlugin {
         
         let appSecret = getConfigValue("iosAppSecret") as? String ?? ""
         let logInterval = UInt(getConfigValue("transmissionInterval") as? String ?? "3") ?? 3
+        let enableInJs = getConfigValue("enableInJs") as? Bool ?? false
         
         implementation.setTransmissionInterval(logInterval)
         implementation.configureWithSettings(appSecret)
+        
+        if (enableInJs) {
+            // Avoid starting an analytics session since it will get enabled in JS
+            implementation.enable(false)
+        }
     }
     
     @objc func enable(_ call: CAPPluginCall) {
@@ -35,6 +41,11 @@ public class AnalyticsPlugin: CAPPlugin {
     
     @objc func trackEvent(_ call: CAPPluginCall) {
         guard let name = call.options["name"] as? String else {
+            call.reject("Must provide an event name")
+            return
+        }
+        
+        guard name.count != 0 else {
             call.reject("Must provide an event name")
             return
         }
