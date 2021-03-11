@@ -44,6 +44,8 @@ Once you add App Center Analytics to your app and the SDK is started, it will au
 * [`isEnabled()`](#isenabled)
 * [`pause()`](#pause)
 * [`resume()`](#resume)
+* [`trackEvent(...)`](#trackevent)
+* [Interfaces](#interfaces)
 
 </docgen-index>
 
@@ -112,5 +114,36 @@ Resume transmission of Analytics logs. Any Analytics logs that accumulated on di
 **Since:** 0.1.0
 
 --------------------
+
+
+### trackEvent(...)
+
+```typescript
+trackEvent(options: AnalyticsEvent) => any
+```
+
+Track an event with optional custom properties to know what's happening in your app, understand user actions, and see the aggregates in the App Center portal.
+
+| Param         | Type                                                      |
+| ------------- | --------------------------------------------------------- |
+| **`options`** | <code><a href="#analyticsevent">AnalyticsEvent</a></code> |
+
+**Returns:** <code>any</code>
+
+**Since:** 0.1.0
+
+--------------------
+
+
+### Interfaces
+
+
+#### AnalyticsEvent
+
+| Prop             | Type                                    | Description                          |
+| ---------------- | --------------------------------------- | ------------------------------------ |
+| **`name`**       | <code>string</code>                     | 256 character limit                  |
+| **`properties`** | <code>{ [key: string]: string; }</code> | Only 20 properties allowed per event |
+| **`flag`**       | <code>"normal" \| "critical"</code>     |                                      |
 
 </docgen-api>
