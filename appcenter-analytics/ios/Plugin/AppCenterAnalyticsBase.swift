@@ -45,33 +45,29 @@ import AppCenterAnalytics
     }
     
     public func configureWithSettings(_ secret: String) {
-    
+        AppCenter.logLevel = .verbose
+        
         if AppCenter.isConfigured {
-            AppCenter.logLevel = .verbose
             AppCenter.startService(Analytics.self)
             return
         }
         
         let wrapperSdk = WrapperSdk(wrapperSdkVersion: "0.1.0", wrapperSdkName: "appcenter.capacitor", wrapperRuntimeVersion: nil, liveUpdateReleaseLabel: nil, liveUpdateDeploymentKey: nil, liveUpdatePackageHash: nil)
         
-        
-        //self.wrapperSdk = wrapperSdk
         setWrapperSdk(wrapperSdk!)
         
-        AppCenter.configure(withAppSecret: getAppSecretWithSettings(secret))
-
+        AppCenter.start(withAppSecret: getAppSecret(secret), services: [Analytics.self])
     }
     
     func setAppSecret(_ secret: String) {
         appSecret = secret
     }
     
-    func getAppSecretWithSettings(_ secret: String) -> String {
-        if(appSecret != nil) {
+    func getAppSecret(_ secret: String) -> String {
+        if appSecret == nil {
             setAppSecret(secret)
         }
-        
-        return appSecret ?? ""
+        return appSecret!
     }
     
     func getWrapperSdk() -> WrapperSdk {
