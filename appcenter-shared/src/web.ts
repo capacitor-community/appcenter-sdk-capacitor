@@ -1,6 +1,6 @@
 import { WebPlugin } from '@capacitor/core';
 
-import type { AppCenterPlugin } from './definitions';
+import { AppCenterPlugin } from './definitions';
 
 export class AppCenterWeb extends WebPlugin implements AppCenterPlugin {
   enable(): Promise<void> {

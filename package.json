@@ -1,0 +1,7 @@
+{
+  "name": "appcenter-sdk-capacitor",
+  "private": true,
+  "devDependencies": {
+    "lerna": "^4.0.0"
+  }
+}
