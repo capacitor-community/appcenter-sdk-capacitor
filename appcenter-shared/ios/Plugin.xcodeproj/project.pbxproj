@@ -15,6 +15,7 @@
 		50ADFFA82020EE4F00D50D53 /* AppCenterPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 50ADFFA72020EE4F00D50D53 /* AppCenterPlugin.m */; };
 		50E1A94820377CB70090CE1A /* AppCenterPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E1A94720377CB70090CE1A /* AppCenterPlugin.swift */; };
 		5370CEFAA118B80072291088 /* Pods_Plugin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEA4E84DAE0F2CBBFCE376DF /* Pods_Plugin.framework */; };
+		6CC0D08825F29C48008EDBD4 /* AppCenterBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CC0D08725F29C48008EDBD4 /* AppCenterBase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		50ADFFA52020D75100D50D53 /* Capacitor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Capacitor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		50ADFFA72020EE4F00D50D53 /* AppCenterPlugin.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppCenterPlugin.m; sourceTree = "<group>"; };
 		50E1A94720377CB70090CE1A /* AppCenterPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCenterPlugin.swift; sourceTree = "<group>"; };
+		6CC0D08725F29C48008EDBD4 /* AppCenterBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCenterBase.swift; sourceTree = "<group>"; };
 		B2F4CDA64B726BE01EA97CFB /* Pods-Plugin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Plugin.debug.xcconfig"; path = "Target Support Files/Pods-Plugin/Pods-Plugin.debug.xcconfig"; sourceTree = "<group>"; };
 		B573B7E0F68950461A6301FF /* Pods-PluginTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PluginTests.debug.xcconfig"; path = "Target Support Files/Pods-PluginTests/Pods-PluginTests.debug.xcconfig"; sourceTree = "<group>"; };
 		CEA4E84DAE0F2CBBFCE376DF /* Pods_Plugin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Plugin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -75,7 +77,6 @@
 				B573B7E0F68950461A6301FF /* Pods-PluginTests.debug.xcconfig */,
 				CF4FA2B715689364DE828498 /* Pods-PluginTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -106,6 +107,7 @@
 				50ADFF8B201F53D600D50D53 /* AppCenterPlugin.h */,
 				50ADFFA72020EE4F00D50D53 /* AppCenterPlugin.m */,
 				50ADFF8C201F53D600D50D53 /* Info.plist */,
+				6CC0D08725F29C48008EDBD4 /* AppCenterBase.swift */,
 			);
 			path = Plugin;
 			sourceTree = "<group>";
@@ -313,6 +315,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				50E1A94820377CB70090CE1A /* AppCenterPlugin.swift in Sources */,
+				6CC0D08825F29C48008EDBD4 /* AppCenterBase.swift in Sources */,
 				50ADFFA82020EE4F00D50D53 /* AppCenterPlugin.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

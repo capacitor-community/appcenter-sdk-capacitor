@@ -69,6 +69,8 @@ const appCenterInfo = async () => {
 * [`getSdkVersion()`](#getsdkversion)
 * [`isEnabled()`](#isenabled)
 * [`enable(...)`](#enable)
+* [`setLogLevel(...)`](#setloglevel)
+* [Enums](#enums)
 
 </docgen-index>
 
@@ -147,7 +149,7 @@ Check if App Center is enabled or not as a whole.
 enable(options: { enableFlag: boolean; }) => any
 ```
 
-Disable all services at runtime. When disabled, the SDK won't forward any information to App Center.
+Toggle all App Center services at runtime. When disabled, the SDK won't forward any information to App Center.
 
 | Param         | Type                                  |
 | ------------- | ------------------------------------- |
@@ -158,5 +160,40 @@ Disable all services at runtime. When disabled, the SDK won't forward any inform
 **Since:** 0.0.1
 
 --------------------
+
+
+### setLogLevel(...)
+
+```typescript
+setLogLevel(options: { logLevel: LogLevel; }) => any
+```
+
+You can control the amount of log messages that show up from App Center in the console. By default, it's set to Assert for the App Store environment and Warning otherwise. To have as many log messages as possible, use Verbose.
+
+| Param         | Type                                                         |
+| ------------- | ------------------------------------------------------------ |
+| **`options`** | <code>{ logLevel: <a href="#loglevel">LogLevel</a>; }</code> |
+
+**Returns:** <code>any</code>
+
+**Since:** 0.1.1
+
+--------------------
+
+
+### Enums
+
+
+#### LogLevel
+
+| Members       | Value           |
+| ------------- | --------------- |
+| **`assert`**  | <code>7</code>  |
+| **`debug`**   | <code>3</code>  |
+| **`error`**   | <code>6</code>  |
+| **`info`**    | <code>4</code>  |
+| **`none`**    | <code>99</code> |
+| **`verbose`** | <code>2</code>  |
+| **`warning`** | <code>5</code>  |
 
 </docgen-api>
