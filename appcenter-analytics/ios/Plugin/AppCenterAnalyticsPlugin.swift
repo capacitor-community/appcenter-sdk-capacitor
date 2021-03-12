@@ -14,7 +14,7 @@ public class AnalyticsPlugin: CAPPlugin {
         implementation.setTransmissionInterval(logInterval)
         implementation.configureWithSettings(appSecret)
         
-        if (enableInJs) {
+        if enableInJs {
             // Avoid starting an analytics session since it will get enabled in JS
             implementation.enable(false)
         }
