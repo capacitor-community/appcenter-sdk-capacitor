@@ -4,9 +4,11 @@
   "webDir": "www",
   "bundledWebRuntime": false,
   "plugins": {
-    "AppCenterPlugin": {
-      "IOS_APP_SECRET": "0000-0000-0000-0000-000000000000",
-      "ANDROID_APP_SECRET": "0000-0000-0000-0000-000000000000"
+    "Analytics": {
+      "iosAppSecret": "fb3a28d5-1ed9-401c-b06a-0379f66c8650",
+      "androidAppSecret": "0000-0000-0000-0000-000000000000",
+      "transmissionInterval": "10",
+      "enableInJs": false
     }
   }
 }

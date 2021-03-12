@@ -1,5 +1,5 @@
 import { Component, h, State } from '@stencil/core';
-import { AppCenter } from '@capacitor-community/appcenter-shared';
+// import { AppCenter } from '@capacitor-community/appcenter-shared';
 
 @Component({
   tag: 'app-other',
@@ -22,13 +22,13 @@ export class AppOther {
 
   async componentWillLoad() {
     try {
-      const sdkEnabled = await AppCenter.isEnabled()
-      const installId = await AppCenter.getInstallId()
-      const sdkVersion = await AppCenter.getSdkVersion()
+      // const sdkEnabled = await AppCenter.isEnabled()
+      // const installId = await AppCenter.getInstallId()
+      // const sdkVersion = await AppCenter.getSdkVersion()
 
-      this.installId = installId.value
-      this.sdkVersion = sdkVersion.value
-      this.enabled = sdkEnabled.value
+      // this.installId = installId.value
+      // this.sdkVersion = sdkVersion.value
+      // this.enabled = sdkEnabled.value
     } catch (error) {
       console.error(error)
     }
@@ -38,7 +38,7 @@ export class AppOther {
     this.userId = e.detail.value
 
     try {
-      await AppCenter.setUserId({userId: this.userId})
+      // await AppCenter.setUserId({userId: this.userId})
     } catch (error) {
       console.error(error)
     }
@@ -46,7 +46,7 @@ export class AppOther {
 
   async toggleSdk(e: CustomEvent) {
     try {
-      await AppCenter.enable({enableFlag: e.detail.checked});
+      // await AppCenter.enable({enableFlag: e.detail.checked});
       this.enabled = e.detail.checked
     } catch (error) {
       this.enabled = false
@@ -69,8 +69,8 @@ export class AppOther {
         {/* <ion-button expand="block">Set Custom Property</ion-button> */}
         <ion-list lines="full" class="ion-no-margin">
           <ion-item>
-            <ion-label>Enable App Center</ion-label>
-            <ion-toggle checked={this.enabled} onIonChange={(event) => this.toggleSdk(event)}></ion-toggle>
+            <ion-label>Enable All App Center Services</ion-label>
+            <ion-toggle checked={this.enabled} onIonChange={(event) => this.toggleSdk(event)} />
           </ion-item>
           <ion-item>
             <ion-label>App Center SDk</ion-label>

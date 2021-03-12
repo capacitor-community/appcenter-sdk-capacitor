@@ -1,5 +1,5 @@
 import { Component, h } from '@stencil/core';
-import { AppCenter } from '@capacitor-community/appcenter-shared';
+// import { AppCenter } from '@capacitor-community/appcenter-shared';
 
 @Component({
   tag: 'app-root',
@@ -9,7 +9,7 @@ export class AppRoot {
 
   async componentWillLoad() {
     try{
-      await AppCenter.setUserId({ userId: "i_am_a_user"});
+      // await AppCenter.setUserId({ userId: "i_am_a_user"});
     } catch (e) {
       console.error(e);
     }

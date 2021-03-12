@@ -9,21 +9,25 @@ export class AppHome {
     return [
       <ion-header>
         <ion-toolbar color="primary">
-          <ion-title>AppCenter Capacitor</ion-title>
+          <ion-title>demo</ion-title>
         </ion-toolbar>
       </ion-header>,
 
       <ion-content class="ion-padding">
-        <ion-button href="/analytics" expand="block">Test Analytics</ion-button>
-        <ion-button href="/crashes" expand="block">Test Crashes</ion-button>
-        <ion-button href="/other" expand="block">Test Other APIs</ion-button>
+        <h3>AppCenter Capacitor SDK</h3>
+        <p>Welcome! Tap on the links below to test various features of the Appcenter SDK</p>
+        <ion-list lines="full" class="ion-no-margin">
+          <ion-item href="/analytics">
+            <ion-label>Analytics</ion-label>
+          </ion-item>
+          <ion-item href="/crashes">
+            <ion-label>Crashes</ion-label>
+          </ion-item>
+          <ion-item href="/other">
+            <ion-label>Core API's</ion-label>
+          </ion-item>
+        </ion-list>
       </ion-content>,
-
-      <ion-footer>
-        <ion-toolbar>
-          <ion-title>appcenter-sdk-capacitor 0.0.1</ion-title>
-        </ion-toolbar>
-      </ion-footer>
     ];
   }
 }
