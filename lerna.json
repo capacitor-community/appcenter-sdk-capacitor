@@ -1,0 +1,7 @@
+{
+  "packages": [
+    "appcenter-shared",
+    "appcenter-analytics"
+  ],
+  "version": "independent"
+}
