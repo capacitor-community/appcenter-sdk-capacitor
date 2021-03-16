@@ -1,35 +1,42 @@
 import Foundation
 import Capacitor
-import AppCenter
 
 @objc(AppCenterPlugin)
 public class AppCenterPlugin: CAPPlugin {
     private let implementation = AppCenterBase()
     
     public override func load() {
-        let appSecret = self.bridge!.config.getPluginConfigValue("AppCenterPlugin", "IOS_APP_SECRET") ?? ""
-        implementation.configureWithSettings(appSecret as! String)
+        let appSecret = getConfigValue("iosAppSecret") as? String ?? ""
+        let enableInJs = getConfigValue("enableInJs") as? Bool ?? false
+        
+        implementation.configureWithSettings(appSecret)
+        
+        if enableInJs {
+            // Avoid starting an analytics session since it will get enabled in JS
+            implementation.enable(false)
+        }
     }
 
     @objc func getInstallId(_ call: CAPPluginCall) {
-        call.resolve(["value": AppCenter.installId.uuidString])
+        call.resolve(["value": implementation.getInstallId()])
     }
-
+    
+//  TEST:  might not work after starting AppCenter service
     @objc func setUserId(_ call: CAPPluginCall) {
         implementation.setUserId(call.getString("userId") ?? "")
         call.resolve()
     }
     
     @objc func getSdkVersion(_ call: CAPPluginCall) {
-        call.resolve(["value": AppCenter.sdkVersion!])
+        call.resolve(["value": implementation.getSdkVersion()])
     }
     
     @objc func isEnabled(_ call: CAPPluginCall) {
-        call.resolve(["value": AppCenter.enabled])
+        call.resolve(["value": implementation.isEnabled()])
     }
     
     @objc func enable(_ call: CAPPluginCall) {
-        AppCenter.enabled = call.getBool("enableFlag") ?? false
+        implementation.enable(call.getBool("enableFlag") ?? false)
         call.resolve()
     }
     

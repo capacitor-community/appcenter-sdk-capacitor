@@ -9,43 +9,56 @@ import AppCenter
     var logUrl: String?
     var wrapperSdk: WrapperSdk?
     
+    public func getInstallId() -> String {
+        return AppCenter.installId.uuidString
+    }
+    
+    public func getSdkVersion() -> String {
+        return AppCenter.sdkVersion
+    }
+    
     public func setUserId(_ id: String) {
         AppCenter.userId = id
     }
     
-    public func configureWithSettings(_ secret: String) {
+    public func enable(_ flag: Bool) {
+        AppCenter.enabled = flag
+    }
     
+    public func isEnabled() -> Bool {
+        return AppCenter.enabled
+    }
+    
+    public func configureWithSettings(_ secret: String) {
+        AppCenter.logLevel = .verbose
+
         if AppCenter.isConfigured {
             return
         }
         
-        let wrapperSdk = WrapperSdk(wrapperSdkVersion: "0.0.1", wrapperSdkName: "appcenter.capacitor", wrapperRuntimeVersion: nil, liveUpdateReleaseLabel: nil, liveUpdateDeploymentKey: nil, liveUpdatePackageHash: nil)
-        
-        
-        self.wrapperSdk = wrapperSdk
-        AppCenter.configure(withAppSecret: "")
-        
-        AppCenter.logLevel = .verbose
+        let wrapperSdk = WrapperSdk(wrapperSdkVersion: "0.1.0", wrapperSdkName: "appcenter.capacitor", wrapperRuntimeVersion: nil, liveUpdateReleaseLabel: nil, liveUpdateDeploymentKey: nil, liveUpdatePackageHash: nil)
 
+        setWrapperSdk(wrapperSdk!)
+
+        AppCenter.start(withAppSecret: getAppSecret(secret), services: [])
     }
     
-    func setAppSecret(secret: String) {
+    func setAppSecret(_ secret: String) {
         appSecret = secret
     }
     
-    func getAppSecretWithSettings(_ secret: String) -> String {
-        if(appSecret != nil) {
-            appSecret = secret
+    func getAppSecret(_ secret: String) -> String {
+        if appSecret == nil {
+            setAppSecret(secret)
         }
-        
-        return appSecret ?? ""
+        return appSecret!
     }
     
     func getWrapperSdk() -> WrapperSdk {
         return wrapperSdk!
     }
     
-    func setWrapperSdk(sdk: WrapperSdk) {
+    func setWrapperSdk(_ sdk: WrapperSdk) {
         wrapperSdk = sdk
         AppCenter.wrapperSdk = sdk
     }
