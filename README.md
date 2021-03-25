@@ -6,7 +6,7 @@ App Center is mission control for mobile apps. Get faster release cycles, higher
 
 ## Plugins
 
-The Capacitor App Center SDK consists of a several plugins so you can use any or all of the supported App Center services:
+The Capacitor App Center SDK consists of a several plugins so you can use any or all of the supported App Center services. This SDK uses a modular approach, where you just add the modules for App Center services that you want to use. `appcenter-analytics` and `appcenter-crashes` make sense to add to almost every app, as they provide value with no additional setup required. `appcenter` provides general purpose App Center APIs, useful for multiple services.
 
 | Package | Source | Version |
 | --- | --- | --- |
@@ -39,15 +39,16 @@ Example:
 
 ```json
 {
-  ...
-  "plugins": {
-    "Analytics": {
-      "iosAppSecret": "0000-0000-0000-0000-000000000000",
-      "androidAppSecret": "0000-0000-0000-0000-000000000000",
-      "transmissionInterval": "10",
-      "enableInJs": false
-    }
+  "appId": "com.example.app",
+  "appName": "example",
+  "webDir": "www",
+  "bundledWebRuntime": false,
+  "AppCenter": {
+    "iosAppSecret": "0000-0000-0000-0000-000000000000",
+    "androidAppSecret": "0000-0000-0000-0000-000000000000"
   }
+  ...
+
 }
 ```
 

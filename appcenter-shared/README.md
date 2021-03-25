@@ -69,8 +69,7 @@ const appCenterInfo = async () => {
 * [`getSdkVersion()`](#getsdkversion)
 * [`isEnabled()`](#isenabled)
 * [`enable(...)`](#enable)
-* [`setLogLevel(...)`](#setloglevel)
-* [Enums](#enums)
+* [`setCustomProperties(...)`](#setcustomproperties)
 
 </docgen-index>
 
@@ -119,7 +118,7 @@ For more info, please see: https://docs.microsoft.com/en-us/appcenter/sdk/other-
 getSdkVersion() => any
 ```
 
-Get the version of App Center SDK
+Get the version of the native App Center SDK
 
 **Returns:** <code>any</code>
 
@@ -162,38 +161,23 @@ Toggle all App Center services at runtime. When disabled, the SDK won't forward 
 --------------------
 
 
-### setLogLevel(...)
+### setCustomProperties(...)
 
 ```typescript
-setLogLevel(options: { logLevel: LogLevel; }) => any
+setCustomProperties(options: { properties: CustomProperties; }) => any
 ```
 
-You can control the amount of log messages that show up from App Center in the console. By default, it's set to Assert for the App Store environment and Warning otherwise. To have as many log messages as possible, use Verbose.
+App Center allows you to define custom properties as key value pairs in your app. You may use custom properties for various purposes. 
+For instance, you can use custom properties to segment your users, and then send push notifications to a specific audience.
 
-| Param         | Type                                                         |
-| ------------- | ------------------------------------------------------------ |
-| **`options`** | <code>{ logLevel: <a href="#loglevel">LogLevel</a>; }</code> |
+| Param         | Type                                           |
+| ------------- | ---------------------------------------------- |
+| **`options`** | <code>{ properties: CustomProperties; }</code> |
 
 **Returns:** <code>any</code>
 
-**Since:** 0.1.1
+**Since:** 0.2.0
 
 --------------------
-
-
-### Enums
-
-
-#### LogLevel
-
-| Members       | Value           |
-| ------------- | --------------- |
-| **`assert`**  | <code>7</code>  |
-| **`debug`**   | <code>3</code>  |
-| **`error`**   | <code>6</code>  |
-| **`info`**    | <code>4</code>  |
-| **`none`**    | <code>99</code> |
-| **`verbose`** | <code>2</code>  |
-| **`warning`** | <code>5</code>  |
 
 </docgen-api>
