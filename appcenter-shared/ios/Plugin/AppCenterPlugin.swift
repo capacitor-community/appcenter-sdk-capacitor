@@ -6,22 +6,16 @@ public class AppCenterPlugin: CAPPlugin {
     private let implementation = AppCenterBase()
     
     public override func load() {
-        let appSecret = getConfigValue("iosAppSecret") as? String ?? ""
-        let enableInJs = getConfigValue("enableInJs") as? Bool ?? false
-        
+        print("[AppCenterPlugin] load")
+        let appSecret = self.bridge?.config.getString("AppCenter.iosAppSecret") ?? ""
         implementation.configureWithSettings(appSecret)
-        
-        if enableInJs {
-            // Avoid starting an analytics session since it will get enabled in JS
-            implementation.enable(false)
-        }
     }
 
     @objc func getInstallId(_ call: CAPPluginCall) {
         call.resolve(["value": implementation.getInstallId()])
     }
     
-//  TEST:  might not work after starting AppCenter service
+//  Move to appcenter-crashes
     @objc func setUserId(_ call: CAPPluginCall) {
         implementation.setUserId(call.getString("userId") ?? "")
         call.resolve()
@@ -50,14 +44,11 @@ public class AppCenterPlugin: CAPPlugin {
 //        AppCenter.logLevel = LogLevel.init(rawValue: UInt(call.getInt("logLevel") ?? 7)) ?? .assert
 //        call.resolve()
 //    }
-//    @objc func setCustomProperties(_ call: CAPPluginCall) {
-//        var properties: JSObject = call.getObject("customProperties") ?? [:]
-//        
-//        let customProperties = CustomProperties()
-//        customProperties.setValuesForKeys(properties)
-//        
-//        AppCenter.setCustomProperties(customProperties)
-//        
-//        call.resolve()
-//    }
+    
+    @objc func setCustomProperties(_ call: CAPPluginCall) {
+        let properties: JSObject = call.getObject("properties") ?? [:]
+        implementation.setCustomProperties(properties)
+        
+        call.resolve()
+    }
 }

@@ -29,6 +29,20 @@ import AppCenter
         return AppCenter.enabled
     }
     
+    public func setCustomProperties(_ properties: JSObject) {
+//        let customProperties = CustomProperties()
+        
+        // JSObject [String: JSValue]
+        // JS: {"color":{"type":"string","value":"blue"},"score":{"type":"number","value":10}}
+        // swift: ["score": ["type": "number", "value": 10], "color": value: ["value": "blue", "type": "string"]]
+        
+//        AppCenter.setCustomProperties(customProperties)
+    }
+    
+    public func clearCustomProperty(name: String) {
+        customProperties.clearProperty(forKey: name)
+    }
+    
     public func configureWithSettings(_ secret: String) {
         AppCenter.logLevel = .verbose
 
@@ -40,7 +54,8 @@ import AppCenter
 
         setWrapperSdk(wrapperSdk!)
 
-        AppCenter.start(withAppSecret: getAppSecret(secret), services: [])
+        AppCenter.configure(withAppSecret: getAppSecret(secret))
+//        AppCenter.start(withAppSecret: getAppSecret(secret), services: [])
     }
     
     func setAppSecret(_ secret: String) {

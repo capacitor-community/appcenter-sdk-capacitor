@@ -9,5 +9,5 @@ CAP_PLUGIN(AppCenterPlugin, "AppCenter",
            CAP_PLUGIN_METHOD(getSdkVersion, CAPPluginReturnPromise);
            CAP_PLUGIN_METHOD(isEnabled, CAPPluginReturnPromise);
            CAP_PLUGIN_METHOD(enable, CAPPluginReturnPromise);
-//           CAP_PLUGIN_METHOD(setLogLevel, CAPPluginReturnPromise);
+           CAP_PLUGIN_METHOD(setCustomProperties, CAPPluginReturnPromise);
 )
