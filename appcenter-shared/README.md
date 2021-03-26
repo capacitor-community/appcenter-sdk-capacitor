@@ -71,6 +71,7 @@ const appCenterInfo = async () => {
 * [`enable(...)`](#enable)
 * [`setCustomProperties(...)`](#setcustomproperties)
 * [`getLogLevel()`](#getloglevel)
+* [`setLogLevel(...)`](#setloglevel)
 * [Enums](#enums)
 
 </docgen-index>
@@ -190,6 +191,25 @@ getLogLevel() => any
 ```
 
 Returns currently set <a href="#loglevel">LogLevel</a>.
+
+**Returns:** <code>any</code>
+
+**Since:** 0.2.0
+
+--------------------
+
+
+### setLogLevel(...)
+
+```typescript
+setLogLevel(options: { logLevel: LogLevel; }) => any
+```
+
+You can control the amount of log messages that show up from App Center in the console. By default, it's set to Assert for the App Store environment and Warning otherwise. To have as many log messages as possible, use Verbose.
+
+| Param         | Type                                                         |
+| ------------- | ------------------------------------------------------------ |
+| **`options`** | <code>{ logLevel: <a href="#loglevel">LogLevel</a>; }</code> |
 
 **Returns:** <code>any</code>
 

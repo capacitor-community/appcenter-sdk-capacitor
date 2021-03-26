@@ -38,16 +38,15 @@ public class AppCenterPlugin: CAPPlugin {
         call.resolve(["value": implementation.getLogLevel()])
     }
     
-//    @objc func setLogLevel(_ call: CAPPluginCall) {
-//        guard let level = call.options["logLevel"] as? Int else {
-//            
-//            call.reject("Must provide an id")
-//            return
-//        }
-//        
-//        AppCenter.logLevel = LogLevel.init(rawValue: UInt(call.getInt("logLevel") ?? 7)) ?? .assert
-//        call.resolve()
-//    }
+    @objc func setLogLevel(_ call: CAPPluginCall) {
+        guard let level = call.options["logLevel"] as? Int else {
+            call.reject("Must provide LogLevel")
+            return
+        }
+        
+        implementation.setLogLevel(level)
+        call.resolve()
+    }
     
     @objc func setCustomProperties(_ call: CAPPluginCall) {
         let properties: JSObject = call.getObject("properties") ?? [:]

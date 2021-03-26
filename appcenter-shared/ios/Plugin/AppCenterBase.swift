@@ -9,6 +9,10 @@ import AppCenter
     var logUrl: String?
     var wrapperSdk: WrapperSdk?
     
+    public func setLogLevel(_ level: Int) {
+        AppCenter.logLevel = LogLevel.init(rawValue: UInt(level)) ?? .verbose
+    }
+    
     public func getLogLevel() -> UInt {
         return AppCenter.logLevel.rawValue
     }

@@ -157,8 +157,16 @@ export interface AppCenterPlugin {
   getLogLevel(): Promise<{value: LogLevel}>;
 
   /**
-   * You can control the amount of log messages that show up from App Center in the console. By default, it's set to Assert for the App Store environment and Warning otherwise. To have as many log messages as possible, use Verbose.
+   * You can control the amount of log messages that show up from App Center in the console. By default, it's set to Assert for the App Store environment and Warning otherwise. 
+   * To have as many log messages as possible, use Verbose. 
+   * Note: `setLogLevel` API can't increase logging for app startup code, before JavaScript is loaded.
+   * @param {logLevel: LogLevel} options
+   * @since 0.2.0
+   * @example
+   * import AppCenter, { LogLevel } from '@capacitor-community/appcenter';
+   * 
+   * await AppCenter.setLogLevel({logLevel: LogLevel.DEBUG})
    */
-  // setLogLevel(options: {logLevel: LogLevel}): Promise<void>;
+  setLogLevel(options: {logLevel: LogLevel}): Promise<void>;
   // setMaxStorageSize
 }
