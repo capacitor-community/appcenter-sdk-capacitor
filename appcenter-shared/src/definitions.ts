@@ -15,8 +15,6 @@ export enum LogLevel {
   NONE = 99
 }
 
-// export type LogLevelString = keyof typeof LogLevel;
-
 interface ICustomProperties {
   set(key: string, value: string | number | boolean | Date): CustomProperties;
   clear(key: string): CustomProperties;
@@ -148,11 +146,19 @@ export interface AppCenterPlugin {
   setCustomProperties(options: {properties: CustomProperties}): Promise<void>
 
   /**
-   * You can control the amount of log messages that show up from App Center in the console. By default, it's set to Assert for the App Store environment and Warning otherwise. To have as many log messages as possible, use Verbose.
-   * @param {logLevel: LogLevel} options 
-   * @since 0.1.1
+   * Returns currently set LogLevel.
+   * @returns {Promise<{value: LogLevel}>} AppCenter LogLevel
+   * @since 0.2.0
+   * @example
+   * import AppCenter from '@capacitor-community/appcenter';
+   * 
+   * const {value: logLevel } = await AppCenter.getLogLevel()
    */
-  // getLogLevel(): Promise<LogLevel>;
+  getLogLevel(): Promise<{value: LogLevel}>;
+
+  /**
+   * You can control the amount of log messages that show up from App Center in the console. By default, it's set to Assert for the App Store environment and Warning otherwise. To have as many log messages as possible, use Verbose.
+   */
   // setLogLevel(options: {logLevel: LogLevel}): Promise<void>;
   // setMaxStorageSize
 }

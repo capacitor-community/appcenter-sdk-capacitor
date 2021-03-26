@@ -9,6 +9,10 @@ import AppCenter
     var logUrl: String?
     var wrapperSdk: WrapperSdk?
     
+    public func getLogLevel() -> UInt {
+        return AppCenter.logLevel.rawValue
+    }
+    
     public func getInstallId() -> String {
         return AppCenter.installId.uuidString
     }
@@ -40,7 +44,7 @@ import AppCenter
     }
     
     public func clearCustomProperty(name: String) {
-        customProperties.clearProperty(forKey: name)
+//        customProperties.clearProperty(forKey: name)
     }
     
     public func configureWithSettings(_ secret: String) {

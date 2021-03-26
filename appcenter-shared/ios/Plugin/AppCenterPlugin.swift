@@ -34,6 +34,10 @@ public class AppCenterPlugin: CAPPlugin {
         call.resolve()
     }
     
+    @objc func getLogLevel(_ call: CAPPluginCall) {
+        call.resolve(["value": implementation.getLogLevel()])
+    }
+    
 //    @objc func setLogLevel(_ call: CAPPluginCall) {
 //        guard let level = call.options["logLevel"] as? Int else {
 //            

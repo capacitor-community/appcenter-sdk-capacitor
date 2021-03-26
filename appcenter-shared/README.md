@@ -70,6 +70,8 @@ const appCenterInfo = async () => {
 * [`isEnabled()`](#isenabled)
 * [`enable(...)`](#enable)
 * [`setCustomProperties(...)`](#setcustomproperties)
+* [`getLogLevel()`](#getloglevel)
+* [Enums](#enums)
 
 </docgen-index>
 
@@ -179,5 +181,36 @@ For instance, you can use custom properties to segment your users, and then send
 **Since:** 0.2.0
 
 --------------------
+
+
+### getLogLevel()
+
+```typescript
+getLogLevel() => any
+```
+
+Returns currently set <a href="#loglevel">LogLevel</a>.
+
+**Returns:** <code>any</code>
+
+**Since:** 0.2.0
+
+--------------------
+
+
+### Enums
+
+
+#### LogLevel
+
+| Members       | Value           |
+| ------------- | --------------- |
+| **`VERBOSE`** | <code>2</code>  |
+| **`DEBUG`**   | <code>3</code>  |
+| **`INFO`**    | <code>4</code>  |
+| **`WARNING`** | <code>5</code>  |
+| **`ERROR`**   | <code>6</code>  |
+| **`ASSERT`**  | <code>7</code>  |
+| **`NONE`**    | <code>99</code> |
 
 </docgen-api>
