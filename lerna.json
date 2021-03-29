@@ -2,6 +2,7 @@
   "packages": [
     "appcenter-shared",
     "appcenter-analytics",
+    "appcenter-crashes",
     "example"
   ],
   "command": {
