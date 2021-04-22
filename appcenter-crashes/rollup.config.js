@@ -4,7 +4,7 @@ export default {
     {
       file: 'dist/plugin.js',
       format: 'iife',
-      name: 'capacitorAppCenterCrashes',
+      name: 'capacitorCrashes',
       globals: {
         '@capacitor/core': 'capacitorExports',
       },

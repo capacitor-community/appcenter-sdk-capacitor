@@ -1,18 +1,32 @@
 import Foundation
 import Capacitor
 
-/**
- * Please read the Capacitor iOS Plugin Development Guide
- * here: https://capacitorjs.com/docs/plugins/ios
- */
 @objc(AppCenterCrashesPlugin)
 public class AppCenterCrashesPlugin: CAPPlugin {
-    private let implementation = AppCenterCrashes()
+    private let implementation = AppCenterCrashesBase()
+    
+    public override func load() {
+            
+        print("[AppCenterCrashesPlugin] load")
+        
+        let appSecret = self.bridge?.config.getString("AppCenter.iosAppSecret") ?? ""
+        let enableInJs = getConfigValue("enableInJs") as? Bool ?? false
+        
+        implementation.configureWithSettings(appSecret)
+        
+        if enableInJs {
+            // Avoid starting an analytics session since it will get enabled in JS
+            implementation.enable(false)
+        }
+    }
 
-    @objc func echo(_ call: CAPPluginCall) {
-        let value = call.getString("value") ?? ""
-        call.resolve([
-            "value": implementation.echo(value)
-        ])
+    @objc func setEnable(_ call: CAPPluginCall) {
+       implementation.enable(call.getBool("shouldEnable") ?? false)
+        call.resolve()
+    }
+    
+    @objc func isEnabled(_ call: CAPPluginCall) {
+       call.resolve(["value": implementation.isEnabled()])
+        call.resolve()
     }
 }

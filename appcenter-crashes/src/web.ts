@@ -1,12 +1,14 @@
 import { WebPlugin } from '@capacitor/core';
 
-import type { AppCenterCrashesPlugin } from './definitions';
+import type { CrashesPlugin } from './definitions';
 
-export class AppCenterCrashesWeb
+export class CrashesWeb
   extends WebPlugin
-  implements AppCenterCrashesPlugin {
-  async echo(options: { value: string }): Promise<{ value: string }> {
-    console.log('ECHO', options);
-    return options;
+  implements CrashesPlugin {
+  isEnabled(): Promise<{ value: boolean; }> {
+    throw this.unimplemented('Not supported on web.');
+  }
+  setEnable(): Promise<void> {
+    throw this.unimplemented('Not supported on web.');
   }
 }

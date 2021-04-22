@@ -1,13 +1,13 @@
 import { registerPlugin } from '@capacitor/core';
 
-import type { AppCenterCrashesPlugin } from './definitions';
+import type { CrashesPlugin } from './definitions';
 
-const AppCenterCrashes = registerPlugin<AppCenterCrashesPlugin>(
-  'AppCenterCrashes',
+const Crashes = registerPlugin<CrashesPlugin>(
+  'Crashes',
   {
-    web: () => import('./web').then(m => new m.AppCenterCrashesWeb()),
+    web: () => import('./web').then(m => new m.CrashesWeb()),
   },
 );
 
 export * from './definitions';
-export { AppCenterCrashes };
+export default Crashes;

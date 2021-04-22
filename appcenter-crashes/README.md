@@ -13,24 +13,44 @@ npx cap sync
 
 <docgen-index>
 
-* [`echo(...)`](#echo)
+* [`isEnabled()`](#isenabled)
+* [`setEnable(...)`](#setenable)
 
 </docgen-index>
 
 <docgen-api>
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
 
-### echo(...)
+### isEnabled()
 
 ```typescript
-echo(options: { value: string; }) => any
+isEnabled() => any
 ```
 
-| Param         | Type                            |
-| ------------- | ------------------------------- |
-| **`options`** | <code>{ value: string; }</code> |
+Check if Crashes is enabled or not.
 
 **Returns:** <code>any</code>
+
+**Since:** 0.1.0
+
+--------------------
+
+
+### setEnable(...)
+
+```typescript
+setEnable(options: { shouldEnable: boolean; }) => any
+```
+
+You can enable and disable App Center Crashes at runtime. If you disable it, the SDK won't do any crash reporting for the app.
+
+| Param         | Type                                    |
+| ------------- | --------------------------------------- |
+| **`options`** | <code>{ shouldEnable: boolean; }</code> |
+
+**Returns:** <code>any</code>
+
+**Since:** 0.1.0
 
 --------------------
 

@@ -5,9 +5,10 @@
 	"bundledWebRuntime": false,
 	"plugins": {
 		"Analytics": {
-			"iosAppSecret": "fb3a28d5-1ed9-401c-b06a-0379f66c8650",
+			"iosAppSecret": "0000-0000-0000-0000-000000000000",
 			"androidAppSecret": "0000-0000-0000-0000-000000000000",
 			"transmissionInterval": "10",
+			"enableInJs": false
 		}
 	}
 }
