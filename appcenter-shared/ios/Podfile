@@ -9,7 +9,6 @@ end
 
 target 'Plugin' do
   capacitor_pods
-
   pod 'AppCenter', '4.1.1'
 end
 
