@@ -49,7 +49,7 @@ public class AppCenterPlugin: CAPPlugin {
     }
     
     @objc func setCustomProperties(_ call: CAPPluginCall) {
-        let properties: JSObject = call.getObject("properties") ?? [:]
+        let properties = call.options["properties"] as! [String: [String: Any]]
         implementation.setCustomProperties(properties)
         
         call.resolve()

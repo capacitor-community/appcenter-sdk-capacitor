@@ -2,11 +2,10 @@ import Foundation
 import Capacitor
 import AppCenter
 
-//    need to move most of this functionality to a shared module accros all AppCenter<plugin_name> plugins
+//    need to move most of this functionality to a shared module accros all AppCenter plugins
 @objc public class AppCenterBase: NSObject {
     
     var appSecret: String?
-    var logUrl: String?
     var wrapperSdk: WrapperSdk?
     
     public func setLogLevel(_ level: Int) {
@@ -37,23 +36,35 @@ import AppCenter
         return AppCenter.enabled
     }
     
-    public func setCustomProperties(_ properties: JSObject) {
-//        let customProperties = CustomProperties()
+    public func setCustomProperties(_ properties: [String: [String: Any]]) {
+        let customProperties = CustomProperties()
+                
+        for (propName, propData) in properties {
+            let type = propData["type"] as! String
+            let value = propData["value"]
+                        
+            if type == "string" {
+                customProperties.set(value as! String, forKey: propName)
+            }
+            else if type == "number" {
+                customProperties.set(value as! NSNumber, forKey: propName)
+            }
+            else if type == "boolean" {
+                customProperties.set(value as! Bool, forKey: propName)
+            }
+            else if type == "date-time" {
+                let date = Date.init(timeIntervalSince1970: value as! Double)
+                customProperties.set(date, forKey: propName)
+            }
+            else if type == "clear" {
+                customProperties.clearProperty(forKey: propName)
+            }
+        }
         
-        // JSObject [String: JSValue]
-        // JS: {"color":{"type":"string","value":"blue"},"score":{"type":"number","value":10}}
-        // swift: ["score": ["type": "number", "value": 10], "color": value: ["value": "blue", "type": "string"]]
-        
-//        AppCenter.setCustomProperties(customProperties)
-    }
-    
-    public func clearCustomProperty(name: String) {
-//        customProperties.clearProperty(forKey: name)
+        AppCenter.setCustomProperties(customProperties)
     }
     
     public func configureWithSettings(_ secret: String) {
-        AppCenter.logLevel = .verbose
-
         if AppCenter.isConfigured {
             return
         }
@@ -63,7 +74,6 @@ import AppCenter
         setWrapperSdk(wrapperSdk!)
 
         AppCenter.configure(withAppSecret: getAppSecret(secret))
-//        AppCenter.start(withAppSecret: getAppSecret(secret), services: [])
     }
     
     func setAppSecret(_ secret: String) {
