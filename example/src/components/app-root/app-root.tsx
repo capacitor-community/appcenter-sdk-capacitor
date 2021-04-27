@@ -8,11 +8,33 @@ import { Component, h } from '@stencil/core';
 export class AppRoot {
 
   async componentWillLoad() {
+    console.debug('[root] componentWillLoad')
+
     try{
       // await AppCenter.setUserId({ userId: "i_am_a_user"});
     } catch (e) {
       console.error(e);
     }
+  }
+
+  componentDidLoad() {
+    console.debug('[root] componentDidLoad')
+  }
+
+  componentWillRender() {
+    console.debug('[root] componentWillRender')
+  }
+
+  componentDidRender() {
+    console.debug('[root] componentDidRender')
+  }
+
+  componentDidUpdate(){
+    console.debug('[root] componentDidUpdate')
+  }
+
+  disconnectedCallback() {
+    console.debug('[root] disconnectedCallback')
   }
 
   render() {
@@ -22,7 +44,6 @@ export class AppRoot {
           <ion-route url="/" component="app-home" />
           <ion-route url="/analytics" component="app-analytics" />
           <ion-route url="/crashes" component="app-crashes" />
-          <ion-route url="/other" component="app-other" />
         </ion-router>
         <ion-nav />
       </ion-app>
