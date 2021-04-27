@@ -49,12 +49,9 @@ export class CustomProperties implements ICustomProperties {
       case 'object':
         if (value instanceof Date) {
           this[key] = { type: 'date-time', value: value.getTime() };
-        } else {
-          // AppCenterLog.error(logTag, 'CustomProperties: Invalid value type, expected string|number|boolean|Date.');
         }
         break;
       default:
-        // AppCenterLog.error(logTag, 'CustomProperties: Invalid value type, expected string|number|boolean|Date.');
         console.error('CustomProperties: Invalid value type, expected string|number|boolean|Date.')
     }
     return this;
