@@ -1,5 +1,5 @@
 import { Component, h, State } from '@stencil/core';
-import AppCenter, { CustomProperties, LogLevel } from '@capacitor-community/appcenter-shared';
+import AppCenter, { CustomProperties, LogLevel } from '@capacitor-community/appcenter';
 
 @Component({
   tag: 'app-home',

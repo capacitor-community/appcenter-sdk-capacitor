@@ -1,5 +1,5 @@
 import { Component, h } from '@stencil/core';
-// import { AppCenter } from '@capacitor-community/appcenter-shared';
+// import AppCenter from '@capacitor-community/appcenter';
 
 @Component({
   tag: 'app-root',

@@ -1,6 +1,6 @@
 {
-  "name": "@capacitor-community/appcenter-shared",
-  "version": "0.2.0",
+  "name": "@capacitor-community/appcenter",
+  "version": "0.3.0",
   "description": "Capacitor Plugin for Microsoft's Visual Studio App Center SDK.",
   "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",
@@ -11,7 +11,7 @@
     "android/build.gradle",
     "dist/",
     "ios/Plugin/",
-    "CapacitorCommunityAppcenterShared.podspec"
+    "CapacitorCommunityAppcenter.podspec"
   ],
   "author": "johnborges",
   "license": "MIT",

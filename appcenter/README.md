@@ -1,18 +1,18 @@
 <p align="center"><br><img src="https://user-images.githubusercontent.com/236501/85893648-1c92e880-b7a8-11ea-926d-95355b8175c7.png" width="128" height="128" /></p>
 
-<h3 align="center">App Center Shared</h3>
-<p align="center"><strong><code>@capacitor-community/appcenter-shared</code></strong></p>
+<h3 align="center">App Center</h3>
+<p align="center"><strong><code>@capacitor-community/appcenter</code></strong></p>
 <p align="center">
   Capacitor Plugin for Microsoft's Visual Studio App Center SDK. Contains additional helper APIs suitable for some projects.
 </p>
 
 <p align="center">
   <img src="https://img.shields.io/maintenance/yes/2020?style=flat-square" />
-  <a href="https://github.com/capacitor-community/appcenter-sdk-capacitor/tree/master/appcenter-shared/actions?query=workflow%3A%22CI%22"><img src="https://img.shields.io/github/workflow/status/capacitor-community/appcenter-sdk-capacitor/tree/master/appcenter-shared/CI?style=flat-square" /></a>
-  <a href="https://www.npmjs.com/package/@capacitor-community/appcenter-shared"><img src="https://img.shields.io/npm/l/@capacitor-community/app-icon?style=flat-square" /></a>
+  <a href="https://github.com/capacitor-community/appcenter-sdk-capacitor/tree/master/appcenter/actions?query=workflow%3A%22CI%22"><img src="https://img.shields.io/github/workflow/status/capacitor-community/appcenter-sdk-capacitor/tree/master/appcenter/CI?style=flat-square" /></a>
+  <a href="https://www.npmjs.com/package/@capacitor-community/appcenter"><img src="https://img.shields.io/npm/l/@capacitor-community/app-icon?style=flat-square" /></a>
   <br>
-  <a href="https://www.npmjs.com/package/@capacitor-community/appcenter-shared"><img src="https://img.shields.io/npm/dw/@capacitor-community/appcenter-shared?style=flat-square" /></a>
-  <a href="https://www.npmjs.com/package/@capacitor-community/appcenter-shared"><img src="https://img.shields.io/npm/v/@capacitor-community/appcenter-shared?style=flat-square" /></a>
+  <a href="https://www.npmjs.com/package/@capacitor-community/appcenter"><img src="https://img.shields.io/npm/dw/@capacitor-community/appcenter?style=flat-square" /></a>
+  <a href="https://www.npmjs.com/package/@capacitor-community/appcenter"><img src="https://img.shields.io/npm/v/@capacitor-community/appcenter?style=flat-square" /></a>
   <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
   <a href="#contributors-"><img src="https://img.shields.io/badge/all%20contributors-0-orange?style=flat-square" /></a>
   <!-- ALL-CONTRIBUTORS-BADGE:END -->
@@ -34,14 +34,14 @@
 ## Install
 
 ```bash
-npm install @capacitor-community/appcenter-shared
+npm install @capacitor-community/appcenter
 npx cap sync
 ```
 
 ## Usage
 
 ```typescript
-import { AppCenter } from '@capacitor-community/appcenter-shared';
+import AppCenter from '@capacitor-community/appcenter';
 
 const appCenterInfo = async () => {
 
@@ -205,7 +205,9 @@ Returns currently set <a href="#loglevel">LogLevel</a>.
 setLogLevel(options: { logLevel: LogLevel; }) => any
 ```
 
-You can control the amount of log messages that show up from App Center in the console. By default, it's set to Assert for the App Store environment and Warning otherwise. To have as many log messages as possible, use Verbose.
+You can control the amount of log messages that show up from App Center in the console. Log messages show in the console on iOS and LogCat on Android.
+By default, it's set to Assert for the App Store environment and Warning otherwise. To have as many log messages as possible, use Verbose. 
+Note: `setLogLevel` API can't increase logging for app startup code, before JavaScript is loaded.
 
 | Param         | Type                                                         |
 | ------------- | ------------------------------------------------------------ |

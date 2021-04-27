@@ -10,7 +10,7 @@ The Capacitor App Center SDK consists of a several plugins so you can use any or
 
 | Package | Source | Version |
 | --- | --- | --- |
-| [`@capacitor-community/appcenter-shared`](https://capacitorjs.com/docs/v3/apis/action-sheet) | [`./appcenter-shared`](./appcenter-shared) | [![npm badge](https://img.shields.io/npm/v/@capacitor-community/appcenter-shared?style=flat-square)](https://www.npmjs.com/package/@capacitor-community/appcenter-shared)
+| [`@capacitor-community/appcenter`](https://capacitorjs.com/docs/v3/apis/action-sheet) | [`./appcenter`](./appcenter) | [![npm badge](https://img.shields.io/npm/v/@capacitor-community/appcenter?style=flat-square)](https://www.npmjs.com/package/@capacitor-community/appcenter)
 | [`@capacitor-community/appcenter-analytics`](https://capacitorjs.com/docs/v3/apis/appcenter-analytics) | [`./appcenter-analytics`](./appcenter-analytics) | [![npm badge](https://img.shields.io/npm/v/@capacitor-community/appcenter-analytics?style=flat-square)](https://www.npmjs.com/package/@capacitor-community/appcenter-analytics)
 | [`@capacitor-community/appcenter-crashes`](https://capacitorjs.com/docs/v3/apis/appcenter-crashes) | [`./appcenter-crashes`](./appcenter-crashes) | [![npm badge](https://img.shields.io/npm/v/@capacitor-community/appcenter-crashes?style=flat-square)](https://www.npmjs.com/package/@capacitor-community/appcenter-crashes)
 
@@ -23,7 +23,7 @@ You can get familiar with SDK quickly by cloning this repository and running the
 Add the App Center plugin(s) that fit your needs directly from the CLI:
 
 ```bash
-npm i @capacitor-community/appcenter-analytics @capacitor-community/appcenter-shared
+npm i @capacitor-community/appcenter @capacitor-community/appcenter-analytics
 npx cap sync
 ```
 

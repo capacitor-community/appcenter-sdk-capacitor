@@ -19,7 +19,7 @@
     "@stencil/core": "^2.0.1"
   },
   "dependencies": {
-    "@capacitor-community/appcenter-shared": "0.2.0",
+    "@capacitor-community/appcenter": "0.3.0",
     "@capacitor/app": "^0.3.3",
     "@capacitor/cli": "next",
     "@capacitor/core": "next",

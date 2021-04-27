@@ -97,6 +97,7 @@ export interface AppCenterPlugin {
    * await AppCenter.setUserId({userId: 'your-user-id'})
    */
   setUserId(options: {userId: string}): Promise<void>;
+
   /**
    * Get the version of the native App Center SDK
    * @returns {Promise<{value: string}>} sdk version
@@ -107,6 +108,7 @@ export interface AppCenterPlugin {
    * const { value: sdkVersion } = await AppCenter.getSdkVersion();
    */
   getSdkVersion(): Promise<{value: string}>;
+
   /**
    * Check if App Center is enabled or not as a whole.
    * @returns {Promise<{value: boolean}>}
@@ -117,6 +119,7 @@ export interface AppCenterPlugin {
    * const { value: sdkEnabled } = await AppCenter.isEnabled();
    */
   isEnabled(): Promise<{value: boolean}>;
+
   /**
    * Toggle all App Center services at runtime. When disabled, the SDK won't forward any information to App Center.
    * @param {enableFlag: boolean} options
