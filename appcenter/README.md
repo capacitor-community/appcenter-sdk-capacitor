@@ -1,18 +1,18 @@
 <p align="center"><br><img src="https://user-images.githubusercontent.com/236501/85893648-1c92e880-b7a8-11ea-926d-95355b8175c7.png" width="128" height="128" /></p>
 
-<h3 align="center">App Center Shared</h3>
-<p align="center"><strong><code>@capacitor-community/appcenter-shared</code></strong></p>
+<h3 align="center">App Center</h3>
+<p align="center"><strong><code>@capacitor-community/appcenter</code></strong></p>
 <p align="center">
   Capacitor Plugin for Microsoft's Visual Studio App Center SDK. Contains additional helper APIs suitable for some projects.
 </p>
 
 <p align="center">
   <img src="https://img.shields.io/maintenance/yes/2020?style=flat-square" />
-  <a href="https://github.com/capacitor-community/appcenter-sdk-capacitor/tree/master/appcenter-shared/actions?query=workflow%3A%22CI%22"><img src="https://img.shields.io/github/workflow/status/capacitor-community/appcenter-sdk-capacitor/tree/master/appcenter-shared/CI?style=flat-square" /></a>
-  <a href="https://www.npmjs.com/package/@capacitor-community/appcenter-shared"><img src="https://img.shields.io/npm/l/@capacitor-community/app-icon?style=flat-square" /></a>
+  <a href="https://github.com/capacitor-community/appcenter-sdk-capacitor/tree/master/appcenter/actions?query=workflow%3A%22CI%22"><img src="https://img.shields.io/github/workflow/status/capacitor-community/appcenter-sdk-capacitor/tree/master/appcenter/CI?style=flat-square" /></a>
+  <a href="https://www.npmjs.com/package/@capacitor-community/appcenter"><img src="https://img.shields.io/npm/l/@capacitor-community/app-icon?style=flat-square" /></a>
   <br>
-  <a href="https://www.npmjs.com/package/@capacitor-community/appcenter-shared"><img src="https://img.shields.io/npm/dw/@capacitor-community/appcenter-shared?style=flat-square" /></a>
-  <a href="https://www.npmjs.com/package/@capacitor-community/appcenter-shared"><img src="https://img.shields.io/npm/v/@capacitor-community/appcenter-shared?style=flat-square" /></a>
+  <a href="https://www.npmjs.com/package/@capacitor-community/appcenter"><img src="https://img.shields.io/npm/dw/@capacitor-community/appcenter?style=flat-square" /></a>
+  <a href="https://www.npmjs.com/package/@capacitor-community/appcenter"><img src="https://img.shields.io/npm/v/@capacitor-community/appcenter?style=flat-square" /></a>
   <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
   <a href="#contributors-"><img src="https://img.shields.io/badge/all%20contributors-0-orange?style=flat-square" /></a>
   <!-- ALL-CONTRIBUTORS-BADGE:END -->
@@ -34,14 +34,14 @@
 ## Install
 
 ```bash
-npm install @capacitor-community/appcenter-shared
+npm install @capacitor-community/appcenter
 npx cap sync
 ```
 
 ## Usage
 
 ```typescript
-import { AppCenter } from '@capacitor-community/appcenter-shared';
+import AppCenter from '@capacitor-community/appcenter';
 
 const appCenterInfo = async () => {
 
@@ -69,6 +69,8 @@ const appCenterInfo = async () => {
 * [`getSdkVersion()`](#getsdkversion)
 * [`isEnabled()`](#isenabled)
 * [`enable(...)`](#enable)
+* [`setCustomProperties(...)`](#setcustomproperties)
+* [`getLogLevel()`](#getloglevel)
 * [`setLogLevel(...)`](#setloglevel)
 * [Enums](#enums)
 
@@ -119,7 +121,7 @@ For more info, please see: https://docs.microsoft.com/en-us/appcenter/sdk/other-
 getSdkVersion() => any
 ```
 
-Get the version of App Center SDK
+Get the version of the native App Center SDK
 
 **Returns:** <code>any</code>
 
@@ -162,13 +164,50 @@ Toggle all App Center services at runtime. When disabled, the SDK won't forward 
 --------------------
 
 
+### setCustomProperties(...)
+
+```typescript
+setCustomProperties(options: { properties: CustomProperties; }) => any
+```
+
+App Center allows you to define custom properties as key value pairs in your app. You may use custom properties for various purposes. 
+For instance, you can use custom properties to segment your users, and then send push notifications to a specific audience.
+
+| Param         | Type                                           |
+| ------------- | ---------------------------------------------- |
+| **`options`** | <code>{ properties: CustomProperties; }</code> |
+
+**Returns:** <code>any</code>
+
+**Since:** 0.2.0
+
+--------------------
+
+
+### getLogLevel()
+
+```typescript
+getLogLevel() => any
+```
+
+Returns currently set <a href="#loglevel">LogLevel</a>.
+
+**Returns:** <code>any</code>
+
+**Since:** 0.2.0
+
+--------------------
+
+
 ### setLogLevel(...)
 
 ```typescript
 setLogLevel(options: { logLevel: LogLevel; }) => any
 ```
 
-You can control the amount of log messages that show up from App Center in the console. By default, it's set to Assert for the App Store environment and Warning otherwise. To have as many log messages as possible, use Verbose.
+You can control the amount of log messages that show up from App Center in the console. Log messages show in the console on iOS and LogCat on Android.
+By default, it's set to Assert for the App Store environment and Warning otherwise. To have as many log messages as possible, use Verbose. 
+Note: `setLogLevel` API can't increase logging for app startup code, before JavaScript is loaded.
 
 | Param         | Type                                                         |
 | ------------- | ------------------------------------------------------------ |
@@ -176,7 +215,7 @@ You can control the amount of log messages that show up from App Center in the c
 
 **Returns:** <code>any</code>
 
-**Since:** 0.1.1
+**Since:** 0.2.0
 
 --------------------
 
@@ -188,12 +227,12 @@ You can control the amount of log messages that show up from App Center in the c
 
 | Members       | Value           |
 | ------------- | --------------- |
-| **`assert`**  | <code>7</code>  |
-| **`debug`**   | <code>3</code>  |
-| **`error`**   | <code>6</code>  |
-| **`info`**    | <code>4</code>  |
-| **`none`**    | <code>99</code> |
-| **`verbose`** | <code>2</code>  |
-| **`warning`** | <code>5</code>  |
+| **`VERBOSE`** | <code>2</code>  |
+| **`DEBUG`**   | <code>3</code>  |
+| **`INFO`**    | <code>4</code>  |
+| **`WARNING`** | <code>5</code>  |
+| **`ERROR`**   | <code>6</code>  |
+| **`ASSERT`**  | <code>7</code>  |
+| **`NONE`**    | <code>99</code> |
 
 </docgen-api>

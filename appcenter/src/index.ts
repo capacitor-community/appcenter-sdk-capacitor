@@ -7,4 +7,4 @@ const AppCenter = registerPlugin<AppCenterPlugin>('AppCenter', {
 });
 
 export * from './definitions';
-export { AppCenter };
+export default AppCenter;

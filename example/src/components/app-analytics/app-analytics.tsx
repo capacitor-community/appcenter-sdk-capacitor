@@ -1,6 +1,6 @@
 import { Component, State, h } from '@stencil/core';
 import { ToggleChangeEventDetail } from '@ionic/core';
-import { Analytics } from '@capacitor-community/appcenter-analytics';
+// import { Analytics } from '@capacitor-community/appcenter-analytics';
 
 @Component({
   tag: 'app-analytics',
@@ -24,56 +24,56 @@ export class AppAnalytics {
 
   async componentWillLoad() {
     try {
-      const analyticsEnabled = await Analytics.isEnabled();
+      // const analyticsEnabled = await Analytics.isEnabled();
 
-      this.enabled = analyticsEnabled.value;
+      // this.enabled = analyticsEnabled.value;
     } catch (error) {
       console.error(error)
     }
   }
 
   async toggleAnalytics(e: CustomEvent<ToggleChangeEventDetail>) {
-    try {
-      // resume logs before disabled analytics
-      if(!e.detail.checked && this.paused) {
-        await Analytics.resume();
-        this.paused = false
-      }
+    // try {
+    //   // resume logs before disabled analytics
+    //   if(!e.detail.checked && this.paused) {
+    //     await Analytics.resume();
+    //     this.paused = false
+    //   }
 
-      await Analytics.enable({enableFlag: e.detail.checked});
-      this.enabled = e.detail.checked
-    } catch (error) {
-      this.enabled = false
-      console.error(error)
-    }
+    //   await Analytics.enable({enableFlag: e.detail.checked});
+    //   this.enabled = e.detail.checked
+    // } catch (error) {
+    //   this.enabled = false
+    //   console.error(error)
+    // }
   }
 
   async toggleLogs(e: CustomEvent<ToggleChangeEventDetail>) {
-    if(e.detail.checked) {
-      try {
-        await Analytics.pause();
-        this.paused = e.detail.checked
-      } catch (error) {
-        this.paused = false
-        console.error(error)
-      }
-    } else {
-      try {
-        await Analytics.resume();
-        this.paused = false
-      } catch (error) {
-        this.paused = true;
-        console.error(error)
-      }
-    }
+    // if(e.detail.checked) {
+    //   try {
+    //     await Analytics.pause();
+    //     this.paused = e.detail.checked
+    //   } catch (error) {
+    //     this.paused = false
+    //     console.error(error)
+    //   }
+    // } else {
+    //   try {
+    //     await Analytics.resume();
+    //     this.paused = false
+    //   } catch (error) {
+    //     this.paused = true;
+    //     console.error(error)
+    //   }
+    // }
   }
 
   async trackEvent() {
-    try {
-      await Analytics.trackEvent({name: this.eventName, properties: {[this.propertyName]: this.propertyValue}});
-    } catch (error) {
-      console.error(error)
-    }
+    // try {
+    //   await Analytics.trackEvent({name: this.eventName, properties: {[this.propertyName]: this.propertyValue}});
+    // } catch (error) {
+    //   console.error(error)
+    // }
   }
 
   render() {

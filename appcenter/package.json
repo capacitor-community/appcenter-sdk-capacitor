@@ -1,6 +1,6 @@
 {
-  "name": "@capacitor-community/appcenter-shared",
-  "version": "0.1.1",
+  "name": "@capacitor-community/appcenter",
+  "version": "0.3.0",
   "description": "Capacitor Plugin for Microsoft's Visual Studio App Center SDK.",
   "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",
@@ -11,7 +11,7 @@
     "android/build.gradle",
     "dist/",
     "ios/Plugin/",
-    "CapacitorCommunityAppcenterShared.podspec"
+    "CapacitorCommunityAppcenter.podspec"
   ],
   "author": "johnborges",
   "license": "MIT",
@@ -44,10 +44,10 @@
     "prepublishOnly": "npm run build"
   },
   "devDependencies": {
-    "@capacitor/android": "^3.0.0-beta.6",
-    "@capacitor/core": "3.0.0-beta.6",
+    "@capacitor/android": "next",
+    "@capacitor/core": "next",
     "@capacitor/docgen": "^0.0.10",
-    "@capacitor/ios": "^3.0.0-beta.6",
+    "@capacitor/ios": "next",
     "@ionic/eslint-config": "^0.3.0",
     "@ionic/prettier-config": "^1.0.1",
     "@ionic/swiftlint-config": "^1.1.2",
@@ -60,7 +60,7 @@
     "typescript": "~4.0.3"
   },
   "peerDependencies": {
-    "@capacitor/core": "^3.0.0-beta.6"
+    "@capacitor/core": "next"
   },
   "prettier": "@ionic/prettier-config",
   "swiftlint": "@ionic/swiftlint-config",
