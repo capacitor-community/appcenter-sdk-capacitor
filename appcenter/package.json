@@ -1,6 +1,6 @@
 {
   "name": "@capacitor-community/appcenter",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Capacitor Plugin for Microsoft's Visual Studio App Center SDK.",
   "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",

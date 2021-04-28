@@ -41,11 +41,11 @@ export class AppHome {
 
       console.debug(logLevel)
 
-      this.customProperties = new CustomProperties()
-      this.customProperties.set('color', 'blue').set('score', 10).set('result', true).set("timestamp", new Date())
-      console.debug(this.customProperties)
+      // this.customProperties = new CustomProperties()
+      // this.customProperties.set('color', 'blue').set('score', 10).set('result', true).set("timestamp", new Date())
+      // console.debug(this.customProperties)
 
-      AppCenter.setCustomProperties({properties: this.customProperties});
+      // AppCenter.setCustomProperties({properties: this.customProperties});
     } catch (error) {
       console.error(error)
     }
@@ -75,7 +75,7 @@ export class AppHome {
     this.userId = e.detail.value
 
     try {
-      await AppCenter.setUserId({userId: this.userId})
+      if (this.userId !== "") await AppCenter.setUserId({userId: this.userId})
     } catch (error) {
       console.error(error)
     }
@@ -94,7 +94,7 @@ export class AppHome {
 
   async setLogLevel(logLevel: LogLevel) {
     try {
-      await AppCenter.setLogLevel({logLevel})
+      await AppCenter.setLogLevel({logLevel: logLevel})
       this.logLevel = logLevel
     } catch (error) {
       console.error(error);
