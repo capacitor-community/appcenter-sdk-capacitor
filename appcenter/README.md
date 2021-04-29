@@ -38,6 +38,27 @@ npm install @capacitor-community/appcenter
 npx cap sync
 ```
 
+## Configure Preferences
+- `iosLogLevel` - _(optional, default is `7`)_ You can control the amount of log messages that show up from App Center. Log messages show in the console on iOS and LogCat on Android.
+Setting the log level here is useful to capture logs before JavaScript is loaded. See [definitions](https://github.com/capacitor-community/appcenter-sdk-capacitor/blob/684fab0bdf15e4be82c48426c9c63d9f3d7039a7/appcenter/src/definitions.ts#L1) for supported Log Levels.
+
+  Example:
+  ```json
+  {
+    "appId": "com.example.app",
+    "appName": "example",
+    "webDir": "www",
+    "bundledWebRuntime": false,
+    "AppCenter": {
+      "iosAppSecret": "0000-0000-0000-0000-000000000000",
+      "iosLogLevel": 2,
+      "androidAppSecret": "0000-0000-0000-0000-000000000000"
+    }
+    ...
+
+  }
+  ```
+
 ## Usage
 
 ```typescript

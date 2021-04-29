@@ -56,14 +56,9 @@ Notice that it's likely that Android and iOS platforms will be associated with d
 
 ### Config Options
 
-These options can be used in `capacitor.config.json`
+These options are required in `capacitor.config.json`
 
 | name                  | type              | default                              |
-| --------------------- | ----------------- | ------------------------------------ |
-| iosAppSecret          | `string`          | `"0000-0000-0000-0000-000000000000"` |
-| androidAppSecret      | `string`          | `"0000-0000-0000-0000-000000000000"` |
-| transmissionInterval  | `string`          | `"3"`                                |
-| enableInJs            | `boolean`         | `false`                              |
-
-## 3. Configure Preferences
-Coming Soon...
+| ---------------------- | ----------------- | ------------------------------------ |
+| iosAppSecret           | `string`          | `"0000-0000-0000-0000-000000000000"` |
+| androidAppSecret       | `string`          | `"0000-0000-0000-0000-000000000000"` |

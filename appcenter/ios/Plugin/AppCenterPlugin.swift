@@ -6,16 +6,17 @@ public class AppCenterPlugin: CAPPlugin {
     private let implementation = AppCenterBase()
     
     public override func load() {
-        print("[AppCenterPlugin] load")
         let appSecret = self.bridge?.config.getString("AppCenter.iosAppSecret") ?? ""
+        let logLevel = self.bridge?.config.getValue("AppCenter.iosLogLevel") ?? 7
+        
         implementation.configureWithSettings(appSecret)
+        implementation.setLogLevel(logLevel as! Int)
     }
 
     @objc func getInstallId(_ call: CAPPluginCall) {
         call.resolve(["value": implementation.getInstallId()])
     }
     
-//  Move to appcenter-crashes
     @objc func setUserId(_ call: CAPPluginCall) {
         implementation.setUserId(call.getString("userId") ?? "")
         call.resolve()
