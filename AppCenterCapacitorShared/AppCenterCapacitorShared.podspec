@@ -25,12 +25,12 @@ TODO: Add long description of the pod here.
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'johnborges' => 'john.borges@icloud.com' }
-  s.source           = { :git => 'https://github.com/capacitor-community/appcenter-sdk-capacitor/AppCenterCapacitorShared.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/capacitor-community/appcenter-sdk-capacitor.git', :tag => s.version.to_s }
   s.social_media_url = 'https://twitter.com/johnborges'
 
   s.ios.deployment_target = '12.0'
 
-  s.source_files = 'AppCenterCapacitorShared/**/*.{h,m,swift}'
+  s.source_files = 'AppCenterCapacitorShared/**/*'
   
   # s.resource_bundles = {
   #   'AppCenterCapacitorShared' => ['AppCenterCapacitorShared/Assets/*.png']
