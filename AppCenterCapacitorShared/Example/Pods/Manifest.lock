@@ -1,0 +1,16 @@
+PODS:
+  - AppCenterCapacitorShared (0.1.0)
+
+DEPENDENCIES:
+  - AppCenterCapacitorShared (from `../`)
+
+EXTERNAL SOURCES:
+  AppCenterCapacitorShared:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  AppCenterCapacitorShared: 907559e7127187a1140ec5f5d9b8f0d414e9ebe6
+
+PODFILE CHECKSUM: 8b449aa093d6659f840674b0912713e5d4720384
+
+COCOAPODS: 1.10.1
