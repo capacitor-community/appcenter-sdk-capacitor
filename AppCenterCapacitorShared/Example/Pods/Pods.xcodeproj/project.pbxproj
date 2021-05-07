@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		0C6903CFA96D76EC576DABC287DDA1E6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
 		32553911AE72750F508DB30668E87F41 /* AppCenterCapacitorShared-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 690DC834674899551DEA0A8B92367967 /* AppCenterCapacitorShared-dummy.m */; };
-		6C79F6402642EC810059C74E /* AppCenterCapacitorShared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C79F63F2642EC810059C74E /* AppCenterCapacitorShared.swift */; };
+		6C14EE5D2645DE39005D17DC /* AppCenterCapacitorShared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C14EE5C2645DE39005D17DC /* AppCenterCapacitorShared.swift */; };
 		8317390BAB10D5F1F0E11F37E00F787A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
 		A9AC49E89FC6ACC8268953742C48357B /* AppCenterCapacitorShared-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 116D66B74FC7237B014A64A2E0B260C9 /* AppCenterCapacitorShared-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B78ABC7A37AC19DCE45A4F7BB0E2395E /* Pods-AppCenterCapacitorShared_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 37B26E441AE59D1DCACFBC868C8B8EDB /* Pods-AppCenterCapacitorShared_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -35,7 +35,7 @@
 		401E61D1F4830C7219440ED1B4E3531B /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		60266C24156815E980D07C392394200E /* AppCenterCapacitorShared.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AppCenterCapacitorShared.debug.xcconfig; sourceTree = "<group>"; };
 		690DC834674899551DEA0A8B92367967 /* AppCenterCapacitorShared-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "AppCenterCapacitorShared-dummy.m"; sourceTree = "<group>"; };
-		6C79F63F2642EC810059C74E /* AppCenterCapacitorShared.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCenterCapacitorShared.swift; sourceTree = "<group>"; };
+		6C14EE5C2645DE39005D17DC /* AppCenterCapacitorShared.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCenterCapacitorShared.swift; sourceTree = "<group>"; };
 		70A6FCC5B8F3CEC3BA949A4794A5C41A /* AppCenterCapacitorShared.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = AppCenterCapacitorShared.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		7BE3EE0C2B3F5E79A3B2AEC29943F47A /* Pods-AppCenterCapacitorShared_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-AppCenterCapacitorShared_Tests.modulemap"; sourceTree = "<group>"; };
@@ -102,7 +102,7 @@
 			children = (
 				A917A8E99CBB06AC6ABBF185FE0A0259 /* Pod */,
 				27ED63C607C472E6EB6B25371B8062E4 /* Support Files */,
-				6C79F63F2642EC810059C74E /* AppCenterCapacitorShared.swift */,
+				6C14EE5C2645DE39005D17DC /* AppCenterCapacitorShared.swift */,
 			);
 			name = AppCenterCapacitorShared;
 			path = ../..;
@@ -300,7 +300,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6C79F6402642EC810059C74E /* AppCenterCapacitorShared.swift in Sources */,
+				6C14EE5D2645DE39005D17DC /* AppCenterCapacitorShared.swift in Sources */,
 				32553911AE72750F508DB30668E87F41 /* AppCenterCapacitorShared-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

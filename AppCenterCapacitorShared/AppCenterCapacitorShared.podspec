@@ -21,7 +21,7 @@ Pod::Spec.new do |s|
 TODO: Add long description of the pod here.
                        DESC
 
-  s.homepage         = 'https://github.com/capacitor-community/appcenter-sdk-capacitor/AppCenterCapacitorShared'
+  s.homepage         = 'https://github.com/capacitor-community/appcenter-sdk-capacitor'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'johnborges' => 'john.borges@icloud.com' }
@@ -30,7 +30,7 @@ TODO: Add long description of the pod here.
 
   s.ios.deployment_target = '12.0'
 
-  s.source_files = 'AppCenterCapacitorShared/**/*'
+  s.source_files = 'AppCenterCapacitorShared/Classes/**/*'
   
   # s.resource_bundles = {
   #   'AppCenterCapacitorShared' => ['AppCenterCapacitorShared/Assets/*.png']
