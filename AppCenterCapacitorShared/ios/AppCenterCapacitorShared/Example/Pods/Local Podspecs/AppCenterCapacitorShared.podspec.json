@@ -1,0 +1,31 @@
+{
+  "name": "AppCenterCapacitorShared",
+  "version": "0.1.0",
+  "summary": "A short description of AppCenterCapacitorShared.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/johnborges/AppCenterCapacitorShared",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "johnborges": "jaborges@protonmail.ch"
+  },
+  "source": {
+    "git": "https://github.com/capacitor-community/appcenter-sdk-capacitor",
+    "tag": "0.1.0"
+  },
+  "social_media_url": "https://twitter.com/johnborges",
+  "platforms": {
+    "ios": "12.0"
+  },
+  "swift_versions": "5.1",
+  "source_files": "*.swift",
+  "dependencies": {
+    "AppCenter": [
+      "4.1.1"
+    ]
+  },
+  "static_framework": true,
+  "swift_version": "5.1"
+}

@@ -1,0 +1,13 @@
+use_frameworks!
+
+platform :ios, '12.0'
+
+target 'AppCenterCapacitorShared_Example' do
+  pod 'AppCenterCapacitorShared', :path => '../'
+
+  target 'AppCenterCapacitorShared_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
