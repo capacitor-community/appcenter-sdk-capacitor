@@ -2,9 +2,9 @@ Pod::Spec.new do |s|
   s.name             = 'AppCenterCapacitorShared'
   s.version          = '0.1.0'
   s.summary          = 'Shared utility to assist with bootstrapping AppCenter for Capacitor apps.'
-  s.homepage         = 'https://github.com/capacitor-community/appcenter-sdk-capacitor/AppCenterCapacitorShared'
+  s.homepage         = 'https://github.com/capacitor-community/appcenter-sdk-capacitor'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'johnborges' => 'jaborges@protonmail.ch' }
+  s.author           = { 'johnborges' => 'john.borges@icloud.com' }
   s.source           = { :git => 'https://github.com/capacitor-community/appcenter-sdk-capacitor.git', :tag => s.version.to_s }
   s.social_media_url = 'https://twitter.com/johnborges'
   s.ios.deployment_target = '12.0'
