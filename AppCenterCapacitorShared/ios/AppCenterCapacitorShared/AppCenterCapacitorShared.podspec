@@ -5,7 +5,7 @@ Pod::Spec.new do |s|
   s.homepage         = 'https://github.com/capacitor-community/appcenter-sdk-capacitor'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'johnborges' => 'john.borges@icloud.com' }
-  s.source           = { :http => 'https://github.com/capacitor-community/appcenter-sdk-capacitor/releases/download/0.1.0/AppCenter-SDK-Capacitor-iOS-Pod-0.1.0.zip' }
+  s.source           = { :http => 'https://github.com/capacitor-community/appcenter-sdk-capacitor/releases/download/AppCenter-SDK-Capacitor-iOS-Pod-0.1.0/AppCenter-SDK-Capacitor-iOS-Pod-0.1.0.zip' }
   s.social_media_url = 'https://twitter.com/johnborges'
   s.ios.deployment_target = '12.0'
   s.swift_version = '5.1'
