@@ -1,0 +1,6 @@
+framework module Pods_AppCenterCapacitorShared_Tests {
+  umbrella header "Pods-AppCenterCapacitorShared_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}
