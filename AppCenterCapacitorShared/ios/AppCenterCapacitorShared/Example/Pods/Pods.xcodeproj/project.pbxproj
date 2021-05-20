@@ -9,14 +9,13 @@
 /* Begin PBXAggregateTarget section */
 		A3282A5B2437E609EEB85861D7ECE717 /* AppCenter */ = {
 			isa = PBXAggregateTarget;
-			buildConfigurationList = 0437EB52E47F4DB542AB24721F109DA8 /* Build configuration list for PBXAggregateTarget "AppCenter" */;
+			buildConfigurationList = D58F0E4D7AE363B112AE77696ED7818C /* Build configuration list for PBXAggregateTarget "AppCenter" */;
 			buildPhases = (
-				29FDC0B5694B0FF384FD03521221DD3E /* [CP] Copy XCFrameworks */,
+				7DBBF80E0825EA0D952E646CEB8D9C38 /* [CP] Copy XCFrameworks */,
 			);
 			dependencies = (
 			);
 			name = AppCenter;
-			productName = AppCenter;
 		};
 /* End PBXAggregateTarget section */
 
@@ -34,28 +33,28 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		2C2A6F0120C4DECFA9C428E696E419C6 /* PBXContainerItemProxy */ = {
+		027A2C1A848FA95E80EB500302758EC6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 000230E4FA0A5DB38A7861B559D4C334;
 			remoteInfo = "Pods-AppCenterCapacitorShared_Example";
 		};
-		3FB46659743584D5FA6647FEBB45F103 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 1BC337ABD408D594C19386144C66A8BE;
-			remoteInfo = AppCenterCapacitorShared;
-		};
-		882139B61FB5CA1B3494C31EA27FB5D3 /* PBXContainerItemProxy */ = {
+		0DB2F8F81E3B016E30A05069B88CDA96 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = A3282A5B2437E609EEB85861D7ECE717;
 			remoteInfo = AppCenter;
 		};
-		8B248F01E5B6FCBBE85A2CBE1F1E9909 /* PBXContainerItemProxy */ = {
+		2467D12E3A2D3BFFD1D0BF5C433A8545 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1BC337ABD408D594C19386144C66A8BE;
+			remoteInfo = AppCenterCapacitorShared;
+		};
+		2DDAAE37979165F0E5282BEEC17E1D6F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
@@ -65,43 +64,41 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		02F71C75EE0D08140066AF074C473E83 /* AppCenter-xcframeworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "AppCenter-xcframeworks.sh"; sourceTree = "<group>"; };
 		1984335B5C9D918A06A31C9B03044383 /* Pods-AppCenterCapacitorShared_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-AppCenterCapacitorShared_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		2DA6CCEAA637E6B1DF08C1D736879139 /* Pods-AppCenterCapacitorShared_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-AppCenterCapacitorShared_Example-umbrella.h"; sourceTree = "<group>"; };
-		3D0CF4C8772C0B488AAD50FC8C8B195A /* AppCenter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AppCenter.debug.xcconfig; sourceTree = "<group>"; };
 		452C6A4CEEF61BA7642C68008C6C31DC /* Pods-AppCenterCapacitorShared_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AppCenterCapacitorShared_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		4A136EA03AFA3920799E92879BA539B2 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		4A136EA03AFA3920799E92879BA539B2 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
 		4C44597F28D05E2F9835D07C9EA207B4 /* AppCenterCapacitorShared-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AppCenterCapacitorShared-prefix.pch"; sourceTree = "<group>"; };
 		4CF9F4B16F6A0D1DCD703F8DF2C7946B /* Pods-AppCenterCapacitorShared_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AppCenterCapacitorShared_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		4D4AF3294E79085DF1680FC51CAF37DF /* AppCenterCapacitorShared.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AppCenterCapacitorShared.swift; sourceTree = "<group>"; };
 		572842FCCA2C601F92B8F68AA46C2A97 /* Pods-AppCenterCapacitorShared_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AppCenterCapacitorShared_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		5BCEC452B77DBBE90F3F0D1EB4F0F7C6 /* AppCenter.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; name = AppCenter.xcframework; path = "AppCenter-SDK-Apple/AppCenter.xcframework"; sourceTree = "<group>"; };
 		5E7FAA37ED3A8C462CF5DB699E125C3C /* AppCenterCapacitorShared.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AppCenterCapacitorShared.debug.xcconfig; sourceTree = "<group>"; };
 		646C014FBD38489BC89B8209A004CBCC /* Pods-AppCenterCapacitorShared_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-AppCenterCapacitorShared_Tests-dummy.m"; sourceTree = "<group>"; };
+		657BDC952DAFBA096B926E15B2F3CB00 /* AppCenter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AppCenter.debug.xcconfig; sourceTree = "<group>"; };
 		66B913322D59A17ECA665CB9E2B69895 /* AppCenterCapacitorShared.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = AppCenterCapacitorShared.modulemap; sourceTree = "<group>"; };
 		67AFF4615037AFA11AC35AF5599FC765 /* AppCenterCapacitorShared.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AppCenterCapacitorShared.release.xcconfig; sourceTree = "<group>"; };
 		6F4E25F80F5BADF18ABA714FCF24ED6E /* Pods-AppCenterCapacitorShared_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-AppCenterCapacitorShared_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
-		72F1C87A91DD130F3F8462BC71DEC0D9 /* AppCenter.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.xcframework; name = AppCenter.xcframework; path = "AppCenter-SDK-Apple/AppCenter.xcframework"; sourceTree = "<group>"; };
 		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		794989403D5D028BAFD378CD331DAA11 /* Pods-AppCenterCapacitorShared_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-AppCenterCapacitorShared_Example-Info.plist"; sourceTree = "<group>"; };
 		7C49643BC96A9627502FCE804FF1B372 /* Pods-AppCenterCapacitorShared_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-AppCenterCapacitorShared_Tests.modulemap"; sourceTree = "<group>"; };
 		7D956922BEF642AEE2351784CACEA23F /* Pods-AppCenterCapacitorShared_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AppCenterCapacitorShared_Example.release.xcconfig"; sourceTree = "<group>"; };
 		7F20C350A216B4E201A84772A2023C47 /* Pods-AppCenterCapacitorShared_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-AppCenterCapacitorShared_Tests-Info.plist"; sourceTree = "<group>"; };
-		7FD449DF93C9EB5454504E90EF012E26 /* Pods_AppCenterCapacitorShared_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AppCenterCapacitorShared_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		852E3E9218B25BD9908E88E94E6FEA05 /* AppCenterCapacitorShared.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AppCenterCapacitorShared.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7FD449DF93C9EB5454504E90EF012E26 /* Pods_AppCenterCapacitorShared_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_AppCenterCapacitorShared_Example.framework; path = "Pods-AppCenterCapacitorShared_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		852E3E9218B25BD9908E88E94E6FEA05 /* AppCenterCapacitorShared.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = AppCenterCapacitorShared.framework; path = AppCenterCapacitorShared.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8890FC36C47166090CF1D032A8037332 /* Pods-AppCenterCapacitorShared_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-AppCenterCapacitorShared_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		8B805EE55D451E8A4C828316FFC9065E /* AppCenterCapacitorShared-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "AppCenterCapacitorShared-Info.plist"; sourceTree = "<group>"; };
-		8C8944646650436C13CA809B31FEDCFE /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		8C8944646650436C13CA809B31FEDCFE /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
 		9A2F5EC5C513B7816E0E34AA4F9DFC1D /* AppCenterCapacitorShared-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AppCenterCapacitorShared-umbrella.h"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9DA23882A1B4274B4CE4084106C57FE8 /* Pods-AppCenterCapacitorShared_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-AppCenterCapacitorShared_Example-dummy.m"; sourceTree = "<group>"; };
-		A561E8022556EFB239CBAE812FCCEF1C /* AppCenterCapacitorShared.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = AppCenterCapacitorShared.podspec; sourceTree = "<group>"; tabWidth = 2; };
+		A561E8022556EFB239CBAE812FCCEF1C /* AppCenterCapacitorShared.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = AppCenterCapacitorShared.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A8E0F6DFC6AB1D195D33953EE6400666 /* Pods-AppCenterCapacitorShared_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-AppCenterCapacitorShared_Example.modulemap"; sourceTree = "<group>"; };
-		B69D7A7B4C1622AD650EA2E030736707 /* AppCenterAnalytics.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.xcframework; name = AppCenterAnalytics.xcframework; path = "AppCenter-SDK-Apple/AppCenterAnalytics.xcframework"; sourceTree = "<group>"; };
 		B93C9CA2096FC2A33F5B332E096C0DFE /* Pods-AppCenterCapacitorShared_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-AppCenterCapacitorShared_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
-		BD2CEC5D4CD40723E7BDDC1B9C56DF43 /* Pods_AppCenterCapacitorShared_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AppCenterCapacitorShared_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C39874D5A2964042B413F857C0520145 /* AppCenter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AppCenter.release.xcconfig; sourceTree = "<group>"; };
+		BD2CEC5D4CD40723E7BDDC1B9C56DF43 /* Pods_AppCenterCapacitorShared_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_AppCenterCapacitorShared_Tests.framework; path = "Pods-AppCenterCapacitorShared_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C97D095F0C741372830ADEC865A8FF7D /* AppCenterCapacitorShared-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "AppCenterCapacitorShared-dummy.m"; sourceTree = "<group>"; };
-		D024FDD6D97527CD1036848CD81D190B /* AppCenterCrashes.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.xcframework; name = AppCenterCrashes.xcframework; path = "AppCenter-SDK-Apple/AppCenterCrashes.xcframework"; sourceTree = "<group>"; };
-		E039AAFC7E20C4A1758D09A8960AA7D9 /* AppCenter-xcframeworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "AppCenter-xcframeworks.sh"; sourceTree = "<group>"; };
+		EC9972589506DA5A8F03010E4D04A8FD /* AppCenter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AppCenter.release.xcconfig; sourceTree = "<group>"; };
 		FB3686A2715A8AEF7347C47ADEB3FB93 /* Pods-AppCenterCapacitorShared_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-AppCenterCapacitorShared_Tests-umbrella.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -133,12 +130,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2F2B7A9E8A3AFDF43FD838C02D566CD8 /* Frameworks */ = {
+		15E1D668D0C052D836952A2FD36A2787 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				B69D7A7B4C1622AD650EA2E030736707 /* AppCenterAnalytics.xcframework */,
+				02F71C75EE0D08140066AF074C473E83 /* AppCenter-xcframeworks.sh */,
+				657BDC952DAFBA096B926E15B2F3CB00 /* AppCenter.debug.xcconfig */,
+				EC9972589506DA5A8F03010E4D04A8FD /* AppCenter.release.xcconfig */,
 			);
-			name = Frameworks;
+			name = "Support Files";
+			path = "../Target Support Files/AppCenter";
+			sourceTree = "<group>";
+		};
+		2162265B4283C01CB181661FF2A4A01A /* AppCenter */ = {
+			isa = PBXGroup;
+			children = (
+				BA5C21AC406155AAAAA9BE91076213A9 /* Core */,
+				15E1D668D0C052D836952A2FD36A2787 /* Support Files */,
+			);
+			name = AppCenter;
+			path = AppCenter;
+			sourceTree = "<group>";
+		};
+		28C3141AD069C4D18B81512DDD5702E3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2162265B4283C01CB181661FF2A4A01A /* AppCenter */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		578452D2E740E91742655AC8F1636D1F /* iOS */ = {
@@ -165,28 +183,12 @@
 			path = "Target Support Files/Pods-AppCenterCapacitorShared_Tests";
 			sourceTree = "<group>";
 		};
-		847EBDDE94B66B5A82F61EB451C88447 /* Pods */ = {
+		689E67CB5BED11A8FF0AA68E1C237E61 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				CCF3AAA61B16584A1E11774EB7B0ADCC /* AppCenter */,
+				5BCEC452B77DBBE90F3F0D1EB4F0F7C6 /* AppCenter.xcframework */,
 			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		85087D08E7B7C1D192737E810CB045D4 /* Core */ = {
-			isa = PBXGroup;
-			children = (
-				8CBBAACAA4138B66D82A6EAD676BFF28 /* Frameworks */,
-			);
-			name = Core;
-			sourceTree = "<group>";
-		};
-		8A73CCCFE9DD339E100B629D77BED900 /* Analytics */ = {
-			isa = PBXGroup;
-			children = (
-				2F2B7A9E8A3AFDF43FD838C02D566CD8 /* Frameworks */,
-			);
-			name = Analytics;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		8C28F84AC564A9FF8B56D14FAF5899BC /* Targets Support Files */ = {
@@ -206,14 +208,6 @@
 				4A136EA03AFA3920799E92879BA539B2 /* README.md */,
 			);
 			name = Pod;
-			sourceTree = "<group>";
-		};
-		8CBBAACAA4138B66D82A6EAD676BFF28 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				72F1C87A91DD130F3F8462BC71DEC0D9 /* AppCenter.xcframework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		8EB981A707C2FA204ED8E1216F87A4BC /* Support Files */ = {
@@ -242,23 +236,12 @@
 			path = ../..;
 			sourceTree = "<group>";
 		};
-		B3B45CEB94D12F1AFCD73811CEF39A57 /* Frameworks */ = {
+		BA5C21AC406155AAAAA9BE91076213A9 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				D024FDD6D97527CD1036848CD81D190B /* AppCenterCrashes.xcframework */,
+				689E67CB5BED11A8FF0AA68E1C237E61 /* Frameworks */,
 			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		B429B4E34BC53C308CEE01E3AB1A4C15 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				E039AAFC7E20C4A1758D09A8960AA7D9 /* AppCenter-xcframeworks.sh */,
-				3D0CF4C8772C0B488AAD50FC8C8B195A /* AppCenter.debug.xcconfig */,
-				C39874D5A2964042B413F857C0520145 /* AppCenter.release.xcconfig */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/AppCenter";
+			name = Core;
 			sourceTree = "<group>";
 		};
 		C52556BBFF40C978D89C60C2B53E5F3E /* Products */ = {
@@ -271,24 +254,13 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		CCF3AAA61B16584A1E11774EB7B0ADCC /* AppCenter */ = {
-			isa = PBXGroup;
-			children = (
-				8A73CCCFE9DD339E100B629D77BED900 /* Analytics */,
-				85087D08E7B7C1D192737E810CB045D4 /* Core */,
-				ED5E0372385F80256AD185B82982C57C /* Crashes */,
-				B429B4E34BC53C308CEE01E3AB1A4C15 /* Support Files */,
-			);
-			path = AppCenter;
-			sourceTree = "<group>";
-		};
 		CF1408CF629C7361332E53B88F7BD30C = {
 			isa = PBXGroup;
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				F2559B09917C362B6FC45B3611C1EB5B /* Development Pods */,
 				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
-				847EBDDE94B66B5A82F61EB451C88447 /* Pods */,
+				28C3141AD069C4D18B81512DDD5702E3 /* Pods */,
 				C52556BBFF40C978D89C60C2B53E5F3E /* Products */,
 				8C28F84AC564A9FF8B56D14FAF5899BC /* Targets Support Files */,
 			);
@@ -316,14 +288,6 @@
 			);
 			name = "Pods-AppCenterCapacitorShared_Example";
 			path = "Target Support Files/Pods-AppCenterCapacitorShared_Example";
-			sourceTree = "<group>";
-		};
-		ED5E0372385F80256AD185B82982C57C /* Crashes */ = {
-			isa = PBXGroup;
-			children = (
-				B3B45CEB94D12F1AFCD73811CEF39A57 /* Frameworks */,
-			);
-			name = Crashes;
 			sourceTree = "<group>";
 		};
 		F2559B09917C362B6FC45B3611C1EB5B /* Development Pods */ = {
@@ -376,8 +340,8 @@
 			buildRules = (
 			);
 			dependencies = (
-				A62B67AB7358F55B958C2AF6C5C173C0 /* PBXTargetDependency */,
-				6C2AFB64ABDF9F5D839BCF4A96D0659D /* PBXTargetDependency */,
+				03A2813E40941FF28009EC94E9F6BD6D /* PBXTargetDependency */,
+				331E0FC3FA40E759A8E19579E28E97D5 /* PBXTargetDependency */,
 			);
 			name = "Pods-AppCenterCapacitorShared_Example";
 			productName = "Pods-AppCenterCapacitorShared_Example";
@@ -396,7 +360,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				93097DFF5739E0E80994FABD246850B7 /* PBXTargetDependency */,
+				9AC752A457E2D8B8A93B19E53EFF1B90 /* PBXTargetDependency */,
 			);
 			name = AppCenterCapacitorShared;
 			productName = AppCenterCapacitorShared;
@@ -415,7 +379,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				A4FE1E38D20D511C198D4E9BC815C2FA /* PBXTargetDependency */,
+				BA2578BB3A48604814C0501725750390 /* PBXTargetDependency */,
 			);
 			name = "Pods-AppCenterCapacitorShared_Tests";
 			productName = "Pods-AppCenterCapacitorShared_Tests";
@@ -477,22 +441,18 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		29FDC0B5694B0FF384FD03521221DD3E /* [CP] Copy XCFrameworks */ = {
+		7DBBF80E0825EA0D952E646CEB8D9C38 /* [CP] Copy XCFrameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/AppCenter/AppCenter-xcframeworks.sh",
-				"${PODS_ROOT}/AppCenter/AppCenter-SDK-Apple/AppCenterAnalytics.xcframework",
 				"${PODS_ROOT}/AppCenter/AppCenter-SDK-Apple/AppCenter.xcframework",
-				"${PODS_ROOT}/AppCenter/AppCenter-SDK-Apple/AppCenterCrashes.xcframework",
 			);
 			name = "[CP] Copy XCFrameworks";
 			outputPaths = (
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/AppCenterAnalytics",
 				"${PODS_XCFRAMEWORKS_BUILD_DIR}/AppCenter",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/AppCenterCrashes",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -530,29 +490,29 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		6C2AFB64ABDF9F5D839BCF4A96D0659D /* PBXTargetDependency */ = {
+		03A2813E40941FF28009EC94E9F6BD6D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = AppCenter;
+			target = A3282A5B2437E609EEB85861D7ECE717 /* AppCenter */;
+			targetProxy = 0DB2F8F81E3B016E30A05069B88CDA96 /* PBXContainerItemProxy */;
+		};
+		331E0FC3FA40E759A8E19579E28E97D5 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = AppCenterCapacitorShared;
 			target = 1BC337ABD408D594C19386144C66A8BE /* AppCenterCapacitorShared */;
-			targetProxy = 3FB46659743584D5FA6647FEBB45F103 /* PBXContainerItemProxy */;
+			targetProxy = 2467D12E3A2D3BFFD1D0BF5C433A8545 /* PBXContainerItemProxy */;
 		};
-		93097DFF5739E0E80994FABD246850B7 /* PBXTargetDependency */ = {
+		9AC752A457E2D8B8A93B19E53EFF1B90 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = AppCenter;
 			target = A3282A5B2437E609EEB85861D7ECE717 /* AppCenter */;
-			targetProxy = 8B248F01E5B6FCBBE85A2CBE1F1E9909 /* PBXContainerItemProxy */;
+			targetProxy = 2DDAAE37979165F0E5282BEEC17E1D6F /* PBXContainerItemProxy */;
 		};
-		A4FE1E38D20D511C198D4E9BC815C2FA /* PBXTargetDependency */ = {
+		BA2578BB3A48604814C0501725750390 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-AppCenterCapacitorShared_Example";
 			target = 000230E4FA0A5DB38A7861B559D4C334 /* Pods-AppCenterCapacitorShared_Example */;
-			targetProxy = 2C2A6F0120C4DECFA9C428E696E419C6 /* PBXContainerItemProxy */;
-		};
-		A62B67AB7358F55B958C2AF6C5C173C0 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = AppCenter;
-			target = A3282A5B2437E609EEB85861D7ECE717 /* AppCenter */;
-			targetProxy = 882139B61FB5CA1B3494C31EA27FB5D3 /* PBXContainerItemProxy */;
+			targetProxy = 027A2C1A848FA95E80EB500302758EC6 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -725,6 +685,20 @@
 			};
 			name = Debug;
 		};
+		4DA06655C79600EB066D9CC2EFD5CBB7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 657BDC952DAFBA096B926E15B2F3CB00 /* AppCenter.debug.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
 		57967102B86CFA05121CF75F424DD447 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 572842FCCA2C601F92B8F68AA46C2A97 /* Pods-AppCenterCapacitorShared_Tests.debug.xcconfig */;
@@ -814,20 +788,21 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Release;
 		};
-		7AAD361011C19CF4293DE5785DFFBA31 /* Release */ = {
+		76C75C0E2EA9630E16C24C45EA849006 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C39874D5A2964042B413F857C0520145 /* AppCenter.release.xcconfig */;
+			baseConfigurationReference = EC9972589506DA5A8F03010E4D04A8FD /* AppCenter.release.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -904,32 +879,9 @@
 			};
 			name = Release;
 		};
-		B60A0430CFAA119A9CD0BE9CA7B53C16 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3D0CF4C8772C0B488AAD50FC8C8B195A /* AppCenter.debug.xcconfig */;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		0437EB52E47F4DB542AB24721F109DA8 /* Build configuration list for PBXAggregateTarget "AppCenter" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				B60A0430CFAA119A9CD0BE9CA7B53C16 /* Debug */,
-				7AAD361011C19CF4293DE5785DFFBA31 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		1E46435DCFB1B8E3B8FA3CE3CEF7188B /* Build configuration list for PBXNativeTarget "Pods-AppCenterCapacitorShared_Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -962,6 +914,15 @@
 			buildConfigurations = (
 				21242E9E204A9798E6A74E3204F7986C /* Debug */,
 				AEB9BE2319165F9C7F0FE8F88325A511 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D58F0E4D7AE363B112AE77696ED7818C /* Build configuration list for PBXAggregateTarget "AppCenter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4DA06655C79600EB066D9CC2EFD5CBB7 /* Debug */,
+				76C75C0E2EA9630E16C24C45EA849006 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

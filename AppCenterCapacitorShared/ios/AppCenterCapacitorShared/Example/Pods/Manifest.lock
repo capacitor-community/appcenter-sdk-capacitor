@@ -1,14 +1,7 @@
 PODS:
-  - AppCenter (4.1.1):
-    - AppCenter/Analytics (= 4.1.1)
-    - AppCenter/Crashes (= 4.1.1)
-  - AppCenter/Analytics (4.1.1):
-    - AppCenter/Core
   - AppCenter/Core (4.1.1)
-  - AppCenter/Crashes (4.1.1):
-    - AppCenter/Core
   - AppCenterCapacitorShared (0.1.0):
-    - AppCenter (= 4.1.1)
+    - AppCenter/Core (= 4.1.1)
 
 DEPENDENCIES:
   - AppCenterCapacitorShared (from `../`)
@@ -23,7 +16,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   AppCenter: cd53e3ed3563cc720bcb806c9731a12389b40d44
-  AppCenterCapacitorShared: e72cc4f473ddc12c9dcb6f97e638e31f6e8a47ce
+  AppCenterCapacitorShared: f728552eac480707268f268ff8bff7b3912d16e8
 
 PODFILE CHECKSUM: fe3b1998cfd9db5f6be13fa9f965c722197a749c
 

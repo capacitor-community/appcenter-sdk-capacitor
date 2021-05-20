@@ -1,18 +1,17 @@
 {
   "name": "AppCenterCapacitorShared",
   "version": "0.1.0",
-  "summary": "A short description of AppCenterCapacitorShared.",
-  "description": "TODO: Add long description of the pod here.",
-  "homepage": "https://github.com/johnborges/AppCenterCapacitorShared",
+  "summary": "Shared utility to assist with bootstrapping AppCenter for Capacitor apps.",
+  "homepage": "https://github.com/capacitor-community/appcenter-sdk-capacitor",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
   },
   "authors": {
-    "johnborges": "jaborges@protonmail.ch"
+    "johnborges": "john.borges@icloud.com"
   },
   "source": {
-    "git": "https://github.com/capacitor-community/appcenter-sdk-capacitor",
+    "git": "https://github.com/capacitor-community/appcenter-sdk-capacitor.git",
     "tag": "0.1.0"
   },
   "social_media_url": "https://twitter.com/johnborges",
@@ -22,7 +21,7 @@
   "swift_versions": "5.1",
   "source_files": "*.swift",
   "dependencies": {
-    "AppCenter": [
+    "AppCenter/Core": [
       "4.1.1"
     ]
   },
