@@ -2,11 +2,7 @@ import Foundation
 import Capacitor
 import AppCenter
 
-//    need to move most of this functionality to a shared module accros all AppCenter plugins
 @objc public class AppCenterBase: NSObject {
-    
-    var appSecret: String?
-    var wrapperSdk: WrapperSdk?
     
     public func setLogLevel(_ level: Int) {
         AppCenter.logLevel = LogLevel.init(rawValue: UInt(level)) ?? .verbose
@@ -62,38 +58,6 @@ import AppCenter
         }
         
         AppCenter.setCustomProperties(customProperties)
-    }
-    
-    public func configureWithSettings(_ secret: String) {
-        if AppCenter.isConfigured {
-            return
-        }
-        
-        let wrapperSdk = WrapperSdk(wrapperSdkVersion: "0.1.0", wrapperSdkName: "appcenter.capacitor", wrapperRuntimeVersion: nil, liveUpdateReleaseLabel: nil, liveUpdateDeploymentKey: nil, liveUpdatePackageHash: nil)
-
-        setWrapperSdk(wrapperSdk!)
-
-        AppCenter.configure(withAppSecret: getAppSecret(secret))
-    }
-    
-    func setAppSecret(_ secret: String) {
-        appSecret = secret
-    }
-    
-    func getAppSecret(_ secret: String) -> String {
-        if appSecret == nil {
-            setAppSecret(secret)
-        }
-        return appSecret!
-    }
-    
-    func getWrapperSdk() -> WrapperSdk {
-        return wrapperSdk!
-    }
-    
-    func setWrapperSdk(_ sdk: WrapperSdk) {
-        wrapperSdk = sdk
-        AppCenter.wrapperSdk = sdk
     }
 
 }
