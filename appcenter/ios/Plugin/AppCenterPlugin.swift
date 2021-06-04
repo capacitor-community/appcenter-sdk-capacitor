@@ -1,16 +1,13 @@
 import Foundation
 import Capacitor
+import AppCenterCapacitorShared
 
 @objc(AppCenterPlugin)
 public class AppCenterPlugin: CAPPlugin {
     private let implementation = AppCenterBase()
     
     public override func load() {
-        let appSecret = self.bridge?.config.getString("AppCenter.iosAppSecret") ?? ""
-        let logLevel = self.bridge?.config.getValue("AppCenter.iosLogLevel") ?? 7
-        
-        implementation.configureWithSettings(appSecret)
-        implementation.setLogLevel(logLevel as! Int)
+        AppCenterCapacitorShared.configureWithSettings()
     }
 
     @objc func getInstallId(_ call: CAPPluginCall) {
