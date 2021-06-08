@@ -4,5 +4,7 @@
     <dict>
     <key>AppSecret</key>
     <string>fb3a28d5-1ed9-401c-b06a-0379f66c8650</string>
+    <key>LogLevel</key>
+    <integer>2</integer>
     </dict>
 </plist>
