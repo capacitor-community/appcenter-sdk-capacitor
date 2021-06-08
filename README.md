@@ -48,6 +48,9 @@ Example:
     <dict>
     <key>AppSecret</key>
     <string>{APP_SECRET_VALUE}</string>
+    <!-- below are optional -->
+    <key>LogLevel</key>
+	<integer>2</integer>
     </dict>
 </plist>
 ```
