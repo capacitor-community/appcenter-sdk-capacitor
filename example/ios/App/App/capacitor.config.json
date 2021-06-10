@@ -1,14 +1,6 @@
 {
 	"appId": "com.example.app",
-	"appName": "example",
+	"appName": "App Center",
 	"webDir": "www",
-	"bundledWebRuntime": false,
-	"plugins": {
-		"Analytics": {
-			"iosAppSecret": "0000-0000-0000-0000-000000000000",
-			"androidAppSecret": "0000-0000-0000-0000-000000000000",
-			"transmissionInterval": "10",
-			"enableInJs": false
-		}
-	}
+	"bundledWebRuntime": false
 }

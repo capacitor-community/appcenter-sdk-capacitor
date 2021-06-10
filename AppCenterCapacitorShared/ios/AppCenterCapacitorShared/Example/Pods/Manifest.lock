@@ -1,0 +1,23 @@
+PODS:
+  - AppCenter/Core (4.1.1)
+  - AppCenterCapacitorShared (0.1.0):
+    - AppCenter/Core (= 4.1.1)
+
+DEPENDENCIES:
+  - AppCenterCapacitorShared (from `../`)
+
+SPEC REPOS:
+  trunk:
+    - AppCenter
+
+EXTERNAL SOURCES:
+  AppCenterCapacitorShared:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  AppCenter: cd53e3ed3563cc720bcb806c9731a12389b40d44
+  AppCenterCapacitorShared: f728552eac480707268f268ff8bff7b3912d16e8
+
+PODFILE CHECKSUM: fe3b1998cfd9db5f6be13fa9f965c722197a749c
+
+COCOAPODS: 1.10.1

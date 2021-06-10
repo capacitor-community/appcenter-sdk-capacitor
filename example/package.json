@@ -19,13 +19,14 @@
     "@stencil/core": "^2.0.1"
   },
   "dependencies": {
-    "@capacitor-community/appcenter-analytics": "0.1.0",
-    "@capacitor/app": "^0.3.3",
-    "@capacitor/cli": "next",
-    "@capacitor/core": "next",
-    "@capacitor/device": "^0.5.3",
-    "@capacitor/haptics": "^0.3.3",
-    "@capacitor/ios": "next",
-    "@capacitor/keyboard": "^0.5.3"
+    "@capacitor-community/appcenter": "0.3.4",
+    "@capacitor-community/appcenter-analytics": "0.2.0",
+    "@capacitor/app": "^1.0.0",
+    "@capacitor/cli": "3.0.0",
+    "@capacitor/core": "3.0.0",
+    "@capacitor/device": "^1.0.0",
+    "@capacitor/haptics": "^1.0.0",
+    "@capacitor/ios": "3.0.0",
+    "@capacitor/keyboard": "^1.0.0"
   }
 }

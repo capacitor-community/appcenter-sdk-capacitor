@@ -1,6 +1,6 @@
 import { Component, State, h } from '@stencil/core';
 import { ToggleChangeEventDetail } from '@ionic/core';
-import { Analytics } from '@capacitor-community/appcenter-analytics';
+import Analytics from '@capacitor-community/appcenter-analytics';
 
 @Component({
   tag: 'app-analytics',
@@ -24,9 +24,9 @@ export class AppAnalytics {
 
   async componentWillLoad() {
     try {
-      const analyticsEnabled = await Analytics.isEnabled();
+      const { value: analyticsEnabled } = await Analytics.isEnabled();
 
-      this.enabled = analyticsEnabled.value;
+      this.enabled = analyticsEnabled
     } catch (error) {
       console.error(error)
     }
@@ -118,12 +118,6 @@ export class AppAnalytics {
         <br/>
         <ion-button disabled={!this.enabled} onClick={this.trackEvent} expand="block">Track Event</ion-button>
       </ion-content>,
-
-      <ion-footer>
-        <ion-toolbar>
-          <ion-title>Capacitor SDK 0.0.1</ion-title>
-        </ion-toolbar>
-      </ion-footer>
     ];
   }
 }
