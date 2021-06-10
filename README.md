@@ -51,6 +51,10 @@ Example:
     <!-- below are optional -->
     <key>LogLevel</key>
 	<integer>2</integer>
+    <key>AnalyticsTransmissionInterval</key>
+	<integer>3</integer>
+	<key>AnalyticsEnableInJs</key>
+	<false/>
     </dict>
 </plist>
 ```
