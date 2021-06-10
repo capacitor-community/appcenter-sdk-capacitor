@@ -1,5 +1,6 @@
 import Foundation
 import Capacitor
+import AppCenterCapacitorShared
 
 @objc(AnalyticsPlugin)
 public class AnalyticsPlugin: CAPPlugin {
@@ -7,16 +8,26 @@ public class AnalyticsPlugin: CAPPlugin {
     
     public override func load() {
         
-        let appSecret = getConfigValue("iosAppSecret") as? String ?? ""
-        let logInterval = UInt(getConfigValue("transmissionInterval") as? String ?? "3") ?? 3
-        let enableInJs = getConfigValue("enableInJs") as? Bool ?? false
+        AppCenterCapacitorShared.configureWithSettings()
         
-        implementation.setTransmissionInterval(logInterval)
-        implementation.configureWithSettings(appSecret)
+        let config: NSDictionary = AppCenterCapacitorShared.getConfiguration()
         
-        if enableInJs {
-            // Avoid starting an analytics session since it will get enabled in JS
-            implementation.enable(false)
+        // get Analytics config options
+        let enableInJs = config["AnalyticsEnableInJs"] as? Bool
+        let transmissionInterval = config["AnalyticsTransmissionInterval"] as? UInt
+        
+        if AppCenterCapacitorShared.isSdkConfigured() {
+            
+            if transmissionInterval != nil {
+                implementation.setTransmissionInterval(transmissionInterval!)
+            }
+            
+            implementation.start()
+            
+            // disable auto start of Analytics
+            if enableInJs ?? false {
+                implementation.enable(false)
+            }
         }
     }
     
