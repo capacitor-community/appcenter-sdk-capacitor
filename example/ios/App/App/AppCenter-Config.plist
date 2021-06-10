@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "https://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
-    <dict>
-    <key>AppSecret</key>
-    <string>fb3a28d5-1ed9-401c-b06a-0379f66c8650</string>
-    <key>LogLevel</key>
-    <integer>2</integer>
-    </dict>
+<dict>
+	<key>AnalyticsTransmissionInterval</key>
+	<integer>10</integer>
+	<key>AnalyticsEnableInJs</key>
+	<true/>
+	<key>AppSecret</key>
+	<string>fb3a28d5-1ed9-401c-b06a-0379f66c8650</string>
+	<key>LogLevel</key>
+	<integer>2</integer>
+</dict>
 </plist>
