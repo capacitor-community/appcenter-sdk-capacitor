@@ -72,6 +72,7 @@ export interface CrashesPlugin {
    isEnabled(): Promise<{value: boolean}>;
    /**
     * You can enable and disable App Center Crashes at runtime. If you disable it, the SDK won't do any crash reporting for the app.
+    * The state is persisted in the device's storage across application launches.
     * @param {shouldEnable: boolean} options
     * @since 0.1.0
     * @example
@@ -79,7 +80,7 @@ export interface CrashesPlugin {
  
     * await Crashes.enable({shouldEnable: true});
     */
-   setEnable(options: {shouldEnable: boolean}): Promise<void>;
+   setEnabled(options: {shouldEnable: boolean}): Promise<void>;
 }
 
 // convert

@@ -8,7 +8,7 @@ export class CrashesWeb
   isEnabled(): Promise<{ value: boolean; }> {
     throw this.unimplemented('Not supported on web.');
   }
-  setEnable(): Promise<void> {
+  setEnabled(): Promise<void> {
     throw this.unimplemented('Not supported on web.');
   }
 }

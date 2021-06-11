@@ -1,32 +1,42 @@
 import Foundation
 import Capacitor
+import AppCenterCapacitorShared
 
-@objc(AppCenterCrashesPlugin)
-public class AppCenterCrashesPlugin: CAPPlugin {
+@objc(CrashesPlugin)
+public class CrashesPlugin: CAPPlugin {
+    
     private let implementation = AppCenterCrashesBase()
     
     public override func load() {
             
-        print("[AppCenterCrashesPlugin] load")
+        print("[CrashesPlugin] load")
         
-        let appSecret = self.bridge?.config.getString("AppCenter.iosAppSecret") ?? ""
-        let enableInJs = getConfigValue("enableInJs") as? Bool ?? false
+        AppCenterCapacitorShared.configureWithSettings()
+                
+        let config: NSDictionary = AppCenterCapacitorShared.getConfiguration()
         
-        implementation.configureWithSettings(appSecret)
+        // get Crashes config options
+        let enableInJs = config["CrashesEnableInJs"] as? Bool
+        let alwaysSendCrashes = config["CrashesAlwaysSend"] as? Bool
         
-        if enableInJs {
-            // Avoid starting an analytics session since it will get enabled in JS
-            implementation.enable(false)
+        if AppCenterCapacitorShared.isSdkConfigured() {
+            
+            implementation.start()
+            
+            // disable auto start of Crashes
+            if enableInJs ?? false {
+                implementation.enable(false)
+            }
         }
     }
 
-    @objc func setEnable(_ call: CAPPluginCall) {
-       implementation.enable(call.getBool("shouldEnable") ?? false)
+    @objc func setEnabled(_ call: CAPPluginCall) {
+        implementation.enable(call.getBool("shouldEnable") ?? false)
         call.resolve()
     }
     
     @objc func isEnabled(_ call: CAPPluginCall) {
-       call.resolve(["value": implementation.isEnabled()])
+        call.resolve(["value": implementation.isEnabled()])
         call.resolve()
     }
 }

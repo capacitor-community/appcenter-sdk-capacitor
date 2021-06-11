@@ -1,6 +1,5 @@
 platform :ios, '12.0'
 
-
 def capacitor_pods
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
@@ -9,12 +8,11 @@ def capacitor_pods
 end
 
 target 'Plugin' do
-  use_frameworks!
   capacitor_pods
+  pod 'AppCenterCapacitorShared', '0.3.0'
   pod 'AppCenter/Crashes', '4.1.1'
 end
 
 target 'PluginTests' do
-  use_frameworks!
   capacitor_pods
 end
