@@ -12,6 +12,7 @@ export class AppCrashes {
 
   constructor() {
     this.toggleCrashes = this.toggleCrashes.bind(this);
+    this.crashApp = this.crashApp.bind(this);
   }
 
   async componentWillLoad() {
@@ -34,6 +35,14 @@ export class AppCrashes {
     }
   }
 
+  async crashApp() {
+    try {
+      await Crashes.generateTestCrash()
+    } catch (error) {
+      
+    }
+  }
+
   render() {
     return [
       <ion-header>
@@ -52,6 +61,11 @@ export class AppCrashes {
             <ion-toggle checked={this.enabled} onIonChange={e => this.toggleCrashes(e)} />
           </ion-item>
         </ion-list>
+        <br />
+        <section>
+          <header>Generate Test Crash</header>
+          <ion-button color="danger" expand="block" onClick={this.crashApp}>Let app crash</ion-button>
+        </section>
       </ion-content>,
     ];
   }
