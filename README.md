@@ -1,6 +1,6 @@
 # App Center SDK for Capacitor
 
-> ### :rotating_light: Project is in active development and not ready to be used. Check back later. :rotating_light:
+> ### :rotating_light: Project is in active development. :rotating_light:
 
 App Center is mission control for mobile apps. Get faster release cycles, higher-quality apps, and the insights to build what users want.
 
@@ -10,9 +10,9 @@ The Capacitor App Center SDK consists of a several plugins so you can use any or
 
 | Package | Source | Version |
 | --- | --- | --- |
-| [`@capacitor-community/appcenter`](https://capacitorjs.com/docs/v3/apis/action-sheet) | [`./appcenter`](./appcenter) | [![npm badge](https://img.shields.io/npm/v/@capacitor-community/appcenter?style=flat-square)](https://www.npmjs.com/package/@capacitor-community/appcenter)
-| [`@capacitor-community/appcenter-analytics`](https://capacitorjs.com/docs/v3/apis/appcenter-analytics) | [`./appcenter-analytics`](./appcenter-analytics) | [![npm badge](https://img.shields.io/npm/v/@capacitor-community/appcenter-analytics?style=flat-square)](https://www.npmjs.com/package/@capacitor-community/appcenter-analytics)
-| [`@capacitor-community/appcenter-crashes`](https://capacitorjs.com/docs/v3/apis/appcenter-crashes) | [`./appcenter-crashes`](./appcenter-crashes) | [![npm badge](https://img.shields.io/npm/v/@capacitor-community/appcenter-crashes?style=flat-square)](https://www.npmjs.com/package/@capacitor-community/appcenter-crashes)
+| `@capacitor-community/appcenter` | [`./appcenter`](https://github.com/capacitor-community/appcenter-sdk-capacitor/tree/master/appcenter) | [![npm badge](https://img.shields.io/npm/v/@capacitor-community/appcenter?style=flat-square)](https://www.npmjs.com/package/@capacitor-community/appcenter)
+| `@capacitor-community/appcenter-analytics` | [`./appcenter-analytics`](https://github.com/capacitor-community/appcenter-sdk-capacitor/tree/master/appcenter-analytics) | [![npm badge](https://img.shields.io/npm/v/@capacitor-community/appcenter-analytics?style=flat-square)](https://www.npmjs.com/package/@capacitor-community/appcenter-analytics)
+| `@capacitor-community/appcenter-crashes` | [`./appcenter-crashes`](https://github.com/capacitor-community/appcenter-sdk-capacitor/tree/master/appcenter-crashes) | [![npm badge](https://img.shields.io/npm/v/@capacitor-community/appcenter-crashes?style=flat-square)](https://www.npmjs.com/package/@capacitor-community/appcenter-crashes)
 
 ## 📱 Example Mobile App
 
@@ -23,11 +23,9 @@ You can get familiar with SDK quickly by cloning this repository and running the
 Add the App Center plugin(s) that fit your needs directly from the CLI:
 
 ```bash
-npm i @capacitor-community/appcenter @capacitor-community/appcenter-analytics
+npm i @capacitor-community/appcenter @capacitor-community/appcenter-analytics @capacitor-community/appcenter-crashes
 npx cap sync
 ```
-
-This will install two of the plugins available today.
 
 ## 2. 🛠 Configure the SDK
 
@@ -51,9 +49,13 @@ Example:
     <!-- below are optional -->
     <key>LogLevel</key>
 	<integer>2</integer>
+	<key>AnalyticsEnableInJs</key>
+	<false/>
     <key>AnalyticsTransmissionInterval</key>
 	<integer>3</integer>
-	<key>AnalyticsEnableInJs</key>
+    <key>CrashesEnableInJs</key>
+	<false/>
+    <key>CrashesAlwaysSend</key>
 	<false/>
     </dict>
 </plist>

@@ -1,6 +1,6 @@
 # @capacitor-community/appcenter-crashes
 
-App Center Crashes records the state of the app and device and automatically generates a crash log.
+App Center Crashes will automatically generate a crash log every time your app crashes. The log is first written to the device's storage and when the user starts the app again, the crash report will be sent to App Center.
 
 ## Install
 
@@ -14,7 +14,7 @@ npx cap sync
 <docgen-index>
 
 * [`isEnabled()`](#isenabled)
-* [`setEnable(...)`](#setenable)
+* [`setEnabled(...)`](#setenabled)
 
 </docgen-index>
 
@@ -36,13 +36,14 @@ Check if Crashes is enabled or not.
 --------------------
 
 
-### setEnable(...)
+### setEnabled(...)
 
 ```typescript
-setEnable(options: { shouldEnable: boolean; }) => any
+setEnabled(options: { shouldEnable: boolean; }) => any
 ```
 
 You can enable and disable App Center Crashes at runtime. If you disable it, the SDK won't do any crash reporting for the app.
+The state is persisted in the device's storage across application launches.
 
 | Param         | Type                                    |
 | ------------- | --------------------------------------- |
