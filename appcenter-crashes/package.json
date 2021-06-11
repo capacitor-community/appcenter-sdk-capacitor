@@ -1,7 +1,7 @@
 {
   "name": "@capacitor-community/appcenter-crashes",
-  "version": "0.1.0",
-  "description": "App Center Crashes records the state of the app and device and automatically generates a crash log.",
+  "version": "0.2.0",
+  "description": "Capacitor plugin for Microsoft AppCenter Crashes.",
   "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",
   "types": "dist/esm/index.d.ts",

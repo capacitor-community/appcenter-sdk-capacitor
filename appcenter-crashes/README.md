@@ -1,6 +1,6 @@
 # @capacitor-community/appcenter-crashes
 
-App Center Crashes will automatically generate a crash log every time your app crashes. The log is first written to the device's storage and when the user starts the app again, the crash report will be sent to App Center.
+App Center Crashes will automatically generate a crash log every time your app crashes. The log is first written to the device's storage and when the user starts the app again, the crash report will be sent to App Center. Collecting crashes works for both beta and live apps, i.e. those submitted to the App Store. Crash logs contain valuable information for you to help fix the crash.
 
 ## Install
 
@@ -15,6 +15,7 @@ npx cap sync
 
 * [`isEnabled()`](#isenabled)
 * [`setEnabled(...)`](#setenabled)
+* [`generateTestCrash()`](#generatetestcrash)
 
 </docgen-index>
 
@@ -52,6 +53,21 @@ The state is persisted in the device's storage across application launches.
 **Returns:** <code>any</code>
 
 **Since:** 0.1.0
+
+--------------------
+
+
+### generateTestCrash()
+
+```typescript
+generateTestCrash() => any
+```
+
+Generate a test crash for easy testing of the SDK. This API can only be used in test/beta apps and won't do anything in production apps.
+
+**Returns:** <code>any</code>
+
+**Since:** 0.2.0
 
 --------------------
 

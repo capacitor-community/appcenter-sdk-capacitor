@@ -39,4 +39,9 @@ public class CrashesPlugin: CAPPlugin {
         call.resolve(["value": implementation.isEnabled()])
         call.resolve()
     }
+    
+    @objc func generateTestCrash(_ call: CAPPluginCall) {
+        implementation.generateTestCrash()
+        call.resolve()
+    }
 }
