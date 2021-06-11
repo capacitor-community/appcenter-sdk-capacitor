@@ -11,6 +11,7 @@ def capacitor_pods
   pod 'CapacitorCordova', :path => '../../node_modules/@capacitor/ios'
   pod 'CapacitorCommunityAppcenter', :path => '../../../appcenter'
   pod 'CapacitorCommunityAppcenterAnalytics', :path => '../../../appcenter-analytics'
+  pod 'CapacitorCommunityAppcenterCrashes', :path => '../../../appcenter-crashes'
   pod 'CapacitorApp', :path => '../../node_modules/@capacitor/app'
   pod 'CapacitorDevice', :path => '../../node_modules/@capacitor/device'
   pod 'CapacitorHaptics', :path => '../../node_modules/@capacitor/haptics'
