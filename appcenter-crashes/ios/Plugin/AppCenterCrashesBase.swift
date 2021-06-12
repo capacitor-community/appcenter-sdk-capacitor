@@ -20,4 +20,8 @@ import AppCenterCrashes
     public func generateTestCrash() {
         Crashes.generateTestCrash()
     }
+    
+    public func hasReceivedMemoryWarningInLastSession() -> Bool {
+        return Crashes.hasReceivedMemoryWarningInLastSession
+    }
 }

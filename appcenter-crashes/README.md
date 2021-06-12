@@ -16,6 +16,7 @@ npx cap sync
 * [`isEnabled()`](#isenabled)
 * [`setEnabled(...)`](#setenabled)
 * [`generateTestCrash()`](#generatetestcrash)
+* [`hasReceivedMemoryWarningInLastSession()`](#hasreceivedmemorywarninginlastsession)
 
 </docgen-index>
 
@@ -64,6 +65,21 @@ generateTestCrash() => any
 ```
 
 Generate a test crash for easy testing of the SDK. This API can only be used in test/beta apps and won't do anything in production apps.
+
+**Returns:** <code>any</code>
+
+**Since:** 0.2.0
+
+--------------------
+
+
+### hasReceivedMemoryWarningInLastSession()
+
+```typescript
+hasReceivedMemoryWarningInLastSession() => any
+```
+
+Check if app recieved memory warning in the last session.
 
 **Returns:** <code>any</code>
 
