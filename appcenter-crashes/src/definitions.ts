@@ -103,10 +103,20 @@ export interface CrashesPlugin {
     * const { value: gotMemWarning } = await Crashes.hasReceivedMemoryWarningInLastSession();
     */
    hasReceivedMemoryWarningInLastSession(): Promise<{value: boolean}>;
+
+   /**
+    * Check if the app has crashed in the last session.
+    * @returns {Promise<{value: boolean}>}
+    * @since 0.3.0
+    * @example
+    * import Crashes from '@capacitor-community/appcenter-crashes';
+    * 
+    * const { value: hasCrashed } = await Crashes.hasCrashedInLastSession();
+    */
+    hasCrashedInLastSession(): Promise<{ value: boolean}>;
 }
 
 // convert
-// export function hasCrashedInLastSession(): Promise<boolean>;
 // export function lastSessionCrashReport(): Promise<ErrorReport>;
 // export function notifyUserConfirmation(userConfirmation: UserConfirmation): void;
 // export function setListener(crashesListener: CrashesListener): Promise<void>;

@@ -10,6 +10,7 @@ export class AppCrashes {
   /* Flag to toggle entire Crashes service */
   @State() enabled: boolean = false
   @State() memoryWarning: boolean = false
+  @State() hasCrashed: boolean = false
 
   constructor() {
     this.toggleCrashes = this.toggleCrashes.bind(this);
@@ -20,10 +21,11 @@ export class AppCrashes {
     try {
       const { value: crashesEnabled } = await Crashes.isEnabled();
       const { value: memoryWarning } = await Crashes.hasReceivedMemoryWarningInLastSession();
+      const { value: hasCrashed } = await Crashes.hasCrashedInLastSession();
 
       this.enabled = crashesEnabled
       this.memoryWarning = memoryWarning
-      console.debug(`got mem warning: ${this.memoryWarning}`)
+      this.hasCrashed = hasCrashed
     } catch (error) {
       console.error(error)
     }
@@ -70,6 +72,10 @@ export class AppCrashes {
           <ion-item>
             <ion-label>Memory Warning</ion-label>
             <ion-note>{this.memoryWarning.toString()}</ion-note>
+          </ion-item>
+          <ion-item>
+            <ion-label>Crashed Before</ion-label>
+            <ion-note>{this.hasCrashed.toString()}</ion-note>
           </ion-item>
         </ion-list>
         <br />

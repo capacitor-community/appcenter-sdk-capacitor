@@ -5,6 +5,9 @@ import type { CrashesPlugin } from './definitions';
 export class CrashesWeb
   extends WebPlugin
   implements CrashesPlugin {
+  hasCrashedInLastSession(): Promise<{ value: boolean; }> {
+    throw this.unimplemented('Not supported on web.');
+  }
   hasReceivedMemoryWarningInLastSession(): Promise<{ value: boolean; }> {
     throw this.unimplemented('Not supported on web.');
   }

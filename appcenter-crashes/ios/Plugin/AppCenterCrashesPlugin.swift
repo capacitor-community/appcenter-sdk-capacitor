@@ -40,4 +40,9 @@ public class CrashesPlugin: CAPPlugin {
     @objc func hasReceivedMemoryWarningInLastSession(_ call: CAPPluginCall) {
         call.resolve(["value": implementation.hasReceivedMemoryWarningInLastSession()])
     }
+    
+    @objc func hasCrashedInLastSession(_ call: CAPPluginCall) {
+        call.resolve(["value": implementation.hasCrashedInLastSession()])
+    }
+
 }

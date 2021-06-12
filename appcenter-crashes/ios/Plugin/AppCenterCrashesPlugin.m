@@ -8,4 +8,5 @@ CAP_PLUGIN(CrashesPlugin, "Crashes",
            CAP_PLUGIN_METHOD(isEnabled, CAPPluginReturnPromise);
            CAP_PLUGIN_METHOD(generateTestCrash, CAPPluginReturnPromise);
            CAP_PLUGIN_METHOD(hasReceivedMemoryWarningInLastSession, CAPPluginReturnPromise);
+           CAP_PLUGIN_METHOD(hasCrashedInLastSession, CAPPluginReturnPromise);
 )
