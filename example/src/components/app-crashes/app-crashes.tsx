@@ -9,16 +9,21 @@ import Crashes from '@capacitor-community/appcenter-crashes';
 export class AppCrashes {
   /* Flag to toggle entire Crashes service */
   @State() enabled: boolean = false
+  @State() memoryWarning: boolean = false
 
   constructor() {
     this.toggleCrashes = this.toggleCrashes.bind(this);
+    this.crashApp = this.crashApp.bind(this);
   }
 
   async componentWillLoad() {
     try {
       const { value: crashesEnabled } = await Crashes.isEnabled();
+      const { value: memoryWarning } = await Crashes.hasReceivedMemoryWarningInLastSession();
 
       this.enabled = crashesEnabled
+      this.memoryWarning = memoryWarning
+      console.debug(`got mem warning: ${this.memoryWarning}`)
     } catch (error) {
       console.error(error)
     }
@@ -31,6 +36,14 @@ export class AppCrashes {
     } catch (error) {
       this.enabled = false
       console.error(error)
+    }
+  }
+
+  async crashApp() {
+    try {
+      await Crashes.generateTestCrash()
+    } catch (error) {
+      
     }
   }
 
@@ -51,7 +64,19 @@ export class AppCrashes {
             <ion-label>Enable Analytics</ion-label>
             <ion-toggle checked={this.enabled} onIonChange={e => this.toggleCrashes(e)} />
           </ion-item>
+          <ion-list-header lines="full">
+            <ion-label>Previous Crash Info</ion-label>
+          </ion-list-header>
+          <ion-item>
+            <ion-label>Memory Warning</ion-label>
+            <ion-note>{this.memoryWarning.toString()}</ion-note>
+          </ion-item>
         </ion-list>
+        <br />
+        <section>
+          <header>Generate Test Crash</header>
+          <ion-button color="danger" expand="block" onClick={this.crashApp}>Let app crash</ion-button>
+        </section>
       </ion-content>,
     ];
   }
