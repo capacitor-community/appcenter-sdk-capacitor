@@ -1,6 +1,6 @@
 import { Component, State, h } from '@stencil/core';
 import { ToggleChangeEventDetail } from '@ionic/core';
-import Crashes from '@capacitor-community/appcenter-crashes';
+import Crashes, { ErrorReport } from '@capacitor-community/appcenter-crashes';
 
 @Component({
   tag: 'app-crashes',
@@ -11,6 +11,7 @@ export class AppCrashes {
   @State() enabled: boolean = false
   @State() memoryWarning: boolean = false
   @State() hasCrashed: boolean = false
+  crashReport: ErrorReport
 
   constructor() {
     this.toggleCrashes = this.toggleCrashes.bind(this);
@@ -22,10 +23,13 @@ export class AppCrashes {
       const { value: crashesEnabled } = await Crashes.isEnabled();
       const { value: memoryWarning } = await Crashes.hasReceivedMemoryWarningInLastSession();
       const { value: hasCrashed } = await Crashes.hasCrashedInLastSession();
+      const { value: crashReport } = await Crashes.lastSessionCrashReport();
 
       this.enabled = crashesEnabled
       this.memoryWarning = memoryWarning
       this.hasCrashed = hasCrashed
+      console.debug(crashReport)
+
     } catch (error) {
       console.error(error)
     }
@@ -56,19 +60,18 @@ export class AppCrashes {
           <ion-buttons slot="start">
             <ion-back-button defaultHref="/" />
           </ion-buttons>
-          <ion-title>Crashes</ion-title>
         </ion-toolbar>
       </ion-header>,
 
       <ion-content class="ion-padding">
+        <h3>App Center Crashes</h3>
+        <p>App Center Crashes will automatically generate a crash log every time your app crashes.</p>
+
         <ion-list lines="full" class="ion-no-margin">
           <ion-item>
-            <ion-label>Enable Analytics</ion-label>
+            <ion-label>Enable Crashes</ion-label>
             <ion-toggle checked={this.enabled} onIonChange={e => this.toggleCrashes(e)} />
           </ion-item>
-          <ion-list-header lines="full">
-            <ion-label>Previous Crash Info</ion-label>
-          </ion-list-header>
           <ion-item>
             <ion-label>Memory Warning</ion-label>
             <ion-note>{this.memoryWarning.toString()}</ion-note>
@@ -78,11 +81,25 @@ export class AppCrashes {
             <ion-note>{this.hasCrashed.toString()}</ion-note>
           </ion-item>
         </ion-list>
-        <br />
+
         <section>
-          <header>Generate Test Crash</header>
+          <header>Generate a Test Crash</header>
           <ion-button color="danger" expand="block" onClick={this.crashApp}>Let app crash</ion-button>
         </section>
+
+        <ion-list>
+          <ion-list-header lines="full">
+            <ion-label>Crash Report</ion-label>
+          </ion-list-header>
+
+          { this.crashReport ? Object.keys(this.crashReport).map(key => {
+            <ion-item>
+              <ion-label>{key}</ion-label>
+            </ion-item>
+          }) : null}
+          
+        </ion-list>
+
       </ion-content>,
     ];
   }
