@@ -11,7 +11,7 @@ export class AppCrashes {
   @State() enabled: boolean = false
   @State() memoryWarning: boolean = false
   @State() hasCrashed: boolean = false
-  crashReport: ErrorReport
+  @State() crashReport: ErrorReport
 
   constructor() {
     this.toggleCrashes = this.toggleCrashes.bind(this);
@@ -77,7 +77,7 @@ export class AppCrashes {
             <ion-note>{this.memoryWarning.toString()}</ion-note>
           </ion-item>
           <ion-item>
-            <ion-label>Crashed Before</ion-label>
+            <ion-label>Crashed Prior</ion-label>
             <ion-note>{this.hasCrashed.toString()}</ion-note>
           </ion-item>
         </ion-list>
