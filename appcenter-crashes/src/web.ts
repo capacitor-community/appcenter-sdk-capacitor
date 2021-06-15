@@ -1,10 +1,13 @@
 import { WebPlugin } from '@capacitor/core';
 
-import type { CrashesPlugin } from './definitions';
+import { CrashesPlugin, ErrorReport } from './definitions';
 
 export class CrashesWeb
   extends WebPlugin
   implements CrashesPlugin {
+  lastSessionCrashReport(): Promise<{ value: ErrorReport; }> {
+    throw new Error('Method not implemented.');
+  }
   hasCrashedInLastSession(): Promise<{ value: boolean; }> {
     throw this.unimplemented('Not supported on web.');
   }

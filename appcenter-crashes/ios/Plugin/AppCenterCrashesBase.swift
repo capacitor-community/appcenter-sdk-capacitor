@@ -28,4 +28,8 @@ import AppCenterCrashes
     public func hasCrashedInLastSession() -> Bool {
         return Crashes.hasCrashedInLastSession
     }
+    
+    public func lastSessionCrashReport() -> Dictionary<String, Any>? {
+        return CrashesUtil.convertReportToJs(report: Crashes.lastSessionCrashReport)
+    }
 }

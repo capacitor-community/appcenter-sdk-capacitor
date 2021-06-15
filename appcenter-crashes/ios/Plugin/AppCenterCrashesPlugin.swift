@@ -19,6 +19,7 @@ public class CrashesPlugin: CAPPlugin {
         let alwaysSendCrashes = config["CrashesAlwaysSend"] as? Bool
         
         if AppCenterCapacitorShared.isSdkConfigured() {
+            print("[CrashesPlugin] starting")
             implementation.start()
         }
     }
@@ -43,6 +44,16 @@ public class CrashesPlugin: CAPPlugin {
     
     @objc func hasCrashedInLastSession(_ call: CAPPluginCall) {
         call.resolve(["value": implementation.hasCrashedInLastSession()])
+    }
+    
+    @objc func lastSessionCrashReport(_ call: CAPPluginCall) {
+        
+        guard let report = implementation.lastSessionCrashReport() else {
+            call.reject("No crash report available")
+            return
+        }
+        
+        call.resolve(["value": report])
     }
 
 }

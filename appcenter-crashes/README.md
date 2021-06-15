@@ -17,6 +17,9 @@ npx cap sync
 * [`setEnabled(...)`](#setenabled)
 * [`generateTestCrash()`](#generatetestcrash)
 * [`hasReceivedMemoryWarningInLastSession()`](#hasreceivedmemorywarninginlastsession)
+* [`hasCrashedInLastSession()`](#hascrashedinlastsession)
+* [`lastSessionCrashReport()`](#lastsessioncrashreport)
+* [Interfaces](#interfaces)
 
 </docgen-index>
 
@@ -86,5 +89,75 @@ Check if app recieved memory warning in the last session.
 **Since:** 0.2.0
 
 --------------------
+
+
+### hasCrashedInLastSession()
+
+```typescript
+hasCrashedInLastSession() => any
+```
+
+Check if the app has crashed in the last session.
+
+**Returns:** <code>any</code>
+
+**Since:** 0.3.0
+
+--------------------
+
+
+### lastSessionCrashReport()
+
+```typescript
+lastSessionCrashReport() => any
+```
+
+Provides details about the crash that occurred in the last app session.
+
+**Returns:** <code>any</code>
+
+**Since:** 0.3.0
+
+--------------------
+
+
+### Interfaces
+
+
+#### ErrorReport
+
+| Prop                       | Type                                      |
+| -------------------------- | ----------------------------------------- |
+| **`id`**                   | <code>string</code>                       |
+| **`threadName`**           | <code>string</code>                       |
+| **`appErrorTime`**         | <code>string \| number</code>             |
+| **`appStartTime`**         | <code>string \| number</code>             |
+| **`exceptionName`**        | <code>string</code>                       |
+| **`exceptionReason`**      | <code>string</code>                       |
+| **`device`**               | <code><a href="#device">Device</a></code> |
+| **`signal`**               | <code>string</code>                       |
+| **`appProcessIdentifier`** | <code>number</code>                       |
+
+
+#### Device
+
+| Prop                 | Type                |
+| -------------------- | ------------------- |
+| **`sdkName`**        | <code>string</code> |
+| **`sdkVersion`**     | <code>string</code> |
+| **`model`**          | <code>string</code> |
+| **`oemName`**        | <code>string</code> |
+| **`osName`**         | <code>string</code> |
+| **`osVersion`**      | <code>string</code> |
+| **`osBuild`**        | <code>string</code> |
+| **`osApiLevel`**     | <code>number</code> |
+| **`locale`**         | <code>string</code> |
+| **`timeZoneOffset`** | <code>number</code> |
+| **`screenSize`**     | <code>string</code> |
+| **`appVersion`**     | <code>string</code> |
+| **`carrierName`**    | <code>string</code> |
+| **`carrierCountry`** | <code>string</code> |
+| **`appBuild`**       | <code>string</code> |
+| **`appNamespace`**   | <code>string</code> |
 
 </docgen-api>

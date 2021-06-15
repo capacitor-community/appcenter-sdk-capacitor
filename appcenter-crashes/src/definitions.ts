@@ -5,34 +5,58 @@ export enum UserConfirmation {
 }
 
 export interface Device {
+  /* Name of the SDK. Consists of the name of the SDK and the platform, e.g. "appcenter.ios", "appcenter.android" */
   sdkName: string;
+  /* Version of the SDK in semver format, e.g. "1.2.0" or "0.12.3-alpha.1". */
   sdkVersion: string;
+  /* Device model (example: iPad2,3). */
   model: string;
+  /* Device manufacturer (example: HTC). */
   oemName: string;
+  /* OS name (example: iOS). */
   osName: string;
+  /* OS version (example: 9.3.0). */
   osVersion: string;
-  osBuild: string;
+  /* OS build code (example: LMY47X). */
+  osBuild?: string;
+  /* API level when applicable like in Android (example: 15). */
   osApiLevel?: number;
+  /* Language code (example: en_US). */
   locale: string;
+  /* The offset in minutes from UTC for the device time zone, including daylight savings time. */
   timeZoneOffset: number;
-  screenSize?: string;
+  /* Screen size of the device in pixels (example: 640x480). */
+  screenSize: string;
+  /* Application version name, e.g. 1.1.0 */
   appVersion: string;
+  /* Carrier name (for mobile devices). */
   carrierName?: string;
+  /* Carrier country code (for mobile devices). */
   carrierCountry?: string;
+  /* The app's build number, e.g. 42. */
   appBuild: string;
-  appNamespace: string;
+  /* The bundle identifier, package identifier, or namespace, depending on what the individual plattforms use,  .e.g com.microsoft.example. */
+  appNamespace?: string;
 }
 
 export interface ErrorReport {
+  /* UUID for the crash report. */
   id: string;
   threadName?: string;
-  appErrorTime: string | number;
-  appStartTime: string | number;
-  exception?: string;
+  /* Date and time the error occurred. */
+  appErrorTime?: string | number;
+  /* Date and time the app started. */
+  appStartTime?: string | number;
+  /* Exception name that triggered the crash. */
+  exceptionName?: string;
+  /* Exception reason. */
   exceptionReason?: string;
+  /* Device information of the app when it crashed. */
   device: Device;
-  signal?: string;
-  appProcessIdentifier?: number;
+  /* Signal that caused the crash. */
+  signal: string;
+  /* Identifier of the app process that crashed. */
+  appProcessIdentifier: number;
 }
 
 export interface CrashesListener {
@@ -114,9 +138,19 @@ export interface CrashesPlugin {
     * const { value: hasCrashed } = await Crashes.hasCrashedInLastSession();
     */
     hasCrashedInLastSession(): Promise<{ value: boolean}>;
+
+    /**
+     * Provides details about the crash that occurred in the last app session.
+     * @returns {Promise<{value: ErrorReport}>}
+     * @since 0.3.0
+     * @example
+     * import Crashes from '@capacitor-community/appcenter-crashes';
+     * 
+     * const { value: crashReport } = await Crashes.lastSessionCrashReport();
+     */
+    lastSessionCrashReport(): Promise<{value: ErrorReport}>;
 }
 
 // convert
-// export function lastSessionCrashReport(): Promise<ErrorReport>;
 // export function notifyUserConfirmation(userConfirmation: UserConfirmation): void;
 // export function setListener(crashesListener: CrashesListener): Promise<void>;
