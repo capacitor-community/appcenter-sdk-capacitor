@@ -1,6 +1,35 @@
-# @capacitor-community/appcenter-crashes
+<p align="center"><br><img src="https://user-images.githubusercontent.com/236501/85893648-1c92e880-b7a8-11ea-926d-95355b8175c7.png" width="128" height="128" /></p>
 
-App Center Crashes will automatically generate a crash log every time your app crashes. The log is first written to the device's storage and when the user starts the app again, the crash report will be sent to App Center. Collecting crashes works for both beta and live apps, i.e. those submitted to the App Store. Crash logs contain valuable information for you to help fix the crash.
+<h3 align="center">App Center Crashes</h3>
+<p align="center"><strong><code>@capacitor-community/appcenter-crashes</code></strong></p>
+<p align="center">
+  App Center Crashes will automatically generate a crash log every time your app crashes. The log is first written to the device's storage and when the user starts the app again, the crash report will be sent to App Center. Collecting crashes works for both beta and live apps, i.e. those submitted to the App Store. Crash logs contain valuable information for you to help fix the crash.
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/maintenance/yes/2021?style=flat-square" />
+  <a href="https://github.com/capacitor-community/appcenter-sdk-capacitor/tree/master/appcenter/actions?query=workflow%3A%22CI%22"></a>
+  <a href="https://www.npmjs.com/package/@capacitor-community/appcenter-crashes"><img src="https://img.shields.io/npm/l/@capacitor-community/appcenter-crashes?style=flat-square" /></a>
+  <br>
+  <a href="https://www.npmjs.com/package/@capacitor-community/appcenter-crashes"><img src="https://img.shields.io/npm/dw/@capacitor-community/appcenter-crashes?style=flat-square" /></a>
+  <a href="https://www.npmjs.com/package/@capacitor-community/appcenter-crashes"><img src="https://img.shields.io/npm/v/@capacitor-community/appcenter-crashes?style=flat-square" /></a>
+  <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+  <a href="#contributors-"><img src="https://img.shields.io/badge/all%20contributors-0-orange?style=flat-square" /></a>
+  <!-- ALL-CONTRIBUTORS-BADGE:END -->
+</p>
+
+## Maintainers
+
+| Maintainer | GitHub | Social |
+| -----------| -------| -------|
+| John Borges | [johnborges](https://github.com/johnborges) | [@johnborges](https://twitter.com/johnborges) |
+
+## Features
+
+- Generate test crashes
+- Get more information about a previous crash
+- Customize how crashes are processed
+- Enable or disable App Center Crashes at runtime
 
 ## Install
 
