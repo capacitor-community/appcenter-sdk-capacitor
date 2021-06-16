@@ -19,6 +19,7 @@ public class CrashesPlugin: CAPPlugin {
         let alwaysSendCrashes = config["CrashesAlwaysSend"] as? Bool
         
         if AppCenterCapacitorShared.isSdkConfigured() {
+            print("[CrashesPlugin] starting")
             implementation.start()
         }
     }
@@ -38,6 +39,26 @@ public class CrashesPlugin: CAPPlugin {
     }
     
     @objc func hasReceivedMemoryWarningInLastSession(_ call: CAPPluginCall) {
-        call.resolve(["value": implementation.hasReceivedMemoryWarningInLastSession()])
+        DispatchQueue.main.async {
+            call.resolve(["value": self.implementation.hasReceivedMemoryWarningInLastSession()])
+        }
     }
+    
+    @objc func hasCrashedInLastSession(_ call: CAPPluginCall) {
+        DispatchQueue.main.async {
+            call.resolve(["value": self.implementation.hasCrashedInLastSession()])
+        }
+    }
+    
+    @objc func lastSessionCrashReport(_ call: CAPPluginCall) {
+        DispatchQueue.main.async {
+            guard let report = self.implementation.lastSessionCrashReport() else {
+                call.reject("No crash report available")
+                return
+            }
+            
+            call.resolve(["value": report])
+        }
+    }
+
 }

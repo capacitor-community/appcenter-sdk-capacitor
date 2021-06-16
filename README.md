@@ -43,21 +43,21 @@ Example:
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "https://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
-    <dict>
+<dict>
     <key>AppSecret</key>
     <string>{APP_SECRET_VALUE}</string>
     <!-- below are optional -->
     <key>LogLevel</key>
-	<integer>2</integer>
-	<key>AnalyticsEnableInJs</key>
-	<false/>
+    <integer>2</integer>
+    <key>AnalyticsEnableInJs</key>
+    <false/>
     <key>AnalyticsTransmissionInterval</key>
-	<integer>3</integer>
+    <integer>3</integer>
     <key>CrashesEnableInJs</key>
-	<false/>
+    <false/>
     <key>CrashesAlwaysSend</key>
-	<false/>
-    </dict>
+    <false/>
+</dict>
 </plist>
 ```
 

@@ -24,4 +24,12 @@ import AppCenterCrashes
     public func hasReceivedMemoryWarningInLastSession() -> Bool {
         return Crashes.hasReceivedMemoryWarningInLastSession
     }
+    
+    public func hasCrashedInLastSession() -> Bool {
+        return Crashes.hasCrashedInLastSession
+    }
+    
+    public func lastSessionCrashReport() -> Dictionary<String, Any>? {
+        return CrashesUtil.convertReportToJs(report: Crashes.lastSessionCrashReport)
+    }
 }
