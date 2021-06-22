@@ -75,8 +75,7 @@ export class CustomProperties implements ICustomProperties {
 
 export interface AppCenterPlugin {
   /**
-   * Returns AppCenter UUID.
-   * For more info, please see: https://docs.microsoft.com/en-us/appcenter/sdk/other-apis/cordova#identify-installations
+   * Returns AppCenter unique installation identifier.
    * @returns {Promise<{value: string}>} install id
    * @since 0.0.1
    * @example
@@ -87,8 +86,7 @@ export interface AppCenterPlugin {
   getInstallId(): Promise<{value: string}>;
   /**
    * Set a user ID that's used to augment crash reports.
-   * For more info, please see: https://docs.microsoft.com/en-us/appcenter/sdk/other-apis/cordova#identify-users
-   * @param {userId: string} options Ex. "your-user-id"
+   * @param {{userId: string}} options Ex. "your-user-id"
    * @returns {Promise<void>}
    * @since 0.0.1
    * @example
@@ -122,19 +120,19 @@ export interface AppCenterPlugin {
 
   /**
    * Toggle all App Center services at runtime. When disabled, the SDK won't forward any information to App Center.
-   * @param {enableFlag: boolean} options
-   * @since 0.0.1
+   * @param {{shouldEnable: boolean}} options
+   * @since 0.4.0
    * @example
    * import AppCenter from '@capacitor-community/appcenter';
 
-   * await AppCenter.enable({enableFlag: true});
+   * await AppCenter.setEnable({shouldEnable: true});
    */
-  enable(options: {enableFlag: boolean}): Promise<void>;
+  setEnable(options: {shouldEnable: boolean}): Promise<void>;
 
   /**
    * App Center allows you to define custom properties as key value pairs in your app. You may use custom properties for various purposes. 
    * For instance, you can use custom properties to segment your users, and then send push notifications to a specific audience.
-   * @param {properties: CustomProperties} options
+   * @param {{properties: CustomProperties}} options
    * @since 0.2.0
    * @example
    * import AppCenter, { CustomProperties } from '@capacitor-community/appcenter';
@@ -152,7 +150,7 @@ export interface AppCenterPlugin {
    * @example
    * import AppCenter from '@capacitor-community/appcenter';
    * 
-   * const {value: logLevel } = await AppCenter.getLogLevel()
+   * const {value: logLevel} = await AppCenter.getLogLevel()
    */
   getLogLevel(): Promise<{value: LogLevel}>;
 
@@ -160,7 +158,7 @@ export interface AppCenterPlugin {
    * You can control the amount of log messages that show up from App Center in the console. Log messages show in the console on iOS and LogCat on Android.
    * By default, it's set to Assert for the App Store environment and Warning otherwise. To have as many log messages as possible, use Verbose. 
    * Note: `setLogLevel` API can't increase logging for app startup code, before JavaScript is loaded.
-   * @param {{logLevel: LogLevel}} options
+   * @param {logLevel: LogLevel} options
    * @since 0.2.0
    * @example
    * import AppCenter, { LogLevel } from '@capacitor-community/appcenter';
@@ -168,6 +166,18 @@ export interface AppCenterPlugin {
    * await AppCenter.setLogLevel({logLevel: LogLevel.DEBUG})
    */
   setLogLevel(options: {logLevel: LogLevel}): Promise<void>;
+
+  /**
+   * Flag indicating whether SDK can send network requests.
+   * @param {{shouldAllow: boolean}} options
+   * @returns {Promise<{value: boolean}>}
+   * @since 0.4.0
+   * @example
+   * import AppCenterfrom '@capacitor-community/appcenter';
+   * 
+   * const {value: allowed} = await AppCenter.networkRequestsAllowed({shouldAllow: true})
+   */
+  networkRequestsAllowed(options?: {shouldAllow: boolean}): Promise<{value: boolean}>
 
   // move to confg setting in appcenter-analytics
   // setMaxStorageSize

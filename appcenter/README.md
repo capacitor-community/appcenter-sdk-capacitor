@@ -7,9 +7,9 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/maintenance/yes/2020?style=flat-square" />
-  <a href="https://github.com/capacitor-community/appcenter-sdk-capacitor/tree/master/appcenter/actions?query=workflow%3A%22CI%22"><img src="https://img.shields.io/github/workflow/status/capacitor-community/appcenter-sdk-capacitor/tree/master/appcenter/CI?style=flat-square" /></a>
-  <a href="https://www.npmjs.com/package/@capacitor-community/appcenter"><img src="https://img.shields.io/npm/l/@capacitor-community/app-icon?style=flat-square" /></a>
+  <img src="https://img.shields.io/maintenance/yes/2021?style=flat-square" />
+  <a href="https://github.com/capacitor-community/appcenter-sdk-capacitor/tree/master/appcenter/actions?query=workflow%3A%22CI%22"></a>
+  <a href="https://www.npmjs.com/package/@capacitor-community/appcenter"><img src="https://img.shields.io/npm/l/@capacitor-community/appcenter?style=flat-square" /></a>
   <br>
   <a href="https://www.npmjs.com/package/@capacitor-community/appcenter"><img src="https://img.shields.io/npm/dw/@capacitor-community/appcenter?style=flat-square" /></a>
   <a href="https://www.npmjs.com/package/@capacitor-community/appcenter"><img src="https://img.shields.io/npm/v/@capacitor-community/appcenter?style=flat-square" /></a>
@@ -71,10 +71,11 @@ const appCenterInfo = async () => {
 * [`setUserId(...)`](#setuserid)
 * [`getSdkVersion()`](#getsdkversion)
 * [`isEnabled()`](#isenabled)
-* [`enable(...)`](#enable)
+* [`setEnable(...)`](#setenable)
 * [`setCustomProperties(...)`](#setcustomproperties)
 * [`getLogLevel()`](#getloglevel)
 * [`setLogLevel(...)`](#setloglevel)
+* [`networkRequestsAllowed(...)`](#networkrequestsallowed)
 * [Enums](#enums)
 
 </docgen-index>
@@ -88,8 +89,7 @@ const appCenterInfo = async () => {
 getInstallId() => any
 ```
 
-Returns AppCenter UUID.
-For more info, please see: https://docs.microsoft.com/en-us/appcenter/sdk/other-apis/cordova#identify-installations
+Returns AppCenter unique installation identifier.
 
 **Returns:** <code>any</code>
 
@@ -148,21 +148,21 @@ Check if App Center is enabled or not as a whole.
 --------------------
 
 
-### enable(...)
+### setEnable(...)
 
 ```typescript
-enable(options: { enableFlag: boolean; }) => any
+setEnable(options: { shouldEnable: boolean; }) => any
 ```
 
 Toggle all App Center services at runtime. When disabled, the SDK won't forward any information to App Center.
 
-| Param         | Type                                  |
-| ------------- | ------------------------------------- |
-| **`options`** | <code>{ enableFlag: boolean; }</code> |
+| Param         | Type                                    |
+| ------------- | --------------------------------------- |
+| **`options`** | <code>{ shouldEnable: boolean; }</code> |
 
 **Returns:** <code>any</code>
 
-**Since:** 0.0.1
+**Since:** 0.4.0
 
 --------------------
 
@@ -219,6 +219,25 @@ Note: `setLogLevel` API can't increase logging for app startup code, before Java
 **Returns:** <code>any</code>
 
 **Since:** 0.2.0
+
+--------------------
+
+
+### networkRequestsAllowed(...)
+
+```typescript
+networkRequestsAllowed(options?: { shouldAllow: boolean; } | undefined) => any
+```
+
+Flag indicating whether SDK can send network requests.
+
+| Param         | Type                                   |
+| ------------- | -------------------------------------- |
+| **`options`** | <code>{ shouldAllow: boolean; }</code> |
+
+**Returns:** <code>any</code>
+
+**Since:** 0.4.0
 
 --------------------
 
