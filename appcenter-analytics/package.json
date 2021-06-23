@@ -1,7 +1,7 @@
 {
   "name": "@capacitor-community/appcenter-analytics",
-  "version": "0.2.0",
-  "description": "App Center Analytics will help you understand more about your app users and their behavior when using your app.",
+  "version": "0.2.1",
+  "description": "Capacitor plugin for AppCenter Analytics",
   "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",
   "types": "dist/esm/index.d.ts",
@@ -25,7 +25,10 @@
   "keywords": [
     "capacitor",
     "plugin",
-    "native"
+    "appcenter",
+    "analytics",
+    "azure",
+    "microsoft"
   ],
   "scripts": {
     "verify": "npm run verify:ios && npm run verify:android && npm run verify:web",
