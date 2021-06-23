@@ -25,7 +25,12 @@
   "keywords": [
     "capacitor",
     "plugin",
-    "native"
+    "appcenter",
+    "reporting",
+    "crash",
+    "error",
+    "azure",
+    "microsoft"
   ],
   "scripts": {
     "verify": "npm run verify:ios && npm run verify:android && npm run verify:web",
