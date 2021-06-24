@@ -15,7 +15,9 @@ export class AppHome {
   /* App Center userId */
   userId: string;
   /* Flag to toggle App Center SDK */
-  @State() enabled: boolean = false;
+  @State() enabled: boolean = false
+  /* Flag to toggle App Center network requests */
+  @State() networkReqAllowed: boolean = false
   /* App Center LogLevel */
   @State() logLevel: LogLevel;
 
@@ -23,6 +25,7 @@ export class AppHome {
     this.updateUserId = this.updateUserId.bind(this);
     this.toggleSdk = this.toggleSdk.bind(this);
     this.setLogLevel = this.setLogLevel.bind(this);
+    this.toggleNetwork = this.toggleNetwork.bind(this)
   }
 
   async componentWillLoad() {
@@ -30,6 +33,7 @@ export class AppHome {
 
     try {
       const { value: sdkEnabled } = await AppCenter.isEnabled()
+      const { value: reqAllowed } = await AppCenter.networkRequestsAllowed()
       const { value: installId } = await AppCenter.getInstallId()
       const { value: sdkVersion } = await AppCenter.getSdkVersion()
       const { value: logLevel } = await AppCenter.getLogLevel()
@@ -38,6 +42,7 @@ export class AppHome {
       this.sdkVersion = sdkVersion
       this.enabled = sdkEnabled
       this.logLevel = logLevel
+      this.networkReqAllowed = reqAllowed
 
       console.debug(logLevel)
 
@@ -92,6 +97,17 @@ export class AppHome {
     }
   }
 
+  async toggleNetwork(e: CustomEvent) {
+    console.debug("[homepage] toggleNetwork");
+    try {
+      await AppCenter.networkRequestsAllowed({shouldAllow: e.detail.checked});
+      this.networkReqAllowed = e.detail.checked
+    } catch (error) {
+      this.enabled = false
+      console.error(error)
+    }
+  }
+
   async setLogLevel(logLevel: LogLevel) {
     try {
       await AppCenter.setLogLevel({logLevel: logLevel})
@@ -120,6 +136,10 @@ export class AppHome {
           <ion-item>
             <ion-label>App Center SDK</ion-label>
             <ion-note slot="end">{this.sdkVersion}</ion-note>
+          </ion-item>
+          <ion-item>
+            <ion-label>Allow Network Requests</ion-label>
+            <ion-toggle checked={this.networkReqAllowed} onIonChange={(event) => this.toggleNetwork(event)} />
           </ion-item>
           <ion-item>
             <ion-label>Log Level</ion-label>

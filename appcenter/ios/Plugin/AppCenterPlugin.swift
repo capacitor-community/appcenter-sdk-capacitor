@@ -28,7 +28,7 @@ public class AppCenterPlugin: CAPPlugin {
     }
     
     @objc func enable(_ call: CAPPluginCall) {
-        implementation.enable(call.getBool("enableFlag") ?? false)
+        implementation.enable(call.getBool("shouldEnable") ?? false)
         call.resolve()
     }
     
@@ -51,5 +51,9 @@ public class AppCenterPlugin: CAPPlugin {
         implementation.setCustomProperties(properties)
         
         call.resolve()
+    }
+    
+    @objc func networkRequestsAllowed(_ call: CAPPluginCall) {
+        call.resolve(["value:": implementation.networkRequestsAllowed(call.getBool("shouldAllow"))])
     }
 }
