@@ -9,7 +9,7 @@ end
 
 target 'Plugin' do
   capacitor_pods
-  pod 'AppCenterCapacitorShared', '0.3.0'
+  pod 'AppCenterCapacitorShared', '0.3.1'
 end
 
 target 'PluginTests' do
