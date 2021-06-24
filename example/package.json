@@ -19,9 +19,9 @@
     "@stencil/core": "^2.0.1"
   },
   "dependencies": {
-    "@capacitor-community/appcenter": "0.3.4",
-    "@capacitor-community/appcenter-analytics": "0.2.0",
-    "@capacitor-community/appcenter-crashes": "0.2.0",
+    "@capacitor-community/appcenter": "^0.4.0",
+    "@capacitor-community/appcenter-analytics": "0.2.1",
+    "@capacitor-community/appcenter-crashes": "^0.3.0",
     "@capacitor/app": "^1.0.0",
     "@capacitor/cli": "3.0.0",
     "@capacitor/core": "3.0.0",

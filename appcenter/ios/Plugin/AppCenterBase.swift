@@ -4,6 +4,15 @@ import AppCenter
 
 @objc public class AppCenterBase: NSObject {
     
+    public func networkRequestsAllowed(_ shouldAllow: Bool?) -> Bool {
+        guard let setAllow = shouldAllow else {
+            return AppCenter.networkRequestsAllowed
+        }
+        
+        AppCenter.networkRequestsAllowed = setAllow
+        return AppCenter.networkRequestsAllowed
+    }
+    
     public func setLogLevel(_ level: Int) {
         AppCenter.logLevel = LogLevel.init(rawValue: UInt(level)) ?? .verbose
     }
