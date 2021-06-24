@@ -84,7 +84,7 @@ export class AppHome {
   async toggleSdk(e: CustomEvent) {
     console.debug("[homepage] toggleSdk");
     try {
-      await AppCenter.enable({enableFlag: e.detail.checked});
+      await AppCenter.setEnable({shouldEnable: e.detail.checked});
       this.enabled = e.detail.checked
     } catch (error) {
       this.enabled = false
