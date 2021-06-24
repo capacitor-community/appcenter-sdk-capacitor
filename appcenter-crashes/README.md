@@ -58,12 +58,12 @@ npx cap sync
 ### isEnabled()
 
 ```typescript
-isEnabled() => any
+isEnabled() => Promise<{ value: boolean; }>
 ```
 
 Check if Crashes is enabled or not.
 
-**Returns:** <code>any</code>
+**Returns:** <code>Promise&lt;{ value: boolean; }&gt;</code>
 
 **Since:** 0.1.0
 
@@ -73,7 +73,7 @@ Check if Crashes is enabled or not.
 ### setEnabled(...)
 
 ```typescript
-setEnabled(options: { shouldEnable: boolean; }) => any
+setEnabled(options: { shouldEnable: boolean; }) => Promise<void>
 ```
 
 You can enable and disable App Center Crashes at runtime. If you disable it, the SDK won't do any crash reporting for the app.
@@ -83,8 +83,6 @@ The state is persisted in the device's storage across application launches.
 | ------------- | --------------------------------------- |
 | **`options`** | <code>{ shouldEnable: boolean; }</code> |
 
-**Returns:** <code>any</code>
-
 **Since:** 0.1.0
 
 --------------------
@@ -93,12 +91,10 @@ The state is persisted in the device's storage across application launches.
 ### generateTestCrash()
 
 ```typescript
-generateTestCrash() => any
+generateTestCrash() => Promise<void>
 ```
 
 Generate a test crash for easy testing of the SDK. This API can only be used in test/beta apps and won't do anything in production apps.
-
-**Returns:** <code>any</code>
 
 **Since:** 0.2.0
 
@@ -108,12 +104,12 @@ Generate a test crash for easy testing of the SDK. This API can only be used in 
 ### hasReceivedMemoryWarningInLastSession()
 
 ```typescript
-hasReceivedMemoryWarningInLastSession() => any
+hasReceivedMemoryWarningInLastSession() => Promise<{ value: boolean; }>
 ```
 
 Check if app recieved memory warning in the last session.
 
-**Returns:** <code>any</code>
+**Returns:** <code>Promise&lt;{ value: boolean; }&gt;</code>
 
 **Since:** 0.2.0
 
@@ -123,12 +119,12 @@ Check if app recieved memory warning in the last session.
 ### hasCrashedInLastSession()
 
 ```typescript
-hasCrashedInLastSession() => any
+hasCrashedInLastSession() => Promise<{ value: boolean; }>
 ```
 
 Check if the app has crashed in the last session.
 
-**Returns:** <code>any</code>
+**Returns:** <code>Promise&lt;{ value: boolean; }&gt;</code>
 
 **Since:** 0.3.0
 
@@ -138,12 +134,12 @@ Check if the app has crashed in the last session.
 ### lastSessionCrashReport()
 
 ```typescript
-lastSessionCrashReport() => any
+lastSessionCrashReport() => Promise<{ value: ErrorReport; }>
 ```
 
 Provides details about the crash that occurred in the last app session.
 
-**Returns:** <code>any</code>
+**Returns:** <code>Promise&lt;{ value: <a href="#errorreport">ErrorReport</a>; }&gt;</code>
 
 **Since:** 0.3.0
 
@@ -155,38 +151,38 @@ Provides details about the crash that occurred in the last app session.
 
 #### ErrorReport
 
-| Prop                       | Type                                      |
-| -------------------------- | ----------------------------------------- |
-| **`id`**                   | <code>string</code>                       |
-| **`threadName`**           | <code>string</code>                       |
-| **`appErrorTime`**         | <code>string \| number</code>             |
-| **`appStartTime`**         | <code>string \| number</code>             |
-| **`exceptionName`**        | <code>string</code>                       |
-| **`exceptionReason`**      | <code>string</code>                       |
-| **`device`**               | <code><a href="#device">Device</a></code> |
-| **`signal`**               | <code>string</code>                       |
-| **`appProcessIdentifier`** | <code>number</code>                       |
+| Prop                       | Type                                      | Description                                                          |
+| -------------------------- | ----------------------------------------- | -------------------------------------------------------------------- |
+| **`id`**                   | <code>string</code>                       | UUID for the crash report.                                           |
+| **`threadName`**           | <code>string</code>                       |                                                                      |
+| **`appErrorTime`**         | <code>string \| number</code>             | Date and time the error occurred.                                    |
+| **`appStartTime`**         | <code>string \| number</code>             | Date and time the app started.                                       |
+| **`exceptionName`**        | <code>string</code>                       | Exception name that triggered the crash.                             |
+| **`exceptionReason`**      | <code>string</code>                       | Exception reason.                                                    |
+| **`device`**               | <code><a href="#device">Device</a></code> | <a href="#device">Device</a> information of the app when it crashed. |
+| **`signal`**               | <code>string</code>                       | Signal that caused the crash.                                        |
+| **`appProcessIdentifier`** | <code>number</code>                       | Identifier of the app process that crashed.                          |
 
 
 #### Device
 
-| Prop                 | Type                |
-| -------------------- | ------------------- |
-| **`sdkName`**        | <code>string</code> |
-| **`sdkVersion`**     | <code>string</code> |
-| **`model`**          | <code>string</code> |
-| **`oemName`**        | <code>string</code> |
-| **`osName`**         | <code>string</code> |
-| **`osVersion`**      | <code>string</code> |
-| **`osBuild`**        | <code>string</code> |
-| **`osApiLevel`**     | <code>number</code> |
-| **`locale`**         | <code>string</code> |
-| **`timeZoneOffset`** | <code>number</code> |
-| **`screenSize`**     | <code>string</code> |
-| **`appVersion`**     | <code>string</code> |
-| **`carrierName`**    | <code>string</code> |
-| **`carrierCountry`** | <code>string</code> |
-| **`appBuild`**       | <code>string</code> |
-| **`appNamespace`**   | <code>string</code> |
+| Prop                 | Type                | Description                                                                                                                           |
+| -------------------- | ------------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
+| **`sdkName`**        | <code>string</code> | Name of the SDK. Consists of the name of the SDK and the platform, e.g. "appcenter.ios", "appcenter.android"                          |
+| **`sdkVersion`**     | <code>string</code> | Version of the SDK in semver format, e.g. "1.2.0" or "0.12.3-alpha.1".                                                                |
+| **`model`**          | <code>string</code> | <a href="#device">Device</a> model (example: iPad2,3).                                                                                |
+| **`oemName`**        | <code>string</code> | <a href="#device">Device</a> manufacturer (example: HTC).                                                                             |
+| **`osName`**         | <code>string</code> | OS name (example: iOS).                                                                                                               |
+| **`osVersion`**      | <code>string</code> | OS version (example: 9.3.0).                                                                                                          |
+| **`osBuild`**        | <code>string</code> | OS build code (example: LMY47X).                                                                                                      |
+| **`osApiLevel`**     | <code>number</code> | API level when applicable like in Android (example: 15).                                                                              |
+| **`locale`**         | <code>string</code> | Language code (example: en_US).                                                                                                       |
+| **`timeZoneOffset`** | <code>number</code> | The offset in minutes from UTC for the device time zone, including daylight savings time.                                             |
+| **`screenSize`**     | <code>string</code> | Screen size of the device in pixels (example: 640x480).                                                                               |
+| **`appVersion`**     | <code>string</code> | Application version name, e.g. 1.1.0                                                                                                  |
+| **`carrierName`**    | <code>string</code> | Carrier name (for mobile devices).                                                                                                    |
+| **`carrierCountry`** | <code>string</code> | Carrier country code (for mobile devices).                                                                                            |
+| **`appBuild`**       | <code>string</code> | The app's build number, e.g. 42.                                                                                                      |
+| **`appNamespace`**   | <code>string</code> | The bundle identifier, package identifier, or namespace, depending on what the individual plattforms use, .e.g com.microsoft.example. |
 
 </docgen-api>
