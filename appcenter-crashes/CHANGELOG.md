@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.4.0
+
+### Features
+
+* Add notifyUserConfirmation api
+
 ## 0.3.1
 
 * Update `Appcenter/Analytics` to 4.2.0

@@ -5,8 +5,11 @@ import { CrashesPlugin, ErrorReport } from './definitions';
 export class CrashesWeb
   extends WebPlugin
   implements CrashesPlugin {
+  notifyUserConfirmation(): Promise<void> {
+    throw this.unimplemented('Not supported on web.');
+  }
   lastSessionCrashReport(): Promise<{ value: ErrorReport; }> {
-    throw new Error('Method not implemented.');
+    throw this.unimplemented('Not supported on web.');
   }
   hasCrashedInLastSession(): Promise<{ value: boolean; }> {
     throw this.unimplemented('Not supported on web.');

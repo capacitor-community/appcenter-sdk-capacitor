@@ -10,5 +10,5 @@ CAP_PLUGIN(CrashesPlugin, "Crashes",
            CAP_PLUGIN_METHOD(hasReceivedMemoryWarningInLastSession, CAPPluginReturnPromise);
            CAP_PLUGIN_METHOD(hasCrashedInLastSession, CAPPluginReturnPromise);
            CAP_PLUGIN_METHOD(lastSessionCrashReport, CAPPluginReturnPromise);
-
+           CAP_PLUGIN_METHOD(notifyUserConfirmation, CAPPluginReturnNone);
 )

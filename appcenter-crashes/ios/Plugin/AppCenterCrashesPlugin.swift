@@ -8,9 +8,7 @@ public class CrashesPlugin: CAPPlugin {
     private let implementation = AppCenterCrashesBase()
     
     public override func load() {
-            
-        print("[CrashesPlugin] load")
-        
+        // set crashes delegate
         AppCenterCapacitorShared.configureWithSettings()
                 
         let config: NSDictionary = AppCenterCapacitorShared.getConfiguration()
@@ -19,7 +17,6 @@ public class CrashesPlugin: CAPPlugin {
         let alwaysSendCrashes = config["CrashesAlwaysSend"] as? Bool
         
         if AppCenterCapacitorShared.isSdkConfigured() {
-            print("[CrashesPlugin] starting")
             implementation.start()
         }
     }
@@ -59,6 +56,16 @@ public class CrashesPlugin: CAPPlugin {
             
             call.resolve(["value": report])
         }
+    }
+    
+    @objc func notifyUserConfirmation(_ call: CAPPluginCall) {
+        guard let userConfirm = call.options["userConfimation"] as? Int else {
+            call.reject("Must provide a UserConfirmation")
+            return
+        }
+        
+        implementation.notifyUserConfirmation(confirmation: userConfirm)
+        call.resolve()
     }
 
 }

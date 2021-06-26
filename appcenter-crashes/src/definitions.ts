@@ -1,3 +1,5 @@
+import { PluginListenerHandle } from "@capacitor/core";
+
 export enum UserConfirmation {
   DONT_SEND = 0,
   SEND = 1,
@@ -150,7 +152,7 @@ export interface CrashesPlugin {
    /**
     * You can enable and disable App Center Crashes at runtime. If you disable it, the SDK won't do any crash reporting for the app.
     * The state is persisted in the device's storage across application launches.
-    * @param {shouldEnable: boolean} options
+    * @param {{shouldEnable: boolean}} options
     * @since 0.1.0
     * @example
     * import Crashes from '@capacitor-community/appcenter-crashes';
@@ -201,8 +203,21 @@ export interface CrashesPlugin {
      * const { value: crashReport } = await Crashes.lastSessionCrashReport();
      */
     lastSessionCrashReport(): Promise<{value: ErrorReport}>;
-}
 
-// convert
-// export function notifyUserConfirmation(userConfirmation: UserConfirmation): void;
-// export function setListener(crashesListener: CrashesListener): Promise<void>;
+    /**
+     * Notify SDK with a confirmation to handle the crash report.
+     * @param {{userConfimation: UserConfirmation}} options A user confirmation
+     * @returns {Promise<void>}
+     * @since 0.4.0
+     * @example
+     * import Crashes, { UserConfirmation } from '@capacitor-community/appcenter-crashes';
+     * // Depending on the user's choice, call Crashes.notifyUserConfirmation() with the right value.
+     * Crashes.notifyUserConfirmation({userConfimation: UserConfirmation.DONT_SEND});
+     * Crashes.notifyUserConfirmation({userConfimation: UserConfirmation.SEND});
+     * Crashes.notifyUserConfirmation({userConfimation: UserConfirmation.ALWAYS_SEND});
+     */
+    notifyUserConfirmation(options: {userConfimation: UserConfirmation}): Promise<void>;
+
+    // CHANGE TO BELOW export function setListener(crashesListener: CrashesListener): Promise<void>;
+    // addListener(eventName: 'onScanResult', listenerFunc: (result: any) => void,): PluginListenerHandle;
+}
