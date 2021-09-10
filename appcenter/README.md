@@ -105,11 +105,10 @@ setUserId(options: { userId: string; }) => any
 ```
 
 Set a user ID that's used to augment crash reports.
-For more info, please see: https://docs.microsoft.com/en-us/appcenter/sdk/other-apis/cordova#identify-users
 
-| Param         | Type                             |
-| ------------- | -------------------------------- |
-| **`options`** | <code>{ userId: string; }</code> |
+| Param         | Type                             | Description        |
+| ------------- | -------------------------------- | ------------------ |
+| **`options`** | <code>{ userId: string; }</code> | Ex. "your-user-id" |
 
 **Returns:** <code>any</code>
 
@@ -229,7 +228,7 @@ Note: `setLogLevel` API can't increase logging for app startup code, before Java
 networkRequestsAllowed(options?: { shouldAllow: boolean; } | undefined) => any
 ```
 
-Flag indicating whether SDK can send network requests.
+Check whether sending data in the App Center SDK is allowed or not. Also set whether SDK can send network requests.
 
 | Param         | Type                                   |
 | ------------- | -------------------------------------- |

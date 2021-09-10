@@ -23,7 +23,7 @@ You can get familiar with SDK quickly by cloning this repository and running the
 Add the App Center plugin(s) that fit your needs directly from the CLI:
 
 ```bash
-npm i @capacitor-community/appcenter @capacitor-community/appcenter-analytics @capacitor-community/appcenter-crashes
+npm i @capacitor-community/appcenter @capacitor-community/appcenter-analytics @capacitor-community/appcenter-crashes --save-exact
 npx cap sync
 ```
 
@@ -63,4 +63,11 @@ Example:
 
 ### Android
 
-Coming Soon.
+Create a new file with the name appcenter-config.json in android/app/src/main/assets/ with the following content and replace {APP_SECRET_VALUE} with your app secret value.
+
+```json
+{
+    "app_secret": "{APP_SECRET_VALUE}",
+    "start_automatically": true
+}
+```

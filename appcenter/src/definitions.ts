@@ -168,7 +168,7 @@ export interface AppCenterPlugin {
   setLogLevel(options: {logLevel: LogLevel}): Promise<void>;
 
   /**
-   * Flag indicating whether SDK can send network requests.
+   * Check whether sending data in the App Center SDK is allowed or not. Also set whether SDK can send network requests.
    * @param {{shouldAllow: boolean}} options
    * @returns {Promise<{value: boolean}>}
    * @since 0.4.0

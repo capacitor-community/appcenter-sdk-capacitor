@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.5.0
+
+### Features
+
+* add initial Android support
+
 ## 0.4.0
 
 ### Features
