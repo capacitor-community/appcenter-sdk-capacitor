@@ -40,7 +40,7 @@ Once you add App Center Analytics to your app and the SDK is started, it will au
 
 <docgen-index>
 
-* [`enable(...)`](#enable)
+* [`setEnabled(...)`](#setenabled)
 * [`isEnabled()`](#isenabled)
 * [`pause()`](#pause)
 * [`resume()`](#resume)
@@ -52,19 +52,19 @@ Once you add App Center Analytics to your app and the SDK is started, it will au
 <docgen-api>
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
 
-### enable(...)
+### setEnabled(...)
 
 ```typescript
-enable(options: { enableFlag: boolean; }) => Promise<void>
+setEnabled(options: { enable: boolean; }) => Promise<void>
 ```
 
 You can enable and disable App Center Analytics at runtime. If you disable it, the SDK won't collect any more analytics information for the app.
 
-| Param         | Type                                  |
-| ------------- | ------------------------------------- |
-| **`options`** | <code>{ enableFlag: boolean; }</code> |
+| Param         | Type                              |
+| ------------- | --------------------------------- |
+| **`options`** | <code>{ enable: boolean; }</code> |
 
-**Since:** 0.1.0
+**Since:** 0.3.0
 
 --------------------
 
