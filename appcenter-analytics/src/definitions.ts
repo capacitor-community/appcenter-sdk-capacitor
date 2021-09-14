@@ -13,11 +13,11 @@ export interface AnalyticsEvent {
 export interface AnalyticsPlugin {
   /**
    * You can enable and disable App Center Analytics at runtime. If you disable it, the SDK won't collect any more analytics information for the app.
-   * @param {enableFlag: boolean} options
+   * @param {enable: boolean} options
    * @returns {Promise<void>}
-   * @since 0.1.0
+   * @since 0.3.0
    */
-  enable(options: {enableFlag: boolean}): Promise<void>;
+  setEnabled(options: {enable: boolean}): Promise<void>;
   /**
    * Check if Analytics is enabled or not.
    * @returns {Promise<{value: boolean}>} 
