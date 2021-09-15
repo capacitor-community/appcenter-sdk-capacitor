@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.4.0
+
+* adding Android support
+
 ## 0.3.1
 
 * Update `Appcenter/Analytics` to 4.2.0

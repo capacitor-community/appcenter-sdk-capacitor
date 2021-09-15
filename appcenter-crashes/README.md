@@ -73,15 +73,15 @@ Check if Crashes is enabled or not.
 ### setEnabled(...)
 
 ```typescript
-setEnabled(options: { shouldEnable: boolean; }) => Promise<void>
+setEnabled(options: { enable: boolean; }) => Promise<void>
 ```
 
 You can enable and disable App Center Crashes at runtime. If you disable it, the SDK won't do any crash reporting for the app.
 The state is persisted in the device's storage across application launches.
 
-| Param         | Type                                    |
-| ------------- | --------------------------------------- |
-| **`options`** | <code>{ shouldEnable: boolean; }</code> |
+| Param         | Type                              |
+| ------------- | --------------------------------- |
+| **`options`** | <code>{ enable: boolean; }</code> |
 
 **Since:** 0.1.0
 
