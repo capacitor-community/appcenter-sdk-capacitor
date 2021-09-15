@@ -40,7 +40,7 @@ export class AppAnalytics {
         this.paused = false
       }
 
-      await Analytics.enable({enableFlag: e.detail.checked});
+      await Analytics.setEnabled({enable: e.detail.checked});
       this.enabled = e.detail.checked
     } catch (error) {
       this.enabled = false

@@ -23,12 +23,12 @@ export class AppCrashes {
       const { value: crashesEnabled } = await Crashes.isEnabled();
       const { value: memoryWarning } = await Crashes.hasReceivedMemoryWarningInLastSession();
       const { value: hasCrashed } = await Crashes.hasCrashedInLastSession();
-      const { value: crashReport } = await Crashes.lastSessionCrashReport();
+      // const { value: crashReport } = await Crashes.lastSessionCrashReport();
 
       this.enabled = crashesEnabled
       this.memoryWarning = memoryWarning
       this.hasCrashed = hasCrashed
-      console.debug(crashReport)
+      // console.debug(crashReport)
 
     } catch (error) {
       console.error(error)
@@ -37,7 +37,7 @@ export class AppCrashes {
 
   async toggleCrashes(e: CustomEvent<ToggleChangeEventDetail>) {
     try {
-      await Crashes.setEnabled({shouldEnable: e.detail.checked});
+      await Crashes.setEnabled({enable: e.detail.checked});
       this.enabled = e.detail.checked
     } catch (error) {
       this.enabled = false
@@ -74,11 +74,11 @@ export class AppCrashes {
           </ion-item>
           <ion-item>
             <ion-label>Memory Warning</ion-label>
-            <ion-note>{this.memoryWarning.toString()}</ion-note>
+            <ion-note slot="end">{this.memoryWarning.toString()}</ion-note>
           </ion-item>
           <ion-item>
             <ion-label>Crashed Prior</ion-label>
-            <ion-note>{this.hasCrashed.toString()}</ion-note>
+            <ion-note slot="end">{this.hasCrashed.toString()}</ion-note>
           </ion-item>
         </ion-list>
 
