@@ -1,6 +1,6 @@
 {
   "name": "@capacitor-community/appcenter-analytics",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "description": "Capacitor plugin for AppCenter Analytics",
   "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",
@@ -47,10 +47,10 @@
     "prepublishOnly": "npm run build"
   },
   "devDependencies": {
-    "@capacitor/android": "3.0.0",
-    "@capacitor/core": "3.0.0",
+    "@capacitor/android": "3.2.2",
+    "@capacitor/core": "3.2.2",
     "@capacitor/docgen": "^0.0.17",
-    "@capacitor/ios": "3.0.0",
+    "@capacitor/ios": "3.2.2",
     "@ionic/eslint-config": "^0.3.0",
     "@ionic/prettier-config": "^1.0.1",
     "@ionic/swiftlint-config": "^1.1.2",
@@ -63,7 +63,7 @@
     "typescript": "~4.0.3"
   },
   "peerDependencies": {
-    "@capacitor/core": "next"
+    "@capacitor/core": "3.2.2"
   },
   "prettier": "@ionic/prettier-config",
   "swiftlint": "@ionic/swiftlint-config",
