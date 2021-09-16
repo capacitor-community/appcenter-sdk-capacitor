@@ -12,5 +12,6 @@ CAP_PLUGIN(AppCenterPlugin, "AppCenter",
            CAP_PLUGIN_METHOD(setCustomProperties, CAPPluginReturnNone);
            CAP_PLUGIN_METHOD(getLogLevel, CAPPluginReturnPromise);
            CAP_PLUGIN_METHOD(setLogLevel, CAPPluginReturnNone);
-           CAP_PLUGIN_METHOD(networkRequestsAllowed, CAPPluginReturnPromise);
+           CAP_PLUGIN_METHOD(setNetworkRequestsAllowed, CAPPluginReturnNone);
+           CAP_PLUGIN_METHOD(isNetworkRequestsAllowed, CAPPluginReturnPromise);
 )
