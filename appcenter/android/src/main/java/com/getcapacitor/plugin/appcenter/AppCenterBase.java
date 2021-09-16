@@ -1,7 +1,6 @@
 package com.getcapacitor.plugin.appcenter;
 
 import java.util.UUID;
-import android.util.Log;
 
 import com.microsoft.appcenter.AppCenter;
 
@@ -31,7 +30,6 @@ public class AppCenterBase {
     public String getSdkVersion() {
         return AppCenter.getSdkVersion();
     }
-
 
     public void setUserId(String userId) {
         AppCenter.setUserId(userId);
