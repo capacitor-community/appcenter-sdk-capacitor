@@ -31,29 +31,25 @@ export class AppHome {
   async componentWillLoad() {
     console.debug('[homepage] componentWillLoad')
 
-    try {
-      const { value: sdkEnabled } = await AppCenter.isEnabled()
-      const { value: reqAllowed } = await AppCenter.networkRequestsAllowed()
-      const { value: installId } = await AppCenter.getInstallId()
-      const { value: sdkVersion } = await AppCenter.getSdkVersion()
-      const { value: logLevel } = await AppCenter.getLogLevel()
+    const { value: sdkEnabled } = await AppCenter.isEnabled()
+    // const { value: reqAllowed } = await AppCenter.networkRequestsAllowed()
+    const { value: installId } = await AppCenter.getInstallId()
+    const { value: sdkVersion } = await AppCenter.getSdkVersion()
+    const { value: logLevel } = await AppCenter.getLogLevel()
 
-      this.installId = installId
-      this.sdkVersion = sdkVersion
-      this.enabled = sdkEnabled
-      this.logLevel = logLevel
-      this.networkReqAllowed = reqAllowed
+    this.installId = installId
+    this.sdkVersion = sdkVersion
+    this.enabled = sdkEnabled
+    this.logLevel = logLevel
+    // this.networkReqAllowed = reqAllowed
 
-      console.debug(logLevel)
+    console.debug(logLevel)
 
-      // this.customProperties = new CustomProperties()
-      // this.customProperties.set('color', 'blue').set('score', 10).set('result', true).set("timestamp", new Date())
-      // console.debug(this.customProperties)
+    // this.customProperties = new CustomProperties()
+    // this.customProperties.set('color', 'blue').set('score', 10).set('result', true).set("timestamp", new Date())
+    // console.debug(this.customProperties)
 
-      // AppCenter.setCustomProperties({properties: this.customProperties});
-    } catch (error) {
-      console.error(error)
-    }
+    // AppCenter.setCustomProperties({properties: this.customProperties});    
   }
 
   componentDidLoad() {

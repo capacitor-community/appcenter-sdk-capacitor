@@ -150,14 +150,14 @@ export interface CrashesPlugin {
    /**
     * You can enable and disable App Center Crashes at runtime. If you disable it, the SDK won't do any crash reporting for the app.
     * The state is persisted in the device's storage across application launches.
-    * @param {shouldEnable: boolean} options
+    * @param {enable: boolean} options
     * @since 0.1.0
     * @example
     * import Crashes from '@capacitor-community/appcenter-crashes';
     * 
-    * await Crashes.enable({shouldEnable: true});
+    * await Crashes.enable({enable: true});
     */
-   setEnabled(options: {shouldEnable: boolean}): Promise<void>;
+   setEnabled(options: {enable: boolean}): Promise<void>;
 
    /**
     * Generate a test crash for easy testing of the SDK. This API can only be used in test/beta apps and won't do anything in production apps.
