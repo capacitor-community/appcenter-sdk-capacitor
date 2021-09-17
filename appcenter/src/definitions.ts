@@ -168,16 +168,27 @@ export interface AppCenterPlugin {
   setLogLevel(options: {logLevel: LogLevel}): Promise<void>;
 
   /**
-   * Check whether sending data in the App Center SDK is allowed or not. Also set whether SDK can send network requests.
-   * @param {{shouldAllow: boolean}} options
-   * @returns {Promise<{value: boolean}>}
-   * @since 0.4.0
+   * Set whether SDK can send network requests.
+   * @param {{isAllowed: boolean}} options
+   * @returns {Promise<void>}
+   * @since 0.6.0
    * @example
-   * import AppCenterfrom '@capacitor-community/appcenter';
+   * import AppCenter from '@capacitor-community/appcenter';
    * 
-   * const {value: allowed} = await AppCenter.networkRequestsAllowed({shouldAllow: true})
+   * await AppCenter.setNetworkRequestsAllowed({isAllowed: true})
    */
-  networkRequestsAllowed(options?: {shouldAllow: boolean}): Promise<{value: boolean}>
+  setNetworkRequestsAllowed(options?: {isAllowed: boolean}): Promise<void>;
+
+  /**
+   * Check whether sending data in the App Center SDK is allowed or not.
+   * @returns {Promise<{value: boolean}>}
+   * @since 0.6.0
+   * @example
+   * import AppCenter from '@capacitor-community/appcenter';
+
+   * const { value: networkRequestsAllowed } = await AppCenter.isNetworkRequestsAllowed();
+   */
+  isNetworkRequestsAllowed(): Promise<{value: boolean}>;
 
   // move to confg setting in appcenter-analytics
   // setMaxStorageSize

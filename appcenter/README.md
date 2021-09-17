@@ -75,7 +75,8 @@ const appCenterInfo = async () => {
 * [`setCustomProperties(...)`](#setcustomproperties)
 * [`getLogLevel()`](#getloglevel)
 * [`setLogLevel(...)`](#setloglevel)
-* [`networkRequestsAllowed(...)`](#networkrequestsallowed)
+* [`setNetworkRequestsAllowed(...)`](#setnetworkrequestsallowed)
+* [`isNetworkRequestsAllowed()`](#isnetworkrequestsallowed)
 * [Enums](#enums)
 
 </docgen-index>
@@ -222,21 +223,36 @@ Note: `setLogLevel` API can't increase logging for app startup code, before Java
 --------------------
 
 
-### networkRequestsAllowed(...)
+### setNetworkRequestsAllowed(...)
 
 ```typescript
-networkRequestsAllowed(options?: { shouldAllow: boolean; } | undefined) => any
+setNetworkRequestsAllowed(options?: { isAllowed: boolean; } | undefined) => any
 ```
 
-Check whether sending data in the App Center SDK is allowed or not. Also set whether SDK can send network requests.
+Set whether SDK can send network requests.
 
-| Param         | Type                                   |
-| ------------- | -------------------------------------- |
-| **`options`** | <code>{ shouldAllow: boolean; }</code> |
+| Param         | Type                                 |
+| ------------- | ------------------------------------ |
+| **`options`** | <code>{ isAllowed: boolean; }</code> |
 
 **Returns:** <code>any</code>
 
-**Since:** 0.4.0
+**Since:** 0.6.0
+
+--------------------
+
+
+### isNetworkRequestsAllowed()
+
+```typescript
+isNetworkRequestsAllowed() => any
+```
+
+Check whether sending data in the App Center SDK is allowed or not.
+
+**Returns:** <code>any</code>
+
+**Since:** 0.6.0
 
 --------------------
 

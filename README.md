@@ -63,7 +63,7 @@ Example:
 
 ### Android
 
-Create a new file with the name appcenter-config.json in android/app/src/main/assets/ with the following content and replace {APP_SECRET_VALUE} with your app secret value.
+Create a new file with the name `appcenter-config.json` in `android/app/src/main/assets/` with the following content and replace {APP_SECRET_VALUE} with your app secret value.
 
 ```json
 {

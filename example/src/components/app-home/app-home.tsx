@@ -32,7 +32,7 @@ export class AppHome {
     console.debug('[homepage] componentWillLoad')
 
     const { value: sdkEnabled } = await AppCenter.isEnabled()
-    // const { value: reqAllowed } = await AppCenter.networkRequestsAllowed()
+    const { value: reqAllowed } = await AppCenter.isNetworkRequestsAllowed()
     const { value: installId } = await AppCenter.getInstallId()
     const { value: sdkVersion } = await AppCenter.getSdkVersion()
     const { value: logLevel } = await AppCenter.getLogLevel()
@@ -41,7 +41,7 @@ export class AppHome {
     this.sdkVersion = sdkVersion
     this.enabled = sdkEnabled
     this.logLevel = logLevel
-    // this.networkReqAllowed = reqAllowed
+    this.networkReqAllowed = reqAllowed
 
     console.debug(logLevel)
 
@@ -96,7 +96,7 @@ export class AppHome {
   async toggleNetwork(e: CustomEvent) {
     console.debug("[homepage] toggleNetwork");
     try {
-      await AppCenter.networkRequestsAllowed({shouldAllow: e.detail.checked});
+      await AppCenter.setNetworkRequestsAllowed({isAllowed: e.detail.checked});
       this.networkReqAllowed = e.detail.checked
     } catch (error) {
       this.enabled = false

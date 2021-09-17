@@ -76,8 +76,16 @@ public class AppCenterPlugin extends Plugin {
         call.unimplemented("Not yet implemented on Android.");
     }
 
+    @PluginMethod(returnType = PluginMethod.RETURN_NONE)
+    public void setNetworkRequestsAllowed(PluginCall call) {
+        implementation.setNetworkRequestsAllowed(call.getBoolean("isAllowed", true));
+        call.resolve();
+    }
+
     @PluginMethod
-    public void networkRequestsAllowed(PluginCall call) {
-        call.unimplemented("Not yet implemented on Android.");
+    public void isNetworkRequestsAllowed(PluginCall call) {
+        JSObject ret = new JSObject();
+        ret.put("value", implementation.isNetworkRequestsAllowed());
+        call.resolve(ret);
     }
 }
