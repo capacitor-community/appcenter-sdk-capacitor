@@ -1,8 +1,15 @@
 package com.getcapacitor.plugin.appcenter;
 
 import java.util.UUID;
+import java.util.Iterator;
+
+import org.json.JSONObject;
+import java.util.Date;
+
+import com.getcapacitor.JSObject;
 
 import com.microsoft.appcenter.AppCenter;
+import com.microsoft.appcenter.CustomProperties;
 
 public class AppCenterBase {
 
@@ -43,7 +50,43 @@ public class AppCenterBase {
         return AppCenter.isEnabled().get();
     }
 
-    // public void setCustomProperties() {
+    public void setCustomProperties(JSObject properties) {
+        CustomProperties customProps = new CustomProperties();
+        Iterator<String> keysIter = properties.keys();
 
-    // }
+        while (keysIter.hasNext()) {
+            String key = keysIter.next();
+            // JSONObject valueObject = (JSONObject) properties.getJSObject(key);
+            JSObject valueObject = properties.getJSObject(key);
+
+            if (valueObject != null) {
+                String type = valueObject.getString("type");
+                switch (type) {
+                    case "clear":
+                        customProps.clear(key);
+                        break;
+
+                    case "string":
+                        customProps.set(key, valueObject.getString("value"));
+                        break;
+
+                    case "number":
+                        customProps.set(key, Double.parseDouble(valueObject.getString("value")));
+                        break;
+
+                    case "boolean":
+                        customProps.set(key, valueObject.getBool("value"));
+                        break;
+
+                    case "date-time":
+                        customProps.set(key, new Date((long) Double.parseDouble(valueObject.getString("value"))));
+                        break;
+                }
+
+            }
+        }
+
+
+        AppCenter.setCustomProperties(customProps);
+    }
 }

@@ -27,8 +27,8 @@ public class AppCenterPlugin: CAPPlugin {
         call.resolve(["value": implementation.isEnabled()])
     }
     
-    @objc func enable(_ call: CAPPluginCall) {
-        implementation.enable(call.getBool("shouldEnable") ?? false)
+    @objc func setEnabled(_ call: CAPPluginCall) {
+        implementation.enable(call.getBool("enabled") ?? false)
         call.resolve()
     }
     

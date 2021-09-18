@@ -3,13 +3,13 @@ import { WebPlugin } from '@capacitor/core';
 import { AppCenterPlugin, LogLevel } from './definitions';
 
 export class AppCenterWeb extends WebPlugin implements AppCenterPlugin {
+  setEnabled(): Promise<void> {
+    throw this.unimplemented('Not supported on web.');
+  }
   setNetworkRequestsAllowed(): Promise<void> {
     throw this.unimplemented('Not supported on web.');
   }
   isNetworkRequestsAllowed(): Promise<{ value: boolean; }> {
-    throw this.unimplemented('Not supported on web.');
-  }
-  setEnable(): Promise<void> {
     throw this.unimplemented('Not supported on web.');
   }
   setLogLevel(): Promise<void> {
@@ -19,9 +19,6 @@ export class AppCenterWeb extends WebPlugin implements AppCenterPlugin {
     throw this.unimplemented('Not supported on web.');
   }
   setCustomProperties(): Promise<void> {
-    throw this.unimplemented('Not supported on web.');
-  }
-  enable(): Promise<void> {
     throw this.unimplemented('Not supported on web.');
   }
   isEnabled(): Promise<{ value: boolean; }> {

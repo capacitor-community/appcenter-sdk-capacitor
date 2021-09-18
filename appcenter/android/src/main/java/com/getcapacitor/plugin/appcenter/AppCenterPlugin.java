@@ -48,8 +48,8 @@ public class AppCenterPlugin extends Plugin {
     }
 
     @PluginMethod(returnType = PluginMethod.RETURN_NONE)
-    public void setEnable(PluginCall call) {
-        implementation.enable(call.getBoolean("shouldEnable", false));
+    public void setEnabled(PluginCall call) {
+        implementation.enable(call.getBoolean("enabled", false));
         call.resolve();
     }
 
@@ -71,9 +71,10 @@ public class AppCenterPlugin extends Plugin {
         call.resolve();
     }
 
-    @PluginMethod
+    @PluginMethod(returnType = PluginMethod.RETURN_NONE)
     public void setCustomProperties(PluginCall call) {
-        call.unimplemented("Not yet implemented on Android.");
+        implementation.setCustomProperties(call.getObject("properties", new JSObject()));
+        call.resolve();
     }
 
     @PluginMethod(returnType = PluginMethod.RETURN_NONE)
