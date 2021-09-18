@@ -95,7 +95,6 @@ export interface AppCenterPlugin {
    * await AppCenter.setUserId({userId: 'your-user-id'})
    */
   setUserId(options: {userId: string}): Promise<void>;
-
   /**
    * Get the version of the native App Center SDK
    * @returns {Promise<{value: string}>} sdk version
@@ -106,7 +105,6 @@ export interface AppCenterPlugin {
    * const { value: sdkVersion } = await AppCenter.getSdkVersion();
    */
   getSdkVersion(): Promise<{value: string}>;
-
   /**
    * Check if App Center is enabled or not as a whole.
    * @returns {Promise<{value: boolean}>}
@@ -117,18 +115,16 @@ export interface AppCenterPlugin {
    * const { value: sdkEnabled } = await AppCenter.isEnabled();
    */
   isEnabled(): Promise<{value: boolean}>;
-
   /**
    * Toggle all App Center services at runtime. When disabled, the SDK won't forward any information to App Center.
-   * @param {{shouldEnable: boolean}} options
-   * @since 0.4.0
+   * @param {{enabled: boolean}} options
+   * @since 0.7.0
    * @example
    * import AppCenter from '@capacitor-community/appcenter';
 
-   * await AppCenter.setEnable({shouldEnable: true});
+   * await AppCenter.setEnable({enabled: true});
    */
-  setEnable(options: {shouldEnable: boolean}): Promise<void>;
-
+  setEnabled(options: {enabled: boolean}): Promise<void>;
   /**
    * App Center allows you to define custom properties as key value pairs in your app. You may use custom properties for various purposes. 
    * For instance, you can use custom properties to segment your users, and then send push notifications to a specific audience.
@@ -142,7 +138,6 @@ export interface AppCenterPlugin {
    * AppCenter.setCustomProperties(properties);
    */
   setCustomProperties(options: {properties: CustomProperties}): Promise<void>
-
   /**
    * Returns currently set LogLevel.
    * @returns {Promise<{value: LogLevel}>} AppCenter LogLevel
@@ -153,7 +148,6 @@ export interface AppCenterPlugin {
    * const {value: logLevel} = await AppCenter.getLogLevel()
    */
   getLogLevel(): Promise<{value: LogLevel}>;
-
   /**
    * You can control the amount of log messages that show up from App Center in the console. Log messages show in the console on iOS and LogCat on Android.
    * By default, it's set to Assert for the App Store environment and Warning otherwise. To have as many log messages as possible, use Verbose. 
@@ -166,7 +160,6 @@ export interface AppCenterPlugin {
    * await AppCenter.setLogLevel({logLevel: LogLevel.DEBUG})
    */
   setLogLevel(options: {logLevel: LogLevel}): Promise<void>;
-
   /**
    * Set whether SDK can send network requests.
    * @param {{isAllowed: boolean}} options
@@ -178,7 +171,6 @@ export interface AppCenterPlugin {
    * await AppCenter.setNetworkRequestsAllowed({isAllowed: true})
    */
   setNetworkRequestsAllowed(options?: {isAllowed: boolean}): Promise<void>;
-
   /**
    * Check whether sending data in the App Center SDK is allowed or not.
    * @returns {Promise<{value: boolean}>}
