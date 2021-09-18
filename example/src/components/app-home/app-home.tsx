@@ -85,7 +85,7 @@ export class AppHome {
   async toggleSdk(e: CustomEvent) {
     console.debug("[homepage] toggleSdk");
     try {
-      await AppCenter.setEnable({shouldEnable: e.detail.checked});
+      await AppCenter.setEnabled({enabled: e.detail.checked});
       this.enabled = e.detail.checked
     } catch (error) {
       this.enabled = false
@@ -111,6 +111,13 @@ export class AppHome {
     } catch (error) {
       console.error(error);
     }
+
+    // also test custom properties
+    this.customProperties = new CustomProperties()
+    this.customProperties.set('color', 'blue').set('score', 10).set('result', true).set("timestamp", new Date())
+    console.debug(this.customProperties)
+
+    AppCenter.setCustomProperties({properties: this.customProperties});  
   }
   
   render() {
