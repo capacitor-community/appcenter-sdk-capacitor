@@ -71,7 +71,7 @@ const appCenterInfo = async () => {
 * [`setUserId(...)`](#setuserid)
 * [`getSdkVersion()`](#getsdkversion)
 * [`isEnabled()`](#isenabled)
-* [`setEnable(...)`](#setenable)
+* [`setEnabled(...)`](#setenabled)
 * [`setCustomProperties(...)`](#setcustomproperties)
 * [`getLogLevel()`](#getloglevel)
 * [`setLogLevel(...)`](#setloglevel)
@@ -148,21 +148,21 @@ Check if App Center is enabled or not as a whole.
 --------------------
 
 
-### setEnable(...)
+### setEnabled(...)
 
 ```typescript
-setEnable(options: { shouldEnable: boolean; }) => any
+setEnabled(options: { enabled: boolean; }) => any
 ```
 
 Toggle all App Center services at runtime. When disabled, the SDK won't forward any information to App Center.
 
-| Param         | Type                                    |
-| ------------- | --------------------------------------- |
-| **`options`** | <code>{ shouldEnable: boolean; }</code> |
+| Param         | Type                               |
+| ------------- | ---------------------------------- |
+| **`options`** | <code>{ enabled: boolean; }</code> |
 
 **Returns:** <code>any</code>
 
-**Since:** 0.4.0
+**Since:** 0.7.0
 
 --------------------
 
