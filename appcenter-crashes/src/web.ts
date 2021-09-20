@@ -1,6 +1,6 @@
 import { WebPlugin } from '@capacitor/core';
 
-import { CrashesPlugin, ErrorReport } from './definitions';
+import type { CrashesPlugin, ErrorReport } from './definitions';
 
 export class CrashesWeb
   extends WebPlugin

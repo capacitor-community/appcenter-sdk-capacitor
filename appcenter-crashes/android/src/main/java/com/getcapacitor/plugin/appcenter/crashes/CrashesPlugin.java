@@ -10,10 +10,12 @@ import com.microsoft.appcenter.AppCenter;
 import com.microsoft.appcenter.crashes.Crashes;
 import com.microsoft.appcenter.reactnative.shared.AppCenterReactNativeShared;
 
+import java.util.Map;
+
 @CapacitorPlugin(name = "Crashes")
 public class CrashesPlugin extends Plugin {
 
-    private CrashesBase implementation = new CrashesBase();
+    private final CrashesBase implementation = new CrashesBase();
 
     @Override
     public void load() {
@@ -23,7 +25,11 @@ public class CrashesPlugin extends Plugin {
 
     @PluginMethod(returnType = PluginMethod.RETURN_NONE)
     public void setEnable(PluginCall call) {
-        implementation.enable(call.getBoolean("enable", false));
+        Boolean enable = call.getBoolean("enable", false);
+        if (enable == null) {
+            enable = false;
+        }
+        implementation.enable(enable);
         call.resolve();
     }
 
@@ -56,7 +62,14 @@ public class CrashesPlugin extends Plugin {
 
     @PluginMethod
     public void lastSessionCrashReport(PluginCall call) {
-        call.unimplemented("Not yet implemented on Android.");
+        Map<String, Object> lastSessionCrashReport = implementation.lastSessionCrashReport();
+        if (lastSessionCrashReport == null) {
+            call.reject("No crash report available");
+            return;
+        }
+        JSObject ret = new JSObject();
+        ret.put("value", lastSessionCrashReport);
+        call.resolve(ret);
     }
     
 }

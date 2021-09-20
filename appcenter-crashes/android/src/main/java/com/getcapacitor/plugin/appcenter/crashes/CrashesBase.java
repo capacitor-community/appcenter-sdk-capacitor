@@ -3,6 +3,8 @@ package com.getcapacitor.plugin.appcenter.crashes;
 import com.microsoft.appcenter.AppCenter;
 import com.microsoft.appcenter.crashes.Crashes;
 
+import java.util.Map;
+
 public class CrashesBase {
 
   public void enable(boolean enabled) {
@@ -31,8 +33,7 @@ public class CrashesBase {
     return Crashes.hasCrashedInLastSession().get();
   }
 
-  // public void lastSessionCrashReport() {
-  //   return Crashes.lastSessionCrashReport().get()
-  // }
-    
+  public Map<String, Object> lastSessionCrashReport() {
+    return CrashesUtil.convertReportToJs(Crashes.getLastSessionCrashReport().get());
+  }
 }
