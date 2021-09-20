@@ -5,6 +5,7 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
+import { ErrorReportItem } from "./components/app-crashes/error-report-items-modal";
 export namespace Components {
     interface AppAnalytics {
     }
@@ -13,6 +14,9 @@ export namespace Components {
     interface AppHome {
     }
     interface AppRoot {
+    }
+    interface ErrorReportItemsModal {
+        "items": ErrorReportItem[];
     }
 }
 declare global {
@@ -40,11 +44,18 @@ declare global {
         prototype: HTMLAppRootElement;
         new (): HTMLAppRootElement;
     };
+    interface HTMLErrorReportItemsModalElement extends Components.ErrorReportItemsModal, HTMLStencilElement {
+    }
+    var HTMLErrorReportItemsModalElement: {
+        prototype: HTMLErrorReportItemsModalElement;
+        new (): HTMLErrorReportItemsModalElement;
+    };
     interface HTMLElementTagNameMap {
         "app-analytics": HTMLAppAnalyticsElement;
         "app-crashes": HTMLAppCrashesElement;
         "app-home": HTMLAppHomeElement;
         "app-root": HTMLAppRootElement;
+        "error-report-items-modal": HTMLErrorReportItemsModalElement;
     }
 }
 declare namespace LocalJSX {
@@ -56,11 +67,15 @@ declare namespace LocalJSX {
     }
     interface AppRoot {
     }
+    interface ErrorReportItemsModal {
+        "items"?: ErrorReportItem[];
+    }
     interface IntrinsicElements {
         "app-analytics": AppAnalytics;
         "app-crashes": AppCrashes;
         "app-home": AppHome;
         "app-root": AppRoot;
+        "error-report-items-modal": ErrorReportItemsModal;
     }
 }
 export { LocalJSX as JSX };
@@ -71,6 +86,7 @@ declare module "@stencil/core" {
             "app-crashes": LocalJSX.AppCrashes & JSXBase.HTMLAttributes<HTMLAppCrashesElement>;
             "app-home": LocalJSX.AppHome & JSXBase.HTMLAttributes<HTMLAppHomeElement>;
             "app-root": LocalJSX.AppRoot & JSXBase.HTMLAttributes<HTMLAppRootElement>;
+            "error-report-items-modal": LocalJSX.ErrorReportItemsModal & JSXBase.HTMLAttributes<HTMLErrorReportItemsModalElement>;
         }
     }
 }

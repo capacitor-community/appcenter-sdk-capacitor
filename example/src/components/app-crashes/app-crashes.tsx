@@ -1,6 +1,8 @@
 import { Component, State, h } from '@stencil/core';
-import { ToggleChangeEventDetail } from '@ionic/core';
+import { modalController, ToggleChangeEventDetail } from '@ionic/core';
 import Crashes, { ErrorReport } from '@capacitor-community/appcenter-crashes';
+
+import { ErrorReportItem } from './error-report-items-modal';
 
 @Component({
   tag: 'app-crashes',
@@ -23,13 +25,12 @@ export class AppCrashes {
       const { value: crashesEnabled } = await Crashes.isEnabled();
       const { value: memoryWarning } = await Crashes.hasReceivedMemoryWarningInLastSession();
       const { value: hasCrashed } = await Crashes.hasCrashedInLastSession();
-      // const { value: crashReport } = await Crashes.lastSessionCrashReport();
+      const { value: crashReport } = await Crashes.lastSessionCrashReport();
 
       this.enabled = crashesEnabled
       this.memoryWarning = memoryWarning
       this.hasCrashed = hasCrashed
-      // console.debug(crashReport)
-
+      this.crashReport = crashReport;
     } catch (error) {
       console.error(error)
     }
@@ -49,8 +50,16 @@ export class AppCrashes {
     try {
       await Crashes.generateTestCrash()
     } catch (error) {
-      
+
     }
+  }
+
+  async presentErrorReportItemModal(items: ErrorReportItem[]) {
+    const modal = await modalController.create({
+      component: 'error-report-items-modal',
+      componentProps: { items },
+    });
+    await modal.present();
   }
 
   render() {
@@ -91,13 +100,31 @@ export class AppCrashes {
           <ion-list-header lines="full">
             <ion-label>Crash Report</ion-label>
           </ion-list-header>
-
           { this.crashReport ? Object.keys(this.crashReport).map(key => {
-            <ion-item>
-              <ion-label>{key}</ion-label>
-            </ion-item>
+            const value = this.crashReport[key];
+            let renderedValue;
+            let errorReportItems: ErrorReportItem[];
+
+            const valueIsObject = value && typeof value === 'object' && value.length === undefined;
+            if (valueIsObject) {
+              const keys = Object.keys(value);
+              renderedValue = `${keys.length} properties`;
+              errorReportItems = keys.map(valueKey => ({ label: valueKey, value: value[valueKey] }));
+            } else {
+              renderedValue = value;
+              errorReportItems = [{ label: key, value }];
+            }
+
+            return (
+              <ion-item detail onClick={() => this.presentErrorReportItemModal(errorReportItems)}>
+                <ion-label>
+                  <h3>{key}</h3>
+                  <p>{renderedValue}</p>
+                </ion-label>
+              </ion-item>
+            );
           }) : null}
-          
+
         </ion-list>
 
       </ion-content>,
