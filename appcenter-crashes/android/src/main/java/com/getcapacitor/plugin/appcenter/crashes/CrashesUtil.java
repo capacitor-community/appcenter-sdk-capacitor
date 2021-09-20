@@ -2,13 +2,12 @@ package com.getcapacitor.plugin.appcenter.crashes;
 
 import android.util.Log;
 
+import com.getcapacitor.JSObject;
 import com.microsoft.appcenter.crashes.model.ErrorReport;
 import com.microsoft.appcenter.ingestion.models.Device;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 /**
  * Utility class containing helpers for converting App Center objects.
@@ -33,12 +32,11 @@ public class CrashesUtil {
      * @param device App Center Device
      * @return Device Dictionary
      */
-    public static Map<String, Object> serializeDeviceToDictionary(Device device) {
-        Map<String, Object> dict = new HashMap<>();
-
+    public static JSObject serializeDeviceToJs(Device device) {
         if (device == null) {
-            return dict;
+            return null;
         }
+        JSObject dict = new JSObject();
 
         dict.put("sdkName", device.getSdkName());
         dict.put("sdkVersion", device.getSdkVersion());
@@ -75,12 +73,12 @@ public class CrashesUtil {
      * @param report App Center ErrorReport
      * @return JS optional Dictionary
      */
-    public static Map<String, Object> convertReportToJs(ErrorReport report) {
+    public static JSObject convertReportToJs(ErrorReport report) {
         if (report == null) {
             return null;
         }
 
-        Map<String, Object> dict = new HashMap<>();
+        JSObject dict = new JSObject();
 
         dict.put("id", report.getId());
 
@@ -104,7 +102,7 @@ public class CrashesUtil {
             dict.put("appErrorTime", appErrorTime);
         }
 
-        dict.put("device", serializeDeviceToDictionary(report.getDevice()));
+        dict.put("device", serializeDeviceToJs(report.getDevice()));
 
         return dict;
     }
@@ -114,8 +112,8 @@ public class CrashesUtil {
      * @param reports App Center ErrorReport list
      * @return List of maps
      */
-    public static List<Map<String, Object>> convertReportsToJs(List<ErrorReport> reports) {
-        List<Map<String ,Object>> jsReadyReports = new ArrayList<>();
+    public static List<JSObject> convertReportsToJs(List<ErrorReport> reports) {
+        List<JSObject> jsReadyReports = new ArrayList<>();
 
         if (reports == null) {
             return jsReadyReports;
@@ -123,7 +121,7 @@ public class CrashesUtil {
 
         for(int i = 0; i < reports.size(); i++) {
             ErrorReport report = reports.get(i);
-            Map<String, Object> convertedReport = convertReportToJs(report);
+            JSObject convertedReport = convertReportToJs(report);
             if (convertedReport != null) {
                 jsReadyReports.add(convertedReport);
             }

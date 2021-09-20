@@ -6,11 +6,7 @@ import com.getcapacitor.PluginCall;
 import com.getcapacitor.PluginMethod;
 import com.getcapacitor.annotation.CapacitorPlugin;
 
-import com.microsoft.appcenter.AppCenter;
-import com.microsoft.appcenter.crashes.Crashes;
 import com.microsoft.appcenter.reactnative.shared.AppCenterReactNativeShared;
-
-import java.util.Map;
 
 @CapacitorPlugin(name = "Crashes")
 public class CrashesPlugin extends Plugin {
@@ -62,7 +58,7 @@ public class CrashesPlugin extends Plugin {
 
     @PluginMethod
     public void lastSessionCrashReport(PluginCall call) {
-        Map<String, Object> lastSessionCrashReport = implementation.lastSessionCrashReport();
+        JSObject lastSessionCrashReport = implementation.lastSessionCrashReport();
         if (lastSessionCrashReport == null) {
             call.reject("No crash report available");
             return;
