@@ -23,6 +23,16 @@ public class CrashesPlugin: CAPPlugin {
             implementation.start()
         }
     }
+    
+    @objc func trackError(_ call: CAPPluginCall) {
+        // The trackError functionality is missing in the AppCenter SDK for iOS
+        // See: https://github.com/microsoft/appcenter/issues/192
+        //
+        // It would maybe be possible to upload straight to AppCenter with a REST api like here
+        // https://github.com/microsoft/appcenter/issues/192#issuecomment-698187673
+        // https://docs.microsoft.com/en-us/appcenter/diagnostics/upload-crashes#upload-an-error-report
+        call.unimplemented("Not yet supported on iOS");
+    }
 
     @objc func setEnabled(_ call: CAPPluginCall) {
         implementation.enable(call.getBool("shouldEnable") ?? false)
