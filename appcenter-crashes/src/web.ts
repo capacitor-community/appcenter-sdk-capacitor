@@ -3,7 +3,7 @@ import { WebPlugin } from '@capacitor/core';
 import type { CrashesPlugin, ErrorReport } from './definitions';
 
 export class CrashesWeb extends WebPlugin implements CrashesPlugin {
-  trackError(): Promise<{ errorReportId: string }> {
+  trackError(): Promise<{ value: string }> {
     throw this.unimplemented('Not supported on web.');
   }
   lastSessionCrashReport(): Promise<{ value: ErrorReport }> {

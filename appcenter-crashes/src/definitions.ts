@@ -244,13 +244,13 @@ export interface CrashesPlugin {
      * const attachments = [
      *  ErrorAttachmentLog.attachmentWithText("some text", "testfile.txt"),
      * ]
-     * const { errorReportId } = await Crashes.trackError({
+     * const { value } = await Crashes.trackError({
      *  error,
      *  properties: { testProp: 'testVal' },
      *  attachments,
      * });
      */
-    trackError(errorModel: TrackableErrorModel): Promise<{ errorReportId: string }>;
+    trackError(errorModel: TrackableErrorModel): Promise<{ value: string }>;
 }
 
 // convert

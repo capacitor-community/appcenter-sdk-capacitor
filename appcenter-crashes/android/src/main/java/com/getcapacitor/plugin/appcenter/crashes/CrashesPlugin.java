@@ -35,7 +35,7 @@ public class CrashesPlugin extends Plugin {
         }
 
         JSObject ret = new JSObject();
-        ret.put("errorReportId", errorReportId);
+        ret.put("value", errorReportId);
         call.resolve(ret);
     }
 
