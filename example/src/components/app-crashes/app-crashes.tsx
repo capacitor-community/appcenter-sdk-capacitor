@@ -54,7 +54,7 @@ export class AppCrashes {
     }
   }
 
-  async presentErrorReportItemModal(items: ErrorReportItem[]) {
+  async presentErrorReportItemsModal(items: ErrorReportItem[]) {
     const modal = await modalController.create({
       component: 'error-report-items-modal',
       componentProps: { items },
@@ -103,20 +103,23 @@ export class AppCrashes {
           { this.crashReport ? Object.keys(this.crashReport).map(key => {
             const value = this.crashReport[key];
             let renderedValue;
-            let errorReportItems: ErrorReportItem[];
 
+            // Extract items we will display in the modal when the item is clicked
+            let errorReportModalItems: ErrorReportItem[];
+            // If the value is an object, we need to add all key/value items to the errorReportModalItems
             const valueIsObject = value && typeof value === 'object' && value.length === undefined;
             if (valueIsObject) {
               const keys = Object.keys(value);
               renderedValue = `${keys.length} properties`;
-              errorReportItems = keys.map(valueKey => ({ label: valueKey, value: value[valueKey] }));
+              errorReportModalItems = keys.map(valueKey => ({ label: valueKey, value: value[valueKey] }));
             } else {
+              // If the value is not an object, add the value as is to the errorReportModalItems
               renderedValue = value;
-              errorReportItems = [{ label: key, value }];
+              errorReportModalItems = [{ label: key, value }];
             }
 
             return (
-              <ion-item detail onClick={() => this.presentErrorReportItemModal(errorReportItems)}>
+              <ion-item detail onClick={() => this.presentErrorReportItemsModal(errorReportModalItems)}>
                 <ion-label>
                   <h3>{key}</h3>
                   <p>{renderedValue}</p>
