@@ -135,7 +135,25 @@ export class ErrorAttachmentLog {
   }
 }
 
-export class ExceptionModel {
+export interface ExceptionModelType {
+    /**
+     * Name of the wrapper SDK. e.g 'appcenter.capacitor'
+     */
+    wrapperSdkName: string;
+    /**
+     * Exception type, e.g 'TypeException'
+     */
+    type: string;
+    /**
+     * Exception message
+     */
+    message: string;
+    /**
+     * Exception stacktrace
+     */
+    stackTrace?: string;
+}
+export class ExceptionModel implements ExceptionModelType {
     wrapperSdkName = 'appcenter.capacitor';
     type: string;
     message: string;
@@ -161,7 +179,7 @@ export class ExceptionModel {
 }
 
 export interface TrackableErrorModel {
-    error: ExceptionModel;
+    error: ExceptionModelType;
     properties?: { [name: string]: string };
     attachments?: ErrorAttachmentLog[];
 }
