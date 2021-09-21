@@ -12,7 +12,7 @@ import com.microsoft.appcenter.reactnative.shared.AppCenterReactNativeShared;
 @CapacitorPlugin(name = "Crashes")
 public class CrashesPlugin extends Plugin {
 
-    private CrashesBase implementation = new CrashesBase();
+    private final CrashesBase implementation = new CrashesBase();
 
     @Override
     public void load() {
