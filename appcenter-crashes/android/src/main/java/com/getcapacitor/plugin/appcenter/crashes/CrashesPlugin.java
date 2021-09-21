@@ -1,13 +1,12 @@
 package com.getcapacitor.plugin.appcenter.crashes;
 
+import com.getcapacitor.JSArray;
 import com.getcapacitor.JSObject;
 import com.getcapacitor.Plugin;
 import com.getcapacitor.PluginCall;
 import com.getcapacitor.PluginMethod;
 import com.getcapacitor.annotation.CapacitorPlugin;
 
-import com.microsoft.appcenter.AppCenter;
-import com.microsoft.appcenter.crashes.Crashes;
 import com.microsoft.appcenter.reactnative.shared.AppCenterReactNativeShared;
 
 @CapacitorPlugin(name = "Crashes")
@@ -19,6 +18,25 @@ public class CrashesPlugin extends Plugin {
     public void load() {
         AppCenterReactNativeShared.configureAppCenter(this.getActivity().getApplication());
         implementation.start();
+    }
+
+    @PluginMethod
+    public void trackError(PluginCall call) {
+        JSObject error = call.getObject("error");
+        JSObject properties = call.getObject("properties");
+        JSArray attachments = call.getArray("attachments");
+
+        String errorReportId;
+        try {
+            errorReportId = implementation.trackError(error, properties, attachments);
+        } catch (java.lang.Exception e) {
+            call.reject(e.getMessage());
+            return;
+        }
+
+        JSObject ret = new JSObject();
+        ret.put("errorReportId", errorReportId);
+        call.resolve(ret);
     }
 
     @PluginMethod(returnType = PluginMethod.RETURN_NONE)
