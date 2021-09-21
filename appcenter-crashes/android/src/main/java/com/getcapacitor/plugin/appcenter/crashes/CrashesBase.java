@@ -4,8 +4,6 @@ import com.getcapacitor.JSObject;
 import com.microsoft.appcenter.AppCenter;
 import com.microsoft.appcenter.crashes.Crashes;
 
-import java.util.Map;
-
 public class CrashesBase {
 
   public void enable(boolean enabled) {
