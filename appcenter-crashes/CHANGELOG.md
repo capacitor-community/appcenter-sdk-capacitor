@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.5.0
+
+### Features
+
+* **android**: Add `Crashes.lastSessionCrashReport()` API to get a report for the crash that happened in your last session in your app.
+
 ## 0.4.0
 
 * adding Android support
