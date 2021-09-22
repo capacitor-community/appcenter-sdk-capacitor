@@ -13,6 +13,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "johnborges",
+      "name": "John Borges",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1888122?v=4",
+      "profile": "http://johnborg.es",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
