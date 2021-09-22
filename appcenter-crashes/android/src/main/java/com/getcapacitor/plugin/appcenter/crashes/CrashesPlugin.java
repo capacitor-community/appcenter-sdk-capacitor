@@ -30,7 +30,7 @@ public class CrashesPlugin extends Plugin {
         try {
             errorReportId = implementation.trackError(error, properties, attachments);
         } catch (java.lang.Exception e) {
-            call.reject(e.getMessage());
+            call.reject("Exception while tracking error: " + e.getMessage());
             return;
         }
 
@@ -41,7 +41,11 @@ public class CrashesPlugin extends Plugin {
 
     @PluginMethod(returnType = PluginMethod.RETURN_NONE)
     public void setEnable(PluginCall call) {
-        implementation.enable(call.getBoolean("enable", false));
+        Boolean enable = call.getBoolean("enable", false);
+        if (enable == null) {
+            enable = false;
+        }
+        implementation.enable(enable);
         call.resolve();
     }
 
@@ -74,7 +78,14 @@ public class CrashesPlugin extends Plugin {
 
     @PluginMethod
     public void lastSessionCrashReport(PluginCall call) {
-        call.unimplemented("Not yet implemented on Android.");
+        JSObject lastSessionCrashReport = implementation.lastSessionCrashReport();
+        if (lastSessionCrashReport == null) {
+            call.reject("No crash report available");
+            return;
+        }
+        JSObject ret = new JSObject();
+        ret.put("value", lastSessionCrashReport);
+        call.resolve(ret);
     }
     
 }

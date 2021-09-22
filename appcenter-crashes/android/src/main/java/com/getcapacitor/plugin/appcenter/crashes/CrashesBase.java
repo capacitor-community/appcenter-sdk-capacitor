@@ -54,8 +54,7 @@ public class CrashesBase {
     return Crashes.hasCrashedInLastSession().get();
   }
 
-  // public void lastSessionCrashReport() {
-  //   return Crashes.lastSessionCrashReport().get()
-  // }
-    
+  public JSObject lastSessionCrashReport() {
+    return CrashesUtil.convertReportToJs(Crashes.getLastSessionCrashReport().get());
+  }
 }

@@ -76,6 +76,9 @@ export interface ErrorReport {
    * UUID for the crash report. 
    */
   id: string;
+  /**
+   * Thread name that triggered the crash
+   */
   threadName?: string;
   /**
    * Date and time the error occurred. 
@@ -100,11 +103,15 @@ export interface ErrorReport {
   /**
    * Signal that caused the crash. 
    */
-  signal: string;
+  signal?: string;
   /**
    * Identifier of the app process that crashed. 
    */
-  appProcessIdentifier: number;
+  appProcessIdentifier?: number;
+  /**
+   * The stack trace of the crash
+   */
+  stackTrace?: string;
 }
 
 export interface CrashesListener {
