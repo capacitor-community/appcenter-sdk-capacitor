@@ -1,5 +1,6 @@
 package com.getcapacitor.plugin.appcenter.crashes;
 
+import com.getcapacitor.JSObject;
 import com.microsoft.appcenter.AppCenter;
 import com.microsoft.appcenter.crashes.Crashes;
 
@@ -31,8 +32,7 @@ public class CrashesBase {
     return Crashes.hasCrashedInLastSession().get();
   }
 
-  // public void lastSessionCrashReport() {
-  //   return Crashes.lastSessionCrashReport().get()
-  // }
-    
+  public JSObject lastSessionCrashReport() {
+    return CrashesUtil.convertReportToJs(Crashes.getLastSessionCrashReport().get());
+  }
 }
