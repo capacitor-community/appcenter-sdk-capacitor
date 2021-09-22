@@ -1,5 +1,12 @@
 # Change Log
 
+## 0.6.0
+
+### Features
+
+* **android**: Add `Crashes.trackError()` API to track handled errors in your app.
+* **ios**: Add `Crashes.trackError()` API stub, it's not supported for iOS yet.
+
 ## 0.5.0
 
 ### Features
