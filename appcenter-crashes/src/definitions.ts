@@ -261,7 +261,7 @@ export interface CrashesPlugin {
     /**
      * Track error
      * @returns {Promise<{ errorReportId: string }>}
-     * @since 0.5.0
+     * @since 0.6.0
      * @example
      * import Crashes, { ExceptionModel, ErrorAttachmentLog } from '@capacitor-community/appcenter-crashes';
      *
