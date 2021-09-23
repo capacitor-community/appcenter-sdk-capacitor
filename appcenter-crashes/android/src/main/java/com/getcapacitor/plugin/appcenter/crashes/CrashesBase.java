@@ -12,8 +12,15 @@ import java.util.Map;
 
 public class CrashesBase {
 
-  public String trackError(JSObject error, JSObject properties, JSArray attachments) {
-    Exception exceptionModel = CrashesUtil.toExceptionModel(error);
+  /**
+   * Track a handled custom exception
+   * @param exception - JSObject containing AppCenter crashes.ingestion.models.Exception properties
+   * @param properties - JSObject containing any custom properties for the exception
+   * @param attachments - JSArray containing objects of  to save with the exception
+   * @return
+   */
+  public String trackException(JSObject exception, JSObject properties, JSArray attachments) {
+    Exception exceptionModel = CrashesUtil.toExceptionModel(exception);
 
     Map<String, String> convertedProperties = null;
     if (properties != null) {
@@ -26,6 +33,33 @@ public class CrashesBase {
     }
 
     return WrapperSdkExceptionManager.trackException(exceptionModel, convertedProperties, convertedAttachments);
+  }
+
+  /**
+   * Track a handled error
+   * @param error Error to track
+   */
+  public void trackError(Throwable error) {
+    trackError(error, null, null);
+  }
+
+  /**
+   * Track a handled error with name and optional properties
+   * @param error Error to track
+   * @param properties
+   */
+  public void trackError(Throwable error, Map<String, String> properties) {
+    trackError(error, properties, null);
+  }
+
+  /**
+   * Track a handled error with name and optional properties and attachments.
+   * @param error
+   * @param properties 
+   * @param attachments
+   */
+  public void trackError(Throwable error, Map<String, String> properties, Iterable<ErrorAttachmentLog> attachments) {
+    Crashes.trackError(error, properties, attachments);
   }
 
   public void enable(boolean enabled) {
