@@ -1,4 +1,5 @@
 import Foundation
+import Capacitor
 import AppCenterCrashes
 
 /**
@@ -21,6 +22,36 @@ public class CrashesUtil {
     static let kMSCarrierCountry: String = "carrierCountry";
     static let kMSAppBuild: String = "appBuild";
     static let kMSAppNamespace: String = "appNamespace";
+    
+    enum ExceptionModelError: Error {
+        case validationError(_ message: String)
+    }
+    
+    public static func toExceptionModel(_ jsObject: JSObject?) throws -> MSACWrapperExceptionModel {
+        if (jsObject == nil) {
+            throw ExceptionModelError.validationError("Exception model cannot be nil")
+        }
+        
+        let model = MSACWrapperExceptionModel()
+        
+        if (jsObject?["type"] == nil || jsObject?["type"] as? String == "") {
+            throw ExceptionModelError.validationError("Type value shouldn't be nil or empty")
+        }
+        if (jsObject?["message"] == nil || jsObject?["message"] as? String == "") {
+            throw ExceptionModelError.validationError("Message value shouldn't be nil or empty")
+        }
+        if (jsObject?["wrapperSdkName"] == nil || jsObject?["wrapperSdkName"] as? String == "") {
+            throw ExceptionModelError.validationError("wrapperSdkName value shouldn't be nil or empty")
+        }
+        model.type = jsObject?["type"] as? String
+        model.message = jsObject?["message"] as? String
+        model.wrapperSdkName = jsObject?["wrapperSdkName"] as? String
+        if (jsObject?["stackTrace"] != nil) {
+            model.stackTrace = jsObject?["stackTrace"] as? String
+        }
+        
+        return model
+    }
    
     /**
      Serializes App Center Device properties to Dictionary
@@ -105,7 +136,7 @@ public class CrashesUtil {
     */
    public static func convertReportsToJS (reports: [ErrorReport]) -> [[String: Any]] {
        var jsReadyReports = [[String: Any]]()
-       for (index, value) in reports.enumerated() {
+       for (_, value) in reports.enumerated() {
            guard let convertedReport = convertReportToJs(report: value) else {
                continue
            }
