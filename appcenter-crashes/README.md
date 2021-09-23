@@ -161,7 +161,7 @@ Track error
 
 **Returns:** <code>Promise&lt;{ value: string; }&gt;</code>
 
-**Since:** 0.5.0
+**Since:** 0.6.0
 
 --------------------
 
