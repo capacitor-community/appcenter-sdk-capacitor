@@ -28,7 +28,9 @@ public class CrashesPlugin extends Plugin {
 
         String errorReportId;
         try {
-            errorReportId = implementation.trackError(error, properties, attachments);
+            // We call trackException here and not trackError because the error is a custom error
+            // parsed from JS instead of a Throwable error. It ends up the same in AppCenter
+            errorReportId = implementation.trackException(error, properties, attachments);
         } catch (java.lang.Exception e) {
             call.reject("Exception while tracking error: " + e.getMessage());
             return;
