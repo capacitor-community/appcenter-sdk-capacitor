@@ -1,11 +1,13 @@
 ---
-name: Bug report
-about: Create a report to help us improve
+name: 🚨 Bug Report
+about: Report something not working
 title: ''
 labels: ''
 assignees: ''
 
 ---
+
+## Bug Report
 
 ### Plugin(s)
 <!--
@@ -63,3 +65,4 @@ Please provide the following information with your request and any other relevan
 <!--
 List any other information that is relevant to your issue. Stack traces, related issues, suggestions on how to fix, Stack Overflow links, forum links, etc.
 -->
+
