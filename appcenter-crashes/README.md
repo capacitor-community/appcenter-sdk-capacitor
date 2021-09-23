@@ -48,6 +48,7 @@ npx cap sync
 * [`hasReceivedMemoryWarningInLastSession()`](#hasreceivedmemorywarninginlastsession)
 * [`hasCrashedInLastSession()`](#hascrashedinlastsession)
 * [`lastSessionCrashReport()`](#lastsessioncrashreport)
+* [`trackError(...)`](#trackerror)
 * [Interfaces](#interfaces)
 
 </docgen-index>
@@ -146,6 +147,25 @@ Provides details about the crash that occurred in the last app session.
 --------------------
 
 
+### trackError(...)
+
+```typescript
+trackError(errorModel: TrackableErrorModel) => Promise<{ value: string; }>
+```
+
+Track error
+
+| Param            | Type                                                                |
+| ---------------- | ------------------------------------------------------------------- |
+| **`errorModel`** | <code><a href="#trackableerrormodel">TrackableErrorModel</a></code> |
+
+**Returns:** <code>Promise&lt;{ value: string; }&gt;</code>
+
+**Since:** 0.5.0
+
+--------------------
+
+
 ### Interfaces
 
 
@@ -185,5 +205,24 @@ Provides details about the crash that occurred in the last app session.
 | **`carrierCountry`** | <code>string</code> | Carrier country code (for mobile devices).                                                                                            |
 | **`appBuild`**       | <code>string</code> | The app's build number, e.g. 42.                                                                                                      |
 | **`appNamespace`**   | <code>string</code> | The bundle identifier, package identifier, or namespace, depending on what the individual plattforms use, .e.g com.microsoft.example. |
+
+
+#### TrackableErrorModel
+
+| Prop              | Type                                                              |
+| ----------------- | ----------------------------------------------------------------- |
+| **`error`**       | <code><a href="#exceptionmodeltype">ExceptionModelType</a></code> |
+| **`properties`**  | <code>{ [name: string]: string; }</code>                          |
+| **`attachments`** | <code>ErrorAttachmentLog[]</code>                                 |
+
+
+#### ExceptionModelType
+
+| Prop                 | Type                | Description                                        |
+| -------------------- | ------------------- | -------------------------------------------------- |
+| **`wrapperSdkName`** | <code>string</code> | Name of the wrapper SDK. e.g 'appcenter.capacitor' |
+| **`type`**           | <code>string</code> | Exception type, e.g 'TypeException'                |
+| **`message`**        | <code>string</code> | Exception message                                  |
+| **`stackTrace`**     | <code>string</code> | Exception stacktrace                               |
 
 </docgen-api>

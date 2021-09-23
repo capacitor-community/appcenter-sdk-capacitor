@@ -1,5 +1,6 @@
 package com.getcapacitor.plugin.appcenter.crashes;
 
+import com.getcapacitor.JSArray;
 import com.getcapacitor.JSObject;
 import com.getcapacitor.Plugin;
 import com.getcapacitor.PluginCall;
@@ -17,6 +18,27 @@ public class CrashesPlugin extends Plugin {
     public void load() {
         AppCenterReactNativeShared.configureAppCenter(this.getActivity().getApplication());
         implementation.start();
+    }
+
+    @PluginMethod
+    public void trackError(PluginCall call) {
+        JSObject error = call.getObject("error");
+        JSObject properties = call.getObject("properties");
+        JSArray attachments = call.getArray("attachments");
+
+        String errorReportId;
+        try {
+            // We call trackException here and not trackError because the error is a custom error
+            // parsed from JS instead of a Throwable error. It ends up the same in AppCenter
+            errorReportId = implementation.trackException(error, properties, attachments);
+        } catch (java.lang.Exception e) {
+            call.reject("Exception while tracking error: " + e.getMessage());
+            return;
+        }
+
+        JSObject ret = new JSObject();
+        ret.put("value", errorReportId);
+        call.resolve(ret);
     }
 
     @PluginMethod(returnType = PluginMethod.RETURN_NONE)

@@ -49,7 +49,7 @@ repositories {
 
 
 dependencies {
-    api 'com.microsoft.appcenter:appcenter-crashes:4.2.0'
+    api 'com.microsoft.appcenter:appcenter-crashes:4.3.1'
     api 'com.microsoft.appcenter.reactnative:appcenter-react-native:4.2.0' // change to own version
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation project(':capacitor-android')

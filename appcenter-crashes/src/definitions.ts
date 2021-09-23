@@ -142,6 +142,55 @@ export class ErrorAttachmentLog {
   }
 }
 
+export interface ExceptionModelType {
+    /**
+     * Name of the wrapper SDK. e.g 'appcenter.capacitor'
+     */
+    wrapperSdkName: string;
+    /**
+     * Exception type, e.g 'TypeException'
+     */
+    type: string;
+    /**
+     * Exception message
+     */
+    message: string;
+    /**
+     * Exception stacktrace
+     */
+    stackTrace?: string;
+}
+export class ExceptionModel implements ExceptionModelType {
+    wrapperSdkName = 'appcenter.capacitor';
+    type: string;
+    message: string;
+    stackTrace?: string;
+
+    constructor(type: string, message: string, stackTrace?: string) {
+        this.type = type;
+        this.message = message;
+        this.stackTrace = stackTrace;
+    }
+
+    public static createFromError(error: Error): ExceptionModel {
+        return new this(error.name, error.message, error.stack);
+    }
+
+    public static createFromTypeAndMessage(
+        type: string,
+        message: string,
+        stackTrace?: string
+      ): ExceptionModel {
+        return new this(type, message, stackTrace);
+      }
+}
+
+export interface TrackableErrorModel {
+    error: ExceptionModelType;
+    properties?: { [name: string]: string };
+    attachments?: ErrorAttachmentLog[];
+}
+
 export interface CrashesPlugin {
   /**
    * Check if Crashes is enabled or not.
@@ -208,6 +257,25 @@ export interface CrashesPlugin {
      * const { value: crashReport } = await Crashes.lastSessionCrashReport();
      */
     lastSessionCrashReport(): Promise<{value: ErrorReport}>;
+
+    /**
+     * Track error
+     * @returns {Promise<{ errorReportId: string }>}
+     * @since 0.6.0
+     * @example
+     * import Crashes, { ExceptionModel, ErrorAttachmentLog } from '@capacitor-community/appcenter-crashes';
+     *
+     * const error = ExceptionModel.createFromError(new Error("test error"));
+     * const attachments = [
+     *  ErrorAttachmentLog.attachmentWithText("some text", "testfile.txt"),
+     * ]
+     * const { value } = await Crashes.trackError({
+     *  error,
+     *  properties: { testProp: 'testVal' },
+     *  attachments,
+     * });
+     */
+    trackError(errorModel: TrackableErrorModel): Promise<{ value: string }>;
 }
 
 // convert
