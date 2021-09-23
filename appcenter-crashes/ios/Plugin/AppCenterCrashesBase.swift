@@ -5,10 +5,13 @@ import AppCenterCrashes
 
 @objc public class AppCenterCrashesBase: NSObject {
     
-    public func trackException(_ exceptionObject: JSObject?, _ propertiesObject: JSObject?, _ attachmentsObject: JSArray?) throws -> String {
-        let exception = try CrashesUtil.toExceptionModel(exceptionObject)
+    public func trackException(_ exceptionObject: JSObject?, _ propertiesObject: JSObject?, _ attachmentsArray: [JSObject]?) throws -> String {
+        let exceptionModel = try CrashesUtil.toExceptionModel(exceptionObject)
+        let properties = propertiesObject as? [String: String] ?? nil
+        let attachments = CrashesUtil.toErrorAttachmentLogs(attachmentsArray ?? [])
         
-        return Crashes.trackException(exception, properties: nil, attachments: nil)
+        
+        return Crashes.trackException(exceptionModel, properties: properties, attachments: attachments)
     }
     
     public func trackError(_ error: Error, _ properties: [String: String]?, _ attachments: [ErrorAttachmentLog]?) {

@@ -29,7 +29,7 @@ public class CrashesPlugin: CAPPlugin {
         DispatchQueue.main.async {
             let errorToTrack = call.getObject("error")
             let properties = call.getObject("properties")
-            let attachments = call.getArray("attachments")
+            let attachments = call.getArray("attachments", JSObject.self)
             
             do {
                 // We call trackException here and not trackError because the error is a custom exception

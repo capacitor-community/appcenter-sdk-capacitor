@@ -27,6 +27,12 @@ public class CrashesUtil {
         case validationError(_ message: String)
     }
     
+    /**
+        Creates an AppCenter WrapperExceptionModel out of given JSObject.
+        Used for creating an acrual exception model out of passed in data from a plugin call from js.
+            - Parameter jsObject: JSObject that contains MSACWrapperExceptionModel props
+            - Returns MSACWrapperExceptionModel
+     */
     public static func toExceptionModel(_ jsObject: JSObject?) throws -> MSACWrapperExceptionModel {
         if (jsObject == nil) {
             throw ExceptionModelError.validationError("Exception model cannot be nil")
@@ -51,6 +57,36 @@ public class CrashesUtil {
         }
         
         return model
+    }
+    
+    public static func toErrorAttachmentLogs(_ attachments: [JSObject]) -> [ErrorAttachmentLog] {
+        var attachmentLogs: [ErrorAttachmentLog] = []
+
+        for jsAttachment in attachments {
+            var fileName: String? = nil
+            if (jsAttachment["fileName"] != nil ) {
+                fileName = jsAttachment["fileName"] as? String
+            }
+            if (jsAttachment["text"] != nil) {
+                let text = jsAttachment["text"] as? String
+                let attachmentLog = ErrorAttachmentLog.attachment(withText: text, filename: fileName)
+                attachmentLogs.append(attachmentLog!)
+            } else if(jsAttachment["data"] != nil) {
+                // Binary data is passed as base64 string from Javascript, decode it
+                let encodedData = jsAttachment["data"] as? String ?? ""
+                let decodedData = Data(base64Encoded: encodedData, options: NSData.Base64DecodingOptions.ignoreUnknownCharacters)
+                
+                var contentType: String? = nil
+                if (jsAttachment["contentType"] != nil) {
+                    contentType = jsAttachment["contentType"] as? String
+                }
+                
+                let attachmentLog = ErrorAttachmentLog.attachment(withBinary: decodedData, filename: fileName, contentType: contentType)
+                attachmentLogs.append(attachmentLog!)
+            }
+        }
+        
+        return attachmentLogs
     }
    
     /**
