@@ -1,7 +1,6 @@
 import Foundation
 import Capacitor
 import AppCenterCapacitorShared
-import AppCenterCrashes
 
 @objc(CrashesPlugin)
 public class CrashesPlugin: CAPPlugin {
