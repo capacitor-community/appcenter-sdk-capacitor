@@ -1,6 +1,6 @@
 import { WebPlugin } from '@capacitor/core';
 
-import { AppCenterPlugin, LogLevel } from './definitions';
+import type { AppCenterPlugin, LogLevel } from './definitions';
 
 export class AppCenterWeb extends WebPlugin implements AppCenterPlugin {
   setEnabled(): Promise<void> {
