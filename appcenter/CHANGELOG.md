@@ -1,5 +1,11 @@
 # Change Log
 
+## [0.7.1](https://github.com/capacitor-community/appcenter-sdk-capacitor/compare/@capacitor-community/appcenter@0.6.0...@capacitor-community/appcenter@0.7.1)
+
+### Chores
+
+* **ios**: Bump `AppCenterCapacitorShared` version to `0.3.2`
+
 ## [0.7.0](https://github.com/capacitor-community/appcenter-sdk-capacitor/compare/@capacitor-community/appcenter@0.6.0...@capacitor-community/appcenter@0.7.0)
 
 ### Features

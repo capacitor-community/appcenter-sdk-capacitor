@@ -1,5 +1,14 @@
 # Change Log
 
+## 0.7.0
+
+### Features
+
+* **ios**: 
+    * Update `AppCenter/Crashes` to 4.3.0
+    * Update `AppCenterCapacitorShared` to 0.3.2
+    * Implement `Crashes.trackError()` API after AppCenter/Crashes update
+
 ## 0.6.0
 
 ### Features

@@ -26,6 +26,7 @@ export class AppCrashes {
   constructor() {
     this.toggleCrashes = this.toggleCrashes.bind(this);
     this.crashApp = this.crashApp.bind(this);
+    this.trackError = this.trackError.bind(this);
   }
 
   async componentWillLoad() {

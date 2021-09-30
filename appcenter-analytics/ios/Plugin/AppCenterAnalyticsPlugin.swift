@@ -31,7 +31,7 @@ public class AnalyticsPlugin: CAPPlugin {
         }
     }
     
-    @objc func enable(_ call: CAPPluginCall) {
+    @objc func setEnabled(_ call: CAPPluginCall) {
         implementation.enable(call.getBool("enableFlag") ?? false)
         call.resolve()
     }
