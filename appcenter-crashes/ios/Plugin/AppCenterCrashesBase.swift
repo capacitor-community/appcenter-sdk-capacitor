@@ -4,6 +4,19 @@ import AppCenter
 import AppCenterCrashes
 
 @objc public class AppCenterCrashesBase: NSObject {
+    
+    public func trackException(_ exceptionObject: JSObject?, _ propertiesObject: JSObject?, _ attachmentsArray: [JSObject]?) throws -> String {
+        let exceptionModel = try CrashesUtil.toExceptionModel(exceptionObject)
+        let properties = propertiesObject as? [String: String] ?? nil
+        let attachments = CrashesUtil.toErrorAttachmentLogs(attachmentsArray ?? [])
+        
+        
+        return Crashes.trackException(exceptionModel, properties: properties, attachments: attachments)
+    }
+    
+    public func trackError(_ error: Error, _ properties: [String: String]?, _ attachments: [ErrorAttachmentLog]?) {
+        Crashes.trackError(error, properties: properties, attachments: attachments)
+    }
    
     public func enable(_ flag: Bool) {
         Crashes.enabled = flag

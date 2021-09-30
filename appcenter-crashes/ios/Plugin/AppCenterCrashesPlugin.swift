@@ -25,13 +25,22 @@ public class CrashesPlugin: CAPPlugin {
     }
     
     @objc func trackError(_ call: CAPPluginCall) {
-        // The trackError functionality is missing in the AppCenter SDK for iOS
-        // See: https://github.com/microsoft/appcenter/issues/192
-        //
-        // It would maybe be possible to upload straight to AppCenter with a REST api like here
-        // https://github.com/microsoft/appcenter/issues/192#issuecomment-698187673
-        // https://docs.microsoft.com/en-us/appcenter/diagnostics/upload-crashes#upload-an-error-report
-        call.unimplemented("Not yet supported on iOS");
+        DispatchQueue.main.async {
+            let errorToTrack = call.getObject("error")
+            let properties = call.getObject("properties")
+            let attachments = call.getArray("attachments", JSObject.self)
+            
+            do {
+                // We call trackException here and not trackError because the error is a custom exception
+                // parsed from JS instead of a Throwable error
+                let errorReportId = try self.implementation.trackException(errorToTrack, properties, attachments);
+                call.resolve(["value": errorReportId])
+            } catch CrashesUtil.ExceptionModelError.validationError(let message) {
+                call.reject("Tracking error failed: \(message)")
+            } catch {
+                call.reject("Tracking error failed: \(error)")
+            }
+        }
     }
 
     @objc func setEnabled(_ call: CAPPluginCall) {

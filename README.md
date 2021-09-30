@@ -1,7 +1,4 @@
 # App Center SDK for Capacitor
-<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
-<!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 > ### :rotating_light: Project is in active development. :rotating_light:
 
@@ -11,11 +8,11 @@ App Center is mission control for mobile apps. Get faster release cycles, higher
 
 The Capacitor App Center SDK consists of a several plugins so you can use any or all of the supported App Center services. This SDK uses a modular approach, where you just add the modules for App Center services that you want to use. `appcenter-analytics` and `appcenter-crashes` make sense to add to almost every app, as they provide value with no additional setup required. `appcenter` provides general purpose App Center APIs, useful for multiple services.
 
-| Package | Source | Version |
-| --- | --- | --- |
-| `@capacitor-community/appcenter` | [`./appcenter`](https://github.com/capacitor-community/appcenter-sdk-capacitor/tree/master/appcenter) | [![npm badge](https://img.shields.io/npm/v/@capacitor-community/appcenter?style=flat-square)](https://www.npmjs.com/package/@capacitor-community/appcenter)
-| `@capacitor-community/appcenter-analytics` | [`./appcenter-analytics`](https://github.com/capacitor-community/appcenter-sdk-capacitor/tree/master/appcenter-analytics) | [![npm badge](https://img.shields.io/npm/v/@capacitor-community/appcenter-analytics?style=flat-square)](https://www.npmjs.com/package/@capacitor-community/appcenter-analytics)
-| `@capacitor-community/appcenter-crashes` | [`./appcenter-crashes`](https://github.com/capacitor-community/appcenter-sdk-capacitor/tree/master/appcenter-crashes) | [![npm badge](https://img.shields.io/npm/v/@capacitor-community/appcenter-crashes?style=flat-square)](https://www.npmjs.com/package/@capacitor-community/appcenter-crashes)
+| Package | Source | Version | Downloads |
+| --- | --- | --- | --- |
+| `@capacitor-community/appcenter` | [`./appcenter`](https://github.com/capacitor-community/appcenter-sdk-capacitor/tree/master/appcenter) | [![npm badge](https://img.shields.io/npm/v/@capacitor-community/appcenter?style=flat-square)](https://www.npmjs.com/package/@capacitor-community/appcenter) | [![npm badge](https://img.shields.io/npm/dw/@capacitor-community/appcenter?style=flat-square)](https://www.npmjs.com/package/@capacitor-community/appcenter)
+| `@capacitor-community/appcenter-analytics` | [`./appcenter-analytics`](https://github.com/capacitor-community/appcenter-sdk-capacitor/tree/master/appcenter-analytics) | [![npm badge](https://img.shields.io/npm/v/@capacitor-community/appcenter-analytics?style=flat-square)](https://www.npmjs.com/package/@capacitor-community/appcenter-analytics) | [![npm badge](https://img.shields.io/npm/dw/@capacitor-community/appcenter-analytics?style=flat-square)](https://www.npmjs.com/package/@capacitor-community/appcenter-analytics)
+| `@capacitor-community/appcenter-crashes` | [`./appcenter-crashes`](https://github.com/capacitor-community/appcenter-sdk-capacitor/tree/master/appcenter-crashes) | [![npm badge](https://img.shields.io/npm/v/@capacitor-community/appcenter-crashes?style=flat-square)](https://www.npmjs.com/package/@capacitor-community/appcenter-crashes) | [![npm badge](https://img.shields.io/npm/dw/@capacitor-community/appcenter-crashes?style=flat-square)](https://www.npmjs.com/package/@capacitor-community/appcenter-crashes)
 
 ## 📱 Example Mobile App
 
@@ -83,8 +80,8 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- markdownlint-disable -->
 <table>
   <tr>
-    <td align="center"><a href="https://hrafnkellbaldurs.com/"><img src="https://avatars.githubusercontent.com/u/5609118?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Hrafnkell Baldursson</b></sub></a><br /><a href="https://github.com/capacitor-community/appcenter-sdk-capacitor/commits?author=hrafnkellbaldurs" title="Code">💻</a></td>
     <td align="center"><a href="http://johnborg.es"><img src="https://avatars.githubusercontent.com/u/1888122?v=4?s=100" width="100px;" alt=""/><br /><sub><b>John Borges</b></sub></a><br /><a href="https://github.com/capacitor-community/appcenter-sdk-capacitor/commits?author=johnborges" title="Code">💻</a></td>
+    <td align="center"><a href="https://hrafnkellbaldurs.com/"><img src="https://avatars.githubusercontent.com/u/5609118?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Hrafnkell Baldursson</b></sub></a><br /><a href="https://github.com/capacitor-community/appcenter-sdk-capacitor/commits?author=hrafnkellbaldurs" title="Code">💻</a></td>
   </tr>
 </table>
 
