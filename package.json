@@ -2,7 +2,8 @@
   "name": "appcenter-sdk-capacitor",
   "private": true,
   "scripts": {
-    "lint": "lerna run lint"
+    "lint": "lerna run lint",
+    "postinstall": "lerna bootstrap"
   },
   "devDependencies": {
     "lerna": "^4.0.0"
