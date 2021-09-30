@@ -6,10 +6,10 @@ This guide provides instructions for contributing to the various Capacitor plugi
 
 The repo uses GitHub [issues](https://github.com/capacitor-community/appcenter-sdk-capacitor/issues) and [discussions](https://github.com/capacitor-community/appcenter-sdk-capacitor/discussions) to track bugs and feature requests, as well as to provide a place for community questions, ideas, and discussions.
 
-* **When to use [issues](https://github.com/ionic-team/capacitor/issues)**:
+* **When to use [issues](https://github.com/capacitor-community/appcenter-sdk-capacitor/issues)**:
     * To report specific, reproducible bugs (see [Creating a Code Reproduction](#creating-a-code-reproduction)).
     * To propose detailed feature requests.
-* **When to use [discussions](https://github.com/ionic-team/capacitor/discussions)**:
+* **When to use [discussions](https://github.com/capacitor-community/appcenter-sdk-capacitor/discussions)**:
     * To ask for help.
     * To ask general questions.
     * To show off cool stuff.
