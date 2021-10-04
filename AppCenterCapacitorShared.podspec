@@ -9,8 +9,7 @@ Pod::Spec.new do |s|
   s.social_media_url = 'https://twitter.com/johnborges'
   s.ios.deployment_target = '12.0'
   s.swift_version = '5.1'
-  # s.source_files = '*.swift'
+  s.source_files = 'AppCenterCapacitorShared/ios/AppCenterCapacitorShared/*.swift'
   s.dependency 'AppCenter/Core', '4.3.0'
   s.static_framework = true
-  # s.vendored_frameworks = '**/AppCenterCapacitorShared.xcframework'
 end
