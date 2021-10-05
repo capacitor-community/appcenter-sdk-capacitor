@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'AppCenterCapacitorShared'
-  s.version          = '0.3.4'
+  s.version          = '0.3.5'
   s.summary          = 'Shared utility to assist with bootstrapping AppCenter for Capacitor plugin.'
   s.homepage         = 'https://github.com/capacitor-community/appcenter-sdk-capacitor'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
