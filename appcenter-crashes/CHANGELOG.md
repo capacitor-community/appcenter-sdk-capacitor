@@ -1,5 +1,12 @@
 # Change Log
 
+## [0.7.2](https://github.com/capacitor-community/appcenter-sdk-capacitor/compare/@capacitor-community/appcenter-crashes@0.7.1...@capacitor-community/appcenter-crashes@0.7.2)
+
+### Chore
+
+* **style**
+  * code style changes from linting
+
 ## [0.7.1](https://github.com/capacitor-community/appcenter-sdk-capacitor/compare/@capacitor-community/appcenter-crashes@0.7.0...@capacitor-community/appcenter-crashes@0.7.1)
 
 ### Fixes

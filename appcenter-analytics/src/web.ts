@@ -15,7 +15,7 @@ export class AnalyticsWeb extends WebPlugin implements AnalyticsPlugin {
   resume(): Promise<void> {
     throw this.unimplemented('Not supported on web.');
   }
-  isEnabled(): Promise<{ value: boolean; }> {
+  isEnabled(): Promise<{ value: boolean }> {
     throw this.unimplemented('Not supported on web.');
   }
 }

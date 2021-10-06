@@ -1,10 +1,9 @@
 package com.getcapacitor.plugin.appcenter.analytics;
 
-import java.util.Map;
-
 import com.microsoft.appcenter.AppCenter;
-import com.microsoft.appcenter.analytics.Analytics;
 import com.microsoft.appcenter.Flags;
+import com.microsoft.appcenter.analytics.Analytics;
+import java.util.Map;
 
 public class AnalyticsBase {
 
@@ -48,5 +47,4 @@ public class AnalyticsBase {
     public boolean isEnabled() {
         return Analytics.isEnabled().get();
     }
-
 }
