@@ -1,13 +1,13 @@
 export interface AnalyticsEvent {
-  /** 
-   * 256 character limit 
+  /**
+   * 256 character limit
    */
-  name: string,
-  /** 
-   * Only 20 properties allowed per event 
+  name: string;
+  /**
+   * Only 20 properties allowed per event
    */
-  properties?: {[key: string]: string},
-  flag?: 'normal' | 'critical'
+  properties?: { [key: string]: string };
+  flag?: 'normal' | 'critical';
 }
 
 export interface AnalyticsPlugin {
@@ -17,13 +17,13 @@ export interface AnalyticsPlugin {
    * @returns {Promise<void>}
    * @since 0.3.0
    */
-  setEnabled(options: {enable: boolean}): Promise<void>;
+  setEnabled(options: { enable: boolean }): Promise<void>;
   /**
    * Check if Analytics is enabled or not.
-   * @returns {Promise<{value: boolean}>} 
+   * @returns {Promise<{value: boolean}>}
    * @since 0.0.1
    */
-  isEnabled(): Promise<{value: boolean}>;
+  isEnabled(): Promise<{ value: boolean }>;
   /**
    * Pause transmission of Analytics logs. While paused, Analytics logs are saved to disk.
    * @returns {Promise<void>}
@@ -42,10 +42,10 @@ export interface AnalyticsPlugin {
    * @returns {Promise<void>}
    * @example
    * import Analytics from '@capacitor-community/appcenter-analytics';
-   * 
+   *
    * Analytics.trackEvent("Video Clicked")
    * Analytics.trackEvent('Video Clicked', {"Category" : "Music", "FileName" : "favorite.avi"}, flag: 'critical')
    * @since 0.1.0
    */
-  trackEvent(options: AnalyticsEvent): Promise<void>
+  trackEvent(options: AnalyticsEvent): Promise<void>;
 }

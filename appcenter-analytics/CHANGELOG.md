@@ -1,5 +1,12 @@
 # Change Log
 
+## [0.3.3](https://github.com/capacitor-community/appcenter-sdk-capacitor/compare/@capacitor-community/appcenter-analyics@0.3.2...@capacitor-community/appcenter-analyics@0.3.3)
+
+### Chore
+
+* **style**
+  * code style changes from linting
+
 ## [0.3.2](https://github.com/capacitor-community/appcenter-sdk-capacitor/compare/@capacitor-community/appcenter-analyics@0.3.1...@capacitor-community/appcenter-analyics@0.3.2)
 
 ### Fixes
