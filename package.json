@@ -3,6 +3,9 @@
   "private": true,
   "scripts": {
     "lint": "lerna run lint",
+    "verify": "lerna run verify",
+    "verify:ios": "lerna run verify:ios",
+    "verify:android": "lerna run verify:android",
     "postinstall": "lerna bootstrap"
   },
   "devDependencies": {
