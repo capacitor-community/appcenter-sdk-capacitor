@@ -2,6 +2,7 @@
   "name": "appcenter-sdk-capacitor",
   "private": true,
   "scripts": {
+    "fmt": "lerna run fmt",
     "lint": "lerna run lint",
     "verify": "lerna run verify",
     "verify:ios": "lerna run verify:ios",
