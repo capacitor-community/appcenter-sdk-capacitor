@@ -1,5 +1,12 @@
 # Change Log
 
+## [0.7.1](https://github.com/capacitor-community/appcenter-sdk-capacitor/compare/@capacitor-community/appcenter-crashes@0.7.0...@capacitor-community/appcenter-crashes@0.7.1)
+
+### Fixes
+
+* **ios**
+  * Update `AppCenterCapacitorShared` to 0.3.5 and using optimistic operator
+
 ## 0.7.0
 
 ### Features

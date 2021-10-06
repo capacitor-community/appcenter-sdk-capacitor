@@ -171,7 +171,7 @@ Toggle all App Center services at runtime. When disabled, the SDK won't forward 
 setCustomProperties(options: { properties: CustomProperties; }) => any
 ```
 
-App Center allows you to define custom properties as key value pairs in your app. You may use custom properties for various purposes. 
+App Center allows you to define custom properties as key value pairs in your app. You may use custom properties for various purposes.
 For instance, you can use custom properties to segment your users, and then send push notifications to a specific audience.
 
 | Param         | Type                                           |
@@ -207,7 +207,7 @@ setLogLevel(options: { logLevel: LogLevel; }) => any
 ```
 
 You can control the amount of log messages that show up from App Center in the console. Log messages show in the console on iOS and LogCat on Android.
-By default, it's set to Assert for the App Store environment and Warning otherwise. To have as many log messages as possible, use Verbose. 
+By default, it's set to Assert for the App Store environment and Warning otherwise. To have as many log messages as possible, use Verbose.
 Note: `setLogLevel` API can't increase logging for app startup code, before JavaScript is loaded.
 
 | Param         | Type                                                         |

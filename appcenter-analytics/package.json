@@ -1,6 +1,6 @@
 {
   "name": "@capacitor-community/appcenter-analytics",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "Capacitor plugin for AppCenter Analytics",
   "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",

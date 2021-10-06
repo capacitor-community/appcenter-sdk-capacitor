@@ -7,7 +7,6 @@ import com.getcapacitor.Plugin;
 import com.getcapacitor.PluginCall;
 import com.getcapacitor.PluginMethod;
 import com.getcapacitor.annotation.CapacitorPlugin;
-
 import com.microsoft.appcenter.reactnative.shared.AppCenterReactNativeShared;
 
 @CapacitorPlugin(name = "AppCenter")
@@ -19,14 +18,14 @@ public class AppCenterPlugin extends Plugin {
     public void load() {
         AppCenterReactNativeShared.configureAppCenter(this.getActivity().getApplication());
     }
-    
+
     @PluginMethod
     public void getInstallId(PluginCall call) {
         JSObject ret = new JSObject();
         ret.put("value", implementation.getInstallId());
         call.resolve(ret);
     }
-    
+
     @PluginMethod(returnType = PluginMethod.RETURN_NONE)
     public void setUserId(PluginCall call) {
         implementation.setUserId(call.getString("userId", null));
