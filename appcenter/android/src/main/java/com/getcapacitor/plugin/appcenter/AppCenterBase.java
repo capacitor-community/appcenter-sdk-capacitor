@@ -1,15 +1,12 @@
 package com.getcapacitor.plugin.appcenter;
 
-import java.util.UUID;
-import java.util.Iterator;
-
-import org.json.JSONObject;
-import java.util.Date;
-
 import com.getcapacitor.JSObject;
-
 import com.microsoft.appcenter.AppCenter;
 import com.microsoft.appcenter.CustomProperties;
+import java.util.Date;
+import java.util.Iterator;
+import java.util.UUID;
+import org.json.JSONObject;
 
 public class AppCenterBase {
 
@@ -65,27 +62,21 @@ public class AppCenterBase {
                     case "clear":
                         customProps.clear(key);
                         break;
-
                     case "string":
                         customProps.set(key, valueObject.getString("value"));
                         break;
-
                     case "number":
                         customProps.set(key, Double.parseDouble(valueObject.getString("value")));
                         break;
-
                     case "boolean":
                         customProps.set(key, valueObject.getBool("value"));
                         break;
-
                     case "date-time":
                         customProps.set(key, new Date((long) Double.parseDouble(valueObject.getString("value"))));
                         break;
                 }
-
             }
         }
-
 
         AppCenter.setCustomProperties(customProps);
     }

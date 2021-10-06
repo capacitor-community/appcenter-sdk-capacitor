@@ -6,7 +6,6 @@ import com.getcapacitor.Plugin;
 import com.getcapacitor.PluginCall;
 import com.getcapacitor.PluginMethod;
 import com.getcapacitor.annotation.CapacitorPlugin;
-
 import com.microsoft.appcenter.reactnative.shared.AppCenterReactNativeShared;
 
 @CapacitorPlugin(name = "Crashes")
@@ -89,5 +88,4 @@ public class CrashesPlugin extends Plugin {
         ret.put("value", lastSessionCrashReport);
         call.resolve(ret);
     }
-    
 }

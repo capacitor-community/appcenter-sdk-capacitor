@@ -2,30 +2,26 @@ package com.getcapacitor.plugin.appcenter.crashes;
 
 import android.util.Base64;
 import android.util.Log;
-
 import com.getcapacitor.JSArray;
 import com.getcapacitor.JSObject;
 import com.microsoft.appcenter.crashes.ingestion.models.ErrorAttachmentLog;
 import com.microsoft.appcenter.crashes.ingestion.models.Exception;
-
-import org.json.JSONObject;
-
+import com.microsoft.appcenter.crashes.model.ErrorReport;
+import com.microsoft.appcenter.ingestion.models.Device;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedList;
-import java.util.Map;
-
-import com.microsoft.appcenter.crashes.model.ErrorReport;
-import com.microsoft.appcenter.ingestion.models.Device;
-
-import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import org.json.JSONObject;
 
 /**
  * Utility class containing helpers for converting App Center objects.
  */
 public class CrashesUtil {
+
     private static final String LOG_TAG = "AppCenterCrashes";
     private static final String DATA_FIELD = "data";
     private static final String TEXT_FIELD = "text";
@@ -79,7 +75,7 @@ public class CrashesUtil {
         Map<String, String> stringMap = new HashMap<>();
         if (jsObject != null) {
             Iterator<String> keys = jsObject.keys();
-            while(keys.hasNext()) {
+            while (keys.hasNext()) {
                 String key = keys.next();
                 String value = jsObject.getString(key);
                 stringMap.put(key, value);
@@ -212,7 +208,7 @@ public class CrashesUtil {
             return jsReadyReports;
         }
 
-        for(int i = 0; i < reports.size(); i++) {
+        for (int i = 0; i < reports.size(); i++) {
             ErrorReport report = reports.get(i);
             JSObject convertedReport = convertReportToJs(report);
             if (convertedReport != null) {
