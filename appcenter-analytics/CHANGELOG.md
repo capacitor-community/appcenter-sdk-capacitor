@@ -5,7 +5,7 @@
 ### Fixes
 
 * **ios**
-  * Update `AppCenterCapacitorShared` to 0.3.2 and using optimistic operator
+  * Update `AppCenterCapacitorShared` to 0.3.5 and using optimistic operator
 
 ## 0.3.1
 
