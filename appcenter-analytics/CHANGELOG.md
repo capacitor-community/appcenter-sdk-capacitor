@@ -1,5 +1,12 @@
 # Change Log
 
+## [0.3.2](https://github.com/capacitor-community/appcenter-sdk-capacitor/compare/@capacitor-community/appcenter-analyics@0.3.1...@capacitor-community/appcenter-analyics@0.3.2)
+
+### Fixes
+
+* **ios**
+  * Update `AppCenterCapacitorShared` to 0.3.2 and using optimistic operator
+
 ## 0.3.1
 
 ### Fixes
