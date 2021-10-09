@@ -82,12 +82,14 @@ export interface ErrorReport {
   threadName?: string;
   /**
    * Date and time the error occurred.
+   * @since 0.7.3
    */
-  appErrorTime?: string | number;
+  appErrorTime: string | number;
   /**
    * Date and time the app started.
+   * @since 0.7.3
    */
-  appStartTime?: string | number;
+  appStartTime: string | number;
   /**
    * Exception name that triggered the crash.
    */

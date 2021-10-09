@@ -169,18 +169,18 @@ Track error
 
 #### ErrorReport
 
-| Prop                       | Type                                      | Description                                                          |
-| -------------------------- | ----------------------------------------- | -------------------------------------------------------------------- |
-| **`id`**                   | <code>string</code>                       | UUID for the crash report.                                           |
-| **`threadName`**           | <code>string</code>                       | Thread name that triggered the crash                                 |
-| **`appErrorTime`**         | <code>string \| number</code>             | Date and time the error occurred.                                    |
-| **`appStartTime`**         | <code>string \| number</code>             | Date and time the app started.                                       |
-| **`exceptionName`**        | <code>string</code>                       | Exception name that triggered the crash.                             |
-| **`exceptionReason`**      | <code>string</code>                       | Exception reason.                                                    |
-| **`device`**               | <code><a href="#device">Device</a></code> | <a href="#device">Device</a> information of the app when it crashed. |
-| **`signal`**               | <code>string</code>                       | Signal that caused the crash.                                        |
-| **`appProcessIdentifier`** | <code>number</code>                       | Identifier of the app process that crashed.                          |
-| **`stackTrace`**           | <code>string</code>                       | The stack trace of the crash                                         |
+| Prop                       | Type                                      | Description                                                          | Since |
+| -------------------------- | ----------------------------------------- | -------------------------------------------------------------------- | ----- |
+| **`id`**                   | <code>string</code>                       | UUID for the crash report.                                           |       |
+| **`threadName`**           | <code>string</code>                       | Thread name that triggered the crash                                 |       |
+| **`appErrorTime`**         | <code>string \| number</code>             | Date and time the error occurred.                                    | 0.7.3 |
+| **`appStartTime`**         | <code>string \| number</code>             | Date and time the app started.                                       | 0.7.3 |
+| **`exceptionName`**        | <code>string</code>                       | Exception name that triggered the crash.                             |       |
+| **`exceptionReason`**      | <code>string</code>                       | Exception reason.                                                    |       |
+| **`device`**               | <code><a href="#device">Device</a></code> | <a href="#device">Device</a> information of the app when it crashed. |       |
+| **`signal`**               | <code>string</code>                       | Signal that caused the crash.                                        |       |
+| **`appProcessIdentifier`** | <code>number</code>                       | Identifier of the app process that crashed.                          |       |
+| **`stackTrace`**           | <code>string</code>                       | The stack trace of the crash                                         |       |
 
 
 #### Device
