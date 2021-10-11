@@ -1,5 +1,11 @@
 # Change Log
 
+## [0.3.4](https://github.com/capacitor-community/appcenter-sdk-capacitor/compare/@capacitor-community/appcenter-analyics@0.3.3...@capacitor-community/appcenter-analyics@0.3.4)
+
+### Chore
+
+* **ios** - remove unused methods
+
 ## [0.3.3](https://github.com/capacitor-community/appcenter-sdk-capacitor/compare/@capacitor-community/appcenter-analyics@0.3.2...@capacitor-community/appcenter-analyics@0.3.3)
 
 ### Chore
