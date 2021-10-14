@@ -91,24 +91,4 @@ public class AnalyticsPlugin extends Plugin {
         }
         return map;
     }
-
-    private static Object getObject(Object value) {
-        if (value instanceof JSONObject) {
-            value = mapFromJSON((JSONObject) value);
-        } else if (value instanceof JSONArray) {
-            value = listFromJSON((JSONArray) value);
-        }
-        return value;
-    }
-
-    private static List<Object> listFromJSON(JSONArray jsonArray) {
-        List<Object> list = new ArrayList<>();
-        for (int i = 0, count = jsonArray.length(); i < count; i++) {
-            Object value = getObject(jsonArray.opt(i));
-            if (value != null) {
-                list.add(value);
-            }
-        }
-        return list;
-    }
 }
