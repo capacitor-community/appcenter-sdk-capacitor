@@ -1,7 +1,5 @@
 # App Center SDK for Capacitor
 
-> ### :rotating_light: Project is in active development. :rotating_light:
-
 App Center is mission control for mobile apps. Get faster release cycles, higher-quality apps, and the insights to build what users want.
 
 ## Plugins
