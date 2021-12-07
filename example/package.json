@@ -15,17 +15,20 @@
     "generate": "stencil generate"
   },
   "devDependencies": {
-    "@ionic/core": "^5.3.2",
-    "@stencil/core": "^2.0.1"
+    "@ionic/core": "^5.7.0",
+    "@stencil/core": "^2.8.0"
   },
   "dependencies": {
-    "@capacitor-community/appcenter": "0.3.0",
-    "@capacitor/app": "^0.3.3",
-    "@capacitor/cli": "next",
-    "@capacitor/core": "next",
-    "@capacitor/device": "^0.5.3",
-    "@capacitor/haptics": "^0.3.3",
-    "@capacitor/ios": "next",
-    "@capacitor/keyboard": "^0.5.3"
+    "@capacitor-community/appcenter": "^0.7.1",
+    "@capacitor-community/appcenter-analytics": "^0.3.1",
+    "@capacitor-community/appcenter-crashes": "^0.7.0",
+    "@capacitor/android": "^3.0.0",
+    "@capacitor/app": "^1.0.0",
+    "@capacitor/cli": "^3.0.0",
+    "@capacitor/core": "^3.0.0",
+    "@capacitor/device": "^1.0.0",
+    "@capacitor/haptics": "^1.0.0",
+    "@capacitor/ios": "^3.0.0",
+    "@capacitor/keyboard": "^1.0.0"
   }
 }

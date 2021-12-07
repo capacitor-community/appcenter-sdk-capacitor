@@ -1,18 +1,16 @@
 # App Center SDK for Capacitor
 
-> ### :rotating_light: Project is in active development and not ready to be used. Check back later. :rotating_light:
-
 App Center is mission control for mobile apps. Get faster release cycles, higher-quality apps, and the insights to build what users want.
 
 ## Plugins
 
 The Capacitor App Center SDK consists of a several plugins so you can use any or all of the supported App Center services. This SDK uses a modular approach, where you just add the modules for App Center services that you want to use. `appcenter-analytics` and `appcenter-crashes` make sense to add to almost every app, as they provide value with no additional setup required. `appcenter` provides general purpose App Center APIs, useful for multiple services.
 
-| Package | Source | Version |
-| --- | --- | --- |
-| [`@capacitor-community/appcenter`](https://capacitorjs.com/docs/v3/apis/action-sheet) | [`./appcenter`](./appcenter) | [![npm badge](https://img.shields.io/npm/v/@capacitor-community/appcenter?style=flat-square)](https://www.npmjs.com/package/@capacitor-community/appcenter)
-| [`@capacitor-community/appcenter-analytics`](https://capacitorjs.com/docs/v3/apis/appcenter-analytics) | [`./appcenter-analytics`](./appcenter-analytics) | [![npm badge](https://img.shields.io/npm/v/@capacitor-community/appcenter-analytics?style=flat-square)](https://www.npmjs.com/package/@capacitor-community/appcenter-analytics)
-| [`@capacitor-community/appcenter-crashes`](https://capacitorjs.com/docs/v3/apis/appcenter-crashes) | [`./appcenter-crashes`](./appcenter-crashes) | [![npm badge](https://img.shields.io/npm/v/@capacitor-community/appcenter-crashes?style=flat-square)](https://www.npmjs.com/package/@capacitor-community/appcenter-crashes)
+| Package | Source | Version | Downloads |
+| --- | --- | --- | --- |
+| `@capacitor-community/appcenter` | [`./appcenter`](https://github.com/capacitor-community/appcenter-sdk-capacitor/tree/master/appcenter) | [![npm badge](https://img.shields.io/npm/v/@capacitor-community/appcenter?style=flat-square)](https://www.npmjs.com/package/@capacitor-community/appcenter) | [![npm badge](https://img.shields.io/npm/dw/@capacitor-community/appcenter?style=flat-square)](https://www.npmjs.com/package/@capacitor-community/appcenter)
+| `@capacitor-community/appcenter-analytics` | [`./appcenter-analytics`](https://github.com/capacitor-community/appcenter-sdk-capacitor/tree/master/appcenter-analytics) | [![npm badge](https://img.shields.io/npm/v/@capacitor-community/appcenter-analytics?style=flat-square)](https://www.npmjs.com/package/@capacitor-community/appcenter-analytics) | [![npm badge](https://img.shields.io/npm/dw/@capacitor-community/appcenter-analytics?style=flat-square)](https://www.npmjs.com/package/@capacitor-community/appcenter-analytics)
+| `@capacitor-community/appcenter-crashes` | [`./appcenter-crashes`](https://github.com/capacitor-community/appcenter-sdk-capacitor/tree/master/appcenter-crashes) | [![npm badge](https://img.shields.io/npm/v/@capacitor-community/appcenter-crashes?style=flat-square)](https://www.npmjs.com/package/@capacitor-community/appcenter-crashes) | [![npm badge](https://img.shields.io/npm/dw/@capacitor-community/appcenter-crashes?style=flat-square)](https://www.npmjs.com/package/@capacitor-community/appcenter-crashes)
 
 ## 📱 Example Mobile App
 
@@ -23,42 +21,71 @@ You can get familiar with SDK quickly by cloning this repository and running the
 Add the App Center plugin(s) that fit your needs directly from the CLI:
 
 ```bash
-npm i @capacitor-community/appcenter @capacitor-community/appcenter-analytics
+npm i @capacitor-community/appcenter @capacitor-community/appcenter-analytics @capacitor-community/appcenter-crashes --save-exact
 npx cap sync
 ```
 
-This will install two of the plugins available today.
+## 2. 🛠 Configure the SDK
 
-## 2. 🛠 Link the SDK
+You must configure the project with your App Center project app secret before you can use the App Center SDK in your Capacitor project. There are other values that can also be added, but they are optional.
 
-To get it working in your app you will need to add some configuration values to your app configuration in `capacitor.config.json` file. See list of available parameters below
+> Notice that it's likely that Android and iOS platforms will be associated with different applications on App Center portal so you would need to add the APP_SECRET twice - one for Android and another for iOS.
 
-- `AppSecret` - _(required)_ App secret which enables App Center to map this app to the right user account
+### iOS
+
+Create a new file with the name `AppCenter-Config.plist` with the following content and replace `{APP_SECRET_VALUE}` with your app secret value. Don't forget to add this file to the Xcode project (right-click the app in Xcode and click Add files to ...).
 
 Example:
 
-```json
-{
-  "appId": "com.example.app",
-  "appName": "example",
-  "webDir": "www",
-  "bundledWebRuntime": false,
-  "AppCenter": {
-    "iosAppSecret": "0000-0000-0000-0000-000000000000",
-    "androidAppSecret": "0000-0000-0000-0000-000000000000"
-  }
-  ...
-
-}
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "https://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>AppSecret</key>
+    <string>{APP_SECRET_VALUE}</string>
+    <!-- below are optional -->
+    <key>LogLevel</key>
+    <integer>2</integer>
+    <key>AnalyticsEnableInJs</key>
+    <false/>
+    <key>AnalyticsTransmissionInterval</key>
+    <integer>3</integer>
+    <key>CrashesEnableInJs</key>
+    <false/>
+    <key>CrashesAlwaysSend</key>
+    <false/>
+</dict>
+</plist>
 ```
 
-Notice that it's likely that Android and iOS platforms will be associated with different applications on App Center portal so you would need to add this preference twice - one for Android and another for iOS.
+### Android
 
-### Config Options
+Create a new file with the name `appcenter-config.json` in `android/app/src/main/assets/` with the following content and replace {APP_SECRET_VALUE} with your app secret value.
 
-These options are required in `capacitor.config.json`
+```json
+{
+    "app_secret": "{APP_SECRET_VALUE}",
+    "start_automatically": true
+}
+```
+## Contributors ✨
 
-| name                  | type              | default                              |
-| ---------------------- | ----------------- | ------------------------------------ |
-| iosAppSecret           | `string`          | `"0000-0000-0000-0000-000000000000"` |
-| androidAppSecret       | `string`          | `"0000-0000-0000-0000-000000000000"` |
+Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tr>
+    <td align="center"><a href="http://johnborg.es"><img src="https://avatars.githubusercontent.com/u/1888122?v=4?s=100" width="100px;" alt=""/><br /><sub><b>John Borges</b></sub></a><br /><a href="https://github.com/capacitor-community/appcenter-sdk-capacitor/commits?author=johnborges" title="Code">💻</a></td>
+    <td align="center"><a href="https://hrafnkellbaldurs.com/"><img src="https://avatars.githubusercontent.com/u/5609118?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Hrafnkell Baldursson</b></sub></a><br /><a href="https://github.com/capacitor-community/appcenter-sdk-capacitor/commits?author=hrafnkellbaldurs" title="Code">💻</a></td>
+  </tr>
+</table>
+
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!

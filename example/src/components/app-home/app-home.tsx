@@ -15,7 +15,9 @@ export class AppHome {
   /* App Center userId */
   userId: string;
   /* Flag to toggle App Center SDK */
-  @State() enabled: boolean = false;
+  @State() enabled: boolean = false
+  /* Flag to toggle App Center network requests */
+  @State() networkReqAllowed: boolean = false
   /* App Center LogLevel */
   @State() logLevel: LogLevel;
 
@@ -23,32 +25,31 @@ export class AppHome {
     this.updateUserId = this.updateUserId.bind(this);
     this.toggleSdk = this.toggleSdk.bind(this);
     this.setLogLevel = this.setLogLevel.bind(this);
+    this.toggleNetwork = this.toggleNetwork.bind(this)
   }
 
   async componentWillLoad() {
     console.debug('[homepage] componentWillLoad')
 
-    try {
-      const { value: sdkEnabled } = await AppCenter.isEnabled()
-      const { value: installId } = await AppCenter.getInstallId()
-      const { value: sdkVersion } = await AppCenter.getSdkVersion()
-      const { value: logLevel } = await AppCenter.getLogLevel()
+    const { value: sdkEnabled } = await AppCenter.isEnabled()
+    const { value: reqAllowed } = await AppCenter.isNetworkRequestsAllowed()
+    const { value: installId } = await AppCenter.getInstallId()
+    const { value: sdkVersion } = await AppCenter.getSdkVersion()
+    const { value: logLevel } = await AppCenter.getLogLevel()
 
-      this.installId = installId
-      this.sdkVersion = sdkVersion
-      this.enabled = sdkEnabled
-      this.logLevel = logLevel
+    this.installId = installId
+    this.sdkVersion = sdkVersion
+    this.enabled = sdkEnabled
+    this.logLevel = logLevel
+    this.networkReqAllowed = reqAllowed
 
-      console.debug(logLevel)
+    console.debug(logLevel)
 
-      // this.customProperties = new CustomProperties()
-      // this.customProperties.set('color', 'blue').set('score', 10).set('result', true).set("timestamp", new Date())
-      // console.debug(this.customProperties)
+    // this.customProperties = new CustomProperties()
+    // this.customProperties.set('color', 'blue').set('score', 10).set('result', true).set("timestamp", new Date())
+    // console.debug(this.customProperties)
 
-      // AppCenter.setCustomProperties({properties: this.customProperties});
-    } catch (error) {
-      console.error(error)
-    }
+    // AppCenter.setCustomProperties({properties: this.customProperties});    
   }
 
   componentDidLoad() {
@@ -84,8 +85,19 @@ export class AppHome {
   async toggleSdk(e: CustomEvent) {
     console.debug("[homepage] toggleSdk");
     try {
-      await AppCenter.enable({enableFlag: e.detail.checked});
+      await AppCenter.setEnabled({enabled: e.detail.checked});
       this.enabled = e.detail.checked
+    } catch (error) {
+      this.enabled = false
+      console.error(error)
+    }
+  }
+
+  async toggleNetwork(e: CustomEvent) {
+    console.debug("[homepage] toggleNetwork");
+    try {
+      await AppCenter.setNetworkRequestsAllowed({isAllowed: e.detail.checked});
+      this.networkReqAllowed = e.detail.checked
     } catch (error) {
       this.enabled = false
       console.error(error)
@@ -99,6 +111,13 @@ export class AppHome {
     } catch (error) {
       console.error(error);
     }
+
+    // also test custom properties
+    this.customProperties = new CustomProperties()
+    this.customProperties.set('color', 'blue').set('score', 10).set('result', true).set("timestamp", new Date())
+    console.debug(this.customProperties)
+
+    AppCenter.setCustomProperties({properties: this.customProperties});  
   }
   
   render() {
@@ -120,6 +139,10 @@ export class AppHome {
           <ion-item>
             <ion-label>App Center SDK</ion-label>
             <ion-note slot="end">{this.sdkVersion}</ion-note>
+          </ion-item>
+          <ion-item>
+            <ion-label>Allow Network Requests</ion-label>
+            <ion-toggle checked={this.networkReqAllowed} onIonChange={(event) => this.toggleNetwork(event)} />
           </ion-item>
           <ion-item>
             <ion-label>Log Level</ion-label>

@@ -7,15 +7,13 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/maintenance/yes/2020?style=flat-square" />
-  <a href="https://github.com/capacitor-community/appcenter-sdk-capacitor/tree/master/appcenter-analytics/actions?query=workflow%3A%22CI%22"><img src="https://img.shields.io/github/workflow/status/capacitor-community/appcenter-sdk-capacitor/tree/master/appcenter-analytics/CI?style=flat-square" /></a>
+  <img src="https://img.shields.io/maintenance/yes/2021?style=flat-square" />
+  <img src="https://img.shields.io/badge/Capacitor%20V3%20Support-yes-green?logo=Capacitor&style=flat-square" />
+  <a href="https://github.com/capacitor-community/appcenter-sdk-capacitor/tree/master/appcenter-analytics/actions?query=workflow%3A%22CI%22"></a>
   <a href="https://www.npmjs.com/package/@capacitor-community/appcenter-analytics"><img src="https://img.shields.io/npm/l/@capacitor-community/appcenter-analytics?style=flat-square" /></a>
   <br>
   <a href="https://www.npmjs.com/package/@capacitor-community/appcenter-analytics"><img src="https://img.shields.io/npm/dw/@capacitor-community/appcenter-analytics?style=flat-square" /></a>
   <a href="https://www.npmjs.com/package/@capacitor-community/appcenter-analytics"><img src="https://img.shields.io/npm/v/@capacitor-community/appcenter-analytics?style=flat-square" /></a>
-  <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-  <a href="#contributors-"><img src="https://img.shields.io/badge/all%20contributors-0-orange?style=flat-square" /></a>
-  <!-- ALL-CONTRIBUTORS-BADGE:END -->
 </p>
 
 ## Maintainers
@@ -40,7 +38,7 @@ Once you add App Center Analytics to your app and the SDK is started, it will au
 
 <docgen-index>
 
-* [`enable(...)`](#enable)
+* [`setEnabled(...)`](#setenabled)
 * [`isEnabled()`](#isenabled)
 * [`pause()`](#pause)
 * [`resume()`](#resume)
@@ -52,21 +50,19 @@ Once you add App Center Analytics to your app and the SDK is started, it will au
 <docgen-api>
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
 
-### enable(...)
+### setEnabled(...)
 
 ```typescript
-enable(options: { enableFlag: boolean; }) => any
+setEnabled(options: { enable: boolean; }) => Promise<void>
 ```
 
 You can enable and disable App Center Analytics at runtime. If you disable it, the SDK won't collect any more analytics information for the app.
 
-| Param         | Type                                  |
-| ------------- | ------------------------------------- |
-| **`options`** | <code>{ enableFlag: boolean; }</code> |
+| Param         | Type                              |
+| ------------- | --------------------------------- |
+| **`options`** | <code>{ enable: boolean; }</code> |
 
-**Returns:** <code>any</code>
-
-**Since:** 0.1.0
+**Since:** 0.3.0
 
 --------------------
 
@@ -74,12 +70,12 @@ You can enable and disable App Center Analytics at runtime. If you disable it, t
 ### isEnabled()
 
 ```typescript
-isEnabled() => any
+isEnabled() => Promise<{ value: boolean; }>
 ```
 
 Check if Analytics is enabled or not.
 
-**Returns:** <code>any</code>
+**Returns:** <code>Promise&lt;{ value: boolean; }&gt;</code>
 
 **Since:** 0.0.1
 
@@ -89,12 +85,10 @@ Check if Analytics is enabled or not.
 ### pause()
 
 ```typescript
-pause() => any
+pause() => Promise<void>
 ```
 
 Pause transmission of Analytics logs. While paused, Analytics logs are saved to disk.
-
-**Returns:** <code>any</code>
 
 **Since:** 0.1.0
 
@@ -104,12 +98,10 @@ Pause transmission of Analytics logs. While paused, Analytics logs are saved to 
 ### resume()
 
 ```typescript
-resume() => any
+resume() => Promise<void>
 ```
 
 Resume transmission of Analytics logs. Any Analytics logs that accumulated on disk while paused are sent to the server.
-
-**Returns:** <code>any</code>
 
 **Since:** 0.1.0
 
@@ -119,7 +111,7 @@ Resume transmission of Analytics logs. Any Analytics logs that accumulated on di
 ### trackEvent(...)
 
 ```typescript
-trackEvent(options: AnalyticsEvent) => any
+trackEvent(options: AnalyticsEvent) => Promise<void>
 ```
 
 Track an event with optional custom properties to know what's happening in your app, understand user actions, and see the aggregates in the App Center portal.
@@ -127,8 +119,6 @@ Track an event with optional custom properties to know what's happening in your 
 | Param         | Type                                                      |
 | ------------- | --------------------------------------------------------- |
 | **`options`** | <code><a href="#analyticsevent">AnalyticsEvent</a></code> |
-
-**Returns:** <code>any</code>
 
 **Since:** 0.1.0
 
@@ -144,6 +134,6 @@ Track an event with optional custom properties to know what's happening in your 
 | ---------------- | --------------------------------------- | ------------------------------------ |
 | **`name`**       | <code>string</code>                     | 256 character limit                  |
 | **`properties`** | <code>{ [key: string]: string; }</code> | Only 20 properties allowed per event |
-| **`flag`**       | <code>"normal" \| "critical"</code>     |                                      |
+| **`flag`**       | <code>'normal' \| 'critical'</code>     |                                      |
 
 </docgen-api>

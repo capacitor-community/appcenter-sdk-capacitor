@@ -7,15 +7,13 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/maintenance/yes/2020?style=flat-square" />
-  <a href="https://github.com/capacitor-community/appcenter-sdk-capacitor/tree/master/appcenter/actions?query=workflow%3A%22CI%22"><img src="https://img.shields.io/github/workflow/status/capacitor-community/appcenter-sdk-capacitor/tree/master/appcenter/CI?style=flat-square" /></a>
-  <a href="https://www.npmjs.com/package/@capacitor-community/appcenter"><img src="https://img.shields.io/npm/l/@capacitor-community/app-icon?style=flat-square" /></a>
+  <img src="https://img.shields.io/maintenance/yes/2021?style=flat-square" />
+  <img src="https://img.shields.io/badge/Capacitor%20V3%20Support-yes-green?logo=Capacitor&style=flat-square" />
+  <a href="https://github.com/capacitor-community/appcenter-sdk-capacitor/tree/master/appcenter/actions?query=workflow%3A%22CI%22"></a>
+  <a href="https://www.npmjs.com/package/@capacitor-community/appcenter"><img src="https://img.shields.io/npm/l/@capacitor-community/appcenter?style=flat-square" /></a>
   <br>
   <a href="https://www.npmjs.com/package/@capacitor-community/appcenter"><img src="https://img.shields.io/npm/dw/@capacitor-community/appcenter?style=flat-square" /></a>
   <a href="https://www.npmjs.com/package/@capacitor-community/appcenter"><img src="https://img.shields.io/npm/v/@capacitor-community/appcenter?style=flat-square" /></a>
-  <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-  <a href="#contributors-"><img src="https://img.shields.io/badge/all%20contributors-0-orange?style=flat-square" /></a>
-  <!-- ALL-CONTRIBUTORS-BADGE:END -->
 </p>
 
 ## Maintainers
@@ -38,27 +36,6 @@ npm install @capacitor-community/appcenter
 npx cap sync
 ```
 
-## Configure Preferences
-- `iosLogLevel` - _(optional, default is `7`)_ You can control the amount of log messages that show up from App Center. Log messages show in the console on iOS and LogCat on Android.
-Setting the log level here is useful to capture logs before JavaScript is loaded. See [definitions](https://github.com/capacitor-community/appcenter-sdk-capacitor/blob/684fab0bdf15e4be82c48426c9c63d9f3d7039a7/appcenter/src/definitions.ts#L1) for supported Log Levels.
-
-  Example:
-  ```json
-  {
-    "appId": "com.example.app",
-    "appName": "example",
-    "webDir": "www",
-    "bundledWebRuntime": false,
-    "AppCenter": {
-      "iosAppSecret": "0000-0000-0000-0000-000000000000",
-      "iosLogLevel": 2,
-      "androidAppSecret": "0000-0000-0000-0000-000000000000"
-    }
-    ...
-
-  }
-  ```
-
 ## Usage
 
 ```typescript
@@ -67,14 +44,17 @@ import AppCenter from '@capacitor-community/appcenter';
 const appCenterInfo = async () => {
 
   try {
-    const sdkEnabled = await AppCenter.isEnabled()
-    const installId = await AppCenter.getInstallId()
-    const sdkVersion = await AppCenter.getSdkVersion()
+    const { value: sdkEnabled } = await AppCenter.isEnabled()
+    const { value: installId } = await AppCenter.getInstallId()
+    const { value: sdkVersion } = await AppCenter.getSdkVersion()
+    const { value: logLevel } = await AppCenter.getLogLevel()
 
-    this.installId = installId.value
-    this.sdkVersion = sdkVersion.value
-    this.enabled = sdkEnabled.value
-  } catch (error) {
+    console.debug(sdkEnabled);
+    console.debug(installId);
+    console.debug(sdkVersion);
+    console.debug(logLevel);
+  } 
+  catch (error) {
     console.error(error)
   }
 
@@ -89,10 +69,12 @@ const appCenterInfo = async () => {
 * [`setUserId(...)`](#setuserid)
 * [`getSdkVersion()`](#getsdkversion)
 * [`isEnabled()`](#isenabled)
-* [`enable(...)`](#enable)
+* [`setEnabled(...)`](#setenabled)
 * [`setCustomProperties(...)`](#setcustomproperties)
 * [`getLogLevel()`](#getloglevel)
 * [`setLogLevel(...)`](#setloglevel)
+* [`setNetworkRequestsAllowed(...)`](#setnetworkrequestsallowed)
+* [`isNetworkRequestsAllowed()`](#isnetworkrequestsallowed)
 * [Enums](#enums)
 
 </docgen-index>
@@ -106,8 +88,7 @@ const appCenterInfo = async () => {
 getInstallId() => any
 ```
 
-Returns AppCenter UUID.
-For more info, please see: https://docs.microsoft.com/en-us/appcenter/sdk/other-apis/cordova#identify-installations
+Returns AppCenter unique installation identifier.
 
 **Returns:** <code>any</code>
 
@@ -123,11 +104,10 @@ setUserId(options: { userId: string; }) => any
 ```
 
 Set a user ID that's used to augment crash reports.
-For more info, please see: https://docs.microsoft.com/en-us/appcenter/sdk/other-apis/cordova#identify-users
 
-| Param         | Type                             |
-| ------------- | -------------------------------- |
-| **`options`** | <code>{ userId: string; }</code> |
+| Param         | Type                             | Description        |
+| ------------- | -------------------------------- | ------------------ |
+| **`options`** | <code>{ userId: string; }</code> | Ex. "your-user-id" |
 
 **Returns:** <code>any</code>
 
@@ -166,21 +146,21 @@ Check if App Center is enabled or not as a whole.
 --------------------
 
 
-### enable(...)
+### setEnabled(...)
 
 ```typescript
-enable(options: { enableFlag: boolean; }) => any
+setEnabled(options: { enabled: boolean; }) => any
 ```
 
 Toggle all App Center services at runtime. When disabled, the SDK won't forward any information to App Center.
 
-| Param         | Type                                  |
-| ------------- | ------------------------------------- |
-| **`options`** | <code>{ enableFlag: boolean; }</code> |
+| Param         | Type                               |
+| ------------- | ---------------------------------- |
+| **`options`** | <code>{ enabled: boolean; }</code> |
 
 **Returns:** <code>any</code>
 
-**Since:** 0.0.1
+**Since:** 0.7.0
 
 --------------------
 
@@ -191,7 +171,7 @@ Toggle all App Center services at runtime. When disabled, the SDK won't forward 
 setCustomProperties(options: { properties: CustomProperties; }) => any
 ```
 
-App Center allows you to define custom properties as key value pairs in your app. You may use custom properties for various purposes. 
+App Center allows you to define custom properties as key value pairs in your app. You may use custom properties for various purposes.
 For instance, you can use custom properties to segment your users, and then send push notifications to a specific audience.
 
 | Param         | Type                                           |
@@ -227,7 +207,7 @@ setLogLevel(options: { logLevel: LogLevel; }) => any
 ```
 
 You can control the amount of log messages that show up from App Center in the console. Log messages show in the console on iOS and LogCat on Android.
-By default, it's set to Assert for the App Store environment and Warning otherwise. To have as many log messages as possible, use Verbose. 
+By default, it's set to Assert for the App Store environment and Warning otherwise. To have as many log messages as possible, use Verbose.
 Note: `setLogLevel` API can't increase logging for app startup code, before JavaScript is loaded.
 
 | Param         | Type                                                         |
@@ -237,6 +217,40 @@ Note: `setLogLevel` API can't increase logging for app startup code, before Java
 **Returns:** <code>any</code>
 
 **Since:** 0.2.0
+
+--------------------
+
+
+### setNetworkRequestsAllowed(...)
+
+```typescript
+setNetworkRequestsAllowed(options?: { isAllowed: boolean; } | undefined) => any
+```
+
+Set whether SDK can send network requests.
+
+| Param         | Type                                 |
+| ------------- | ------------------------------------ |
+| **`options`** | <code>{ isAllowed: boolean; }</code> |
+
+**Returns:** <code>any</code>
+
+**Since:** 0.6.0
+
+--------------------
+
+
+### isNetworkRequestsAllowed()
+
+```typescript
+isNetworkRequestsAllowed() => any
+```
+
+Check whether sending data in the App Center SDK is allowed or not.
+
+**Returns:** <code>any</code>
+
+**Since:** 0.6.0
 
 --------------------
 

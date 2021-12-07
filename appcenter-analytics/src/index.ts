@@ -7,4 +7,4 @@ const Analytics = registerPlugin<AnalyticsPlugin>('Analytics', {
 });
 
 export * from './definitions';
-export { Analytics };
+export default Analytics;
