@@ -7,13 +7,8 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/maintenance/yes/2021?style=flat-square" />
-  <img src="https://img.shields.io/badge/Capacitor%20V3%20Support-yes-green?logo=Capacitor&style=flat-square" />
-  <a href="https://github.com/capacitor-community/appcenter-sdk-capacitor/tree/master/appcenter/actions?query=workflow%3A%22CI%22"></a>
-  <a href="https://www.npmjs.com/package/@capacitor-community/appcenter-crashes"><img src="https://img.shields.io/npm/l/@capacitor-community/appcenter-crashes?style=flat-square" /></a>
-  <br>
-  <a href="https://www.npmjs.com/package/@capacitor-community/appcenter-crashes"><img src="https://img.shields.io/npm/dw/@capacitor-community/appcenter-crashes?style=flat-square" /></a>
   <a href="https://www.npmjs.com/package/@capacitor-community/appcenter-crashes"><img src="https://img.shields.io/npm/v/@capacitor-community/appcenter-crashes?style=flat-square" /></a>
+  <a href="https://www.npmjs.com/package/@capacitor-community/appcenter-crashes"><img src="https://img.shields.io/npm/dw/@capacitor-community/appcenter-crashes?style=flat-square" /></a>
 </p>
 
 ## Maintainers

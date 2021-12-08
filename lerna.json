@@ -2,7 +2,8 @@
   "packages": [
     "appcenter",
     "appcenter-analytics",
-    "appcenter-crashes"
+    "appcenter-crashes",
+    "example"
   ],
   "command": {
     "bootstrap": {

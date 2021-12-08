@@ -15,6 +15,6 @@ Pod::Spec.new do |s|
   s.swift_version = '5.1'
   s.static_framework = true
   s.dependency 'Capacitor'
-  s.dependency 'AppCenterCapacitorShared', '~> 0.3.5'
+  s.dependency 'AppCenterCapacitorShared', '~> 1.0.0'
   s.dependency 'AppCenter/Crashes', '4.3.0'
 end
