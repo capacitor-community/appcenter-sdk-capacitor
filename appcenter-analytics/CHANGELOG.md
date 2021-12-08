@@ -1,5 +1,11 @@
 # Change Log
 
+## [1.0.0](https://github.com/capacitor-community/appcenter-sdk-capacitor/compare/@capacitor-community/appcenter-analyics@0.3.4...@capacitor-community/appcenter-analyics@1.0.0)
+
+### Chore
+
+* **ios**: Bump `AppCenterCapacitorShared` version to `1.0.0`
+
 ## [0.3.4](https://github.com/capacitor-community/appcenter-sdk-capacitor/compare/@capacitor-community/appcenter-analyics@0.3.3...@capacitor-community/appcenter-analyics@0.3.4)
 
 ### Chore
