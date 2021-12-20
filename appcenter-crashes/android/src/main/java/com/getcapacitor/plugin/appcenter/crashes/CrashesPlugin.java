@@ -41,7 +41,7 @@ public class CrashesPlugin extends Plugin {
     }
 
     @PluginMethod(returnType = PluginMethod.RETURN_NONE)
-    public void setEnable(PluginCall call) {
+    public void setEnabled(PluginCall call) {
         Boolean enable = call.getBoolean("enable", false);
         if (enable == null) {
             enable = false;
