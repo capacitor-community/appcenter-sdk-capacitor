@@ -1,3 +1,9 @@
+declare module '@capacitor/core' {
+  interface PluginRegistry {
+    Analytics: AnalyticsPlugin;
+  }
+}
+
 export interface AnalyticsEvent {
   /**
    * 256 character limit
@@ -41,7 +47,9 @@ export interface AnalyticsPlugin {
    * @param {AnalyticsEvent} options
    * @returns {Promise<void>}
    * @example
-   * import Analytics from '@capacitor-community/appcenter-analytics';
+   * import { Plugins } from '@capacitor/core';
+   * import { LogLevel } from '@capacitor-community/appcenter-analytics';
+   * const { Analytics } = Plugins
    *
    * Analytics.trackEvent("Video Clicked")
    * Analytics.trackEvent('Video Clicked', {"Category" : "Music", "FileName" : "favorite.avi"}, flag: 'critical')

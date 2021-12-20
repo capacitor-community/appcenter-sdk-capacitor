@@ -11,9 +11,9 @@ Pod::Spec.new do |s|
   s.author = package['author']
   s.source = { :git => package['repository']['url'], :tag => s.version.to_s }
   s.source_files = 'ios/Plugin/**/*.{swift,h,m,c,cc,mm,cpp}'
-  s.ios.deployment_target  = '12.0'
+  s.ios.deployment_target  = '11.0'
   s.dependency 'Capacitor'
-  s.dependency 'AppCenterCapacitorShared', '~> 1.0.0'
+  s.dependency 'AppCenterCapacitorShared', '~> 0.4.0'
   s.dependency 'AppCenter/Analytics', '4.3.0'
   s.static_framework = true
   s.swift_version = '5.1'
