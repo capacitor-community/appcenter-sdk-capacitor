@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'AppCenterCapacitorShared'
-  s.version          = '1.0.0'
+  s.version          = '2.0.0'
   s.summary          = 'Shared utility to assist with bootstrapping AppCenter for Capacitor plugin.'
   s.homepage         = 'https://github.com/capacitor-community/appcenter-sdk-capacitor'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
@@ -10,6 +10,6 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '12.0'
   s.swift_version = '5.1'
   s.source_files = 'AppCenterCapacitorShared/ios/AppCenterCapacitorShared/*.swift'
-  s.dependency 'AppCenter/Core', '4.3.0'
+  s.dependency 'AppCenter/Core', ' ~> 4.4.0'
   s.static_framework = true
 end
