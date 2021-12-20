@@ -77,7 +77,7 @@ The state is persisted in the device's storage across application launches.
 | ------------- | --------------------------------- |
 | **`options`** | <code>{ enable: boolean; }</code> |
 
-**Since:** 0.1.0
+**Since:** 0.1.1
 
 --------------------
 
