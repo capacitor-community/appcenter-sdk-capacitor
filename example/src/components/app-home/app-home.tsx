@@ -1,5 +1,8 @@
 import { Component, h, State } from '@stencil/core';
-import AppCenter, { CustomProperties, LogLevel } from '@capacitor-community/appcenter';
+import { Plugins } from '@capacitor/core';
+import { CustomProperties, LogLevel } from '@capacitor-community/appcenter';
+
+const { AppCenter } = Plugins
 
 @Component({
   tag: 'app-home',
@@ -19,7 +22,7 @@ export class AppHome {
   /* Flag to toggle App Center network requests */
   @State() networkReqAllowed: boolean = false
   /* App Center LogLevel */
-  @State() logLevel: LogLevel;
+  @State() logLevel: LogLevel
 
   constructor() {
     this.updateUserId = this.updateUserId.bind(this);
@@ -104,16 +107,16 @@ export class AppHome {
     }
   }
 
-  async setLogLevel(logLevel: LogLevel) {
+  async setLogLevel(logLevel) {
     try {
-      await AppCenter.setLogLevel({logLevel: logLevel})
+      await AppCenter.setLogLevel({logLevel})
       this.logLevel = logLevel
     } catch (error) {
       console.error(error);
     }
 
     // also test custom properties
-    this.customProperties = new CustomProperties()
+    // this.customProperties = new CustomProperties()
     this.customProperties.set('color', 'blue').set('score', 10).set('result', true).set("timestamp", new Date())
     console.debug(this.customProperties)
 

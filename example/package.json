@@ -10,25 +10,24 @@
   "scripts": {
     "build": "stencil build --dev",
     "start": "stencil build --dev --watch --serve",
+    "build:android": "cd android && ./gradlew assembleDebug && cd ../",
+    "emulate:android": "cd android/app/build/outputs/apk/debug/ && native-run android --app app-debug.apk && cd ../../../../../",
     "test": "stencil test --spec --e2e",
     "test.watch": "stencil test --spec --e2e --watch",
     "generate": "stencil generate"
   },
   "devDependencies": {
     "@ionic/core": "^5.7.0",
-    "@stencil/core": "^2.8.0"
+    "@stencil/core": "^2.8.0",
+    "native-run": "^1.5.0"
   },
   "dependencies": {
-    "@capacitor-community/appcenter": "^1.0.0",
-    "@capacitor-community/appcenter-analytics": "^1.0.0",
-    "@capacitor-community/appcenter-crashes": "^1.0.0",
-    "@capacitor/android": "^3.0.0",
-    "@capacitor/app": "^1.0.0",
-    "@capacitor/cli": "^3.0.0",
-    "@capacitor/core": "^3.0.0",
-    "@capacitor/device": "^1.0.0",
-    "@capacitor/haptics": "^1.0.0",
-    "@capacitor/ios": "^3.0.0",
-    "@capacitor/keyboard": "^1.0.0"
+    "@capacitor-community/appcenter": "^0.8.0",
+    "@capacitor-community/appcenter-analytics": "^0.4.0",
+    "@capacitor-community/appcenter-crashes": "^0.8.0",
+    "@capacitor/android": "^2.0.0",
+    "@capacitor/cli": "^2.0.0",
+    "@capacitor/core": "^2.0.0",
+    "@capacitor/ios": "^2.0.0"
   }
 }

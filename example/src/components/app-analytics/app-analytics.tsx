@@ -1,6 +1,8 @@
 import { Component, State, h } from '@stencil/core';
 import { ToggleChangeEventDetail } from '@ionic/core';
-import Analytics from '@capacitor-community/appcenter-analytics';
+import { Plugins } from '@capacitor/core';
+
+const { Analytics } = Plugins;
 
 @Component({
   tag: 'app-analytics',

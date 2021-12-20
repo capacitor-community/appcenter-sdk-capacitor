@@ -1,6 +1,6 @@
 {
-	"appId": "com.example.app",
-	"appName": "App Center",
-	"webDir": "www",
-	"bundledWebRuntime": false
+  "appId": "com.example.app",
+  "appName": "App Center",
+  "webDir": "www",
+  "bundledWebRuntime": false
 }

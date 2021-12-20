@@ -1,8 +1,9 @@
 import { Component, State, h } from '@stencil/core';
 import { modalController, ToggleChangeEventDetail } from '@ionic/core';
-import Crashes, { ErrorReport, ExceptionModel, ErrorAttachmentLog } from '@capacitor-community/appcenter-crashes';
-
+import { Plugins } from '@capacitor/core';
+import { ExceptionModel, ErrorAttachmentLog } from '@capacitor-community/appcenter-crashes';
 import { ErrorReportItem } from './error-report-items-modal';
+const { Crashes } = Plugins;
 
 @Component({
   tag: 'app-crashes',
@@ -13,7 +14,7 @@ export class AppCrashes {
   @State() enabled: boolean = false
   @State() memoryWarning: boolean = false
   @State() hasCrashed: boolean = false
-  @State() crashReport: ErrorReport
+  @State() crashReport
   /* Track error fields */
   @State() errorType: string = "";
   @State() errorMessage: string = "";
