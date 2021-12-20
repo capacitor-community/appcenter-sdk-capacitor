@@ -2,10 +2,11 @@
 
 <img src="https://img.shields.io/maintenance/yes/2021?style=flat-square" /> <a href="https://github.com/capacitor-community/appcenter-sdk-capacitor/actions?query=workflow%3A%22CI%22"><img src="https://img.shields.io/github/workflow/status/capacitor-community/appcenter-sdk-capacitor/CI?style=flat-square" /></a> 
  [![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lerna.js.org/)
- <br>
+<br>
 <img src="https://img.shields.io/badge/Capacitor%20V2%20Support-yes-green?logo=Capacitor&style=flat-square" />
- <img src="https://img.shields.io/badge/Capacitor%20V3%20Support-yes-green?logo=Capacitor&style=flat-square" /> 
+<img src="https://img.shields.io/badge/Capacitor%20V3%20Support-yes-green?logo=Capacitor&style=flat-square" /> 
 
+# This branch is for Capacitor 2.x. For Capacitor 3.x, see `https://github.com/capacitor-community/appcenter-sdk-capacitor/tree/master`
 
 App Center is mission control for mobile apps. Get faster release cycles, higher-quality apps, and the insights to build what users want.
 
@@ -30,6 +31,14 @@ Add the App Center plugin(s) that fit your needs directly from the CLI:
 ```bash
 npm i @capacitor-community/appcenter @capacitor-community/appcenter-analytics @capacitor-community/appcenter-crashes --save-exact
 npx cap sync
+```
+
+### Capacitor 2.x
+
+For Capacitor 2.x projects, you will need to install a version less than 1.0.0. You can do that by specifying the version in your `package.json` or installing like this.
+
+```bash
+npm i @capacitor-community/appcenter@0.x
 ```
 
 ## 2. 🛠 Configure the SDK

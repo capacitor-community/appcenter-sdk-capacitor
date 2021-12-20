@@ -21,7 +21,7 @@
 ## Install
 
 ```bash
-npm install @capacitor-community/appcenter-analytics
+npm install @capacitor-community/appcenter-analytics@0.4.0
 npx cap sync
 ```
 

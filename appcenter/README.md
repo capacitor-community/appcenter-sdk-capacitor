@@ -34,7 +34,10 @@ npx cap sync
 ## Usage
 
 ```typescript
-import AppCenter from '@capacitor-community/appcenter';
+import { Plugins } from '@capacitor/core';
+import { CustomProperties, LogLevel } from '@capacitor-community/appcenter';
+
+const { AppCenter } = Plugins
 
 const appCenterInfo = async () => {
 

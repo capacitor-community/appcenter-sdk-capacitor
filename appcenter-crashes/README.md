@@ -27,7 +27,7 @@
 ## Install
 
 ```bash
-npm install @capacitor-community/appcenter-crashes
+npm install @capacitor-community/appcenter-crashes@0.8.0
 npx cap sync
 ```
 
