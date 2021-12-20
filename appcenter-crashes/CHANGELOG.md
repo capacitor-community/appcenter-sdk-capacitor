@@ -1,5 +1,12 @@
 # Change Log
 
+## [1.0.1](https://github.com/capacitor-community/appcenter-sdk-capacitor/compare/@capacitor-community/appcenter-crashes@1.0.0...@capacitor-community/appcenter-crashes@1.0.1)
+
+### Fixes
+
+* **android**: change `setEnable` to `setEnabled`
+* **ios**: use correct `enable` flag for `setEnabled`
+
 ## [1.0.0](https://github.com/capacitor-community/appcenter-sdk-capacitor/compare/@capacitor-community/appcenter-crashes@0.7.3...@capacitor-community/appcenter-crashes@1.0.0)
 
 ### Chore

@@ -30,19 +30,19 @@ export class AppCrashes {
   }
 
   async componentWillLoad() {
-    try {
       const { value: crashesEnabled } = await Crashes.isEnabled();
       const { value: memoryWarning } = await Crashes.hasReceivedMemoryWarningInLastSession();
       const { value: hasCrashed } = await Crashes.hasCrashedInLastSession();
-      const { value: crashReport } = await Crashes.lastSessionCrashReport();
+      try {
+        const { value: crashReport } = await Crashes.lastSessionCrashReport();
+        this.crashReport = crashReport;
+      } catch (error) {
+        console.error(error);
+      }
 
       this.enabled = crashesEnabled
       this.memoryWarning = memoryWarning
       this.hasCrashed = hasCrashed
-      this.crashReport = crashReport;
-    } catch (error) {
-      console.error(error)
-    }
   }
 
   async toggleCrashes(e: CustomEvent<ToggleChangeEventDetail>) {
