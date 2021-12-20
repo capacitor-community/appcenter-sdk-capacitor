@@ -5,10 +5,10 @@ import com.getcapacitor.JSObject;
 import com.getcapacitor.Plugin;
 import com.getcapacitor.PluginCall;
 import com.getcapacitor.PluginMethod;
-import com.getcapacitor.annotation.CapacitorPlugin;
+import com.getcapacitor.NativePlugin;
 import com.microsoft.appcenter.reactnative.shared.AppCenterReactNativeShared;
 
-@CapacitorPlugin(name = "Crashes")
+@NativePlugin()
 public class CrashesPlugin extends Plugin {
 
     private final CrashesBase implementation = new CrashesBase();

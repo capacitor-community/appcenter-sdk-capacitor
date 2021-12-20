@@ -33,7 +33,7 @@ public class CrashesUtil {
      - Parameter jsObject: JSObject that contains MSACWrapperExceptionModel props
      - Returns MSACWrapperExceptionModel
      */
-    public static func toExceptionModel(_ jsObject: JSObject?) throws -> MSACWrapperExceptionModel {
+    public static func toExceptionModel(_ jsObject: [String:Any]?) throws -> MSACWrapperExceptionModel {
         if jsObject == nil {
             throw ExceptionModelError.validationError("Exception model cannot be nil")
         }
@@ -59,7 +59,7 @@ public class CrashesUtil {
         return model
     }
 
-    public static func toErrorAttachmentLogs(_ attachments: [JSObject]) -> [ErrorAttachmentLog] {
+    public static func toErrorAttachmentLogs(_ attachments: [[String:Any]]) -> [ErrorAttachmentLog] {
         var attachmentLogs: [ErrorAttachmentLog] = []
 
         for jsAttachment in attachments {

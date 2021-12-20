@@ -5,7 +5,7 @@ import AppCenterCrashes
 
 @objc public class AppCenterCrashesBase: NSObject {
 
-    public func trackException(_ exceptionObject: JSObject?, _ propertiesObject: JSObject?, _ attachmentsArray: [JSObject]?) throws -> String {
+    public func trackException(_ exceptionObject: [String:Any]?, _ propertiesObject: [String:Any]?, _ attachmentsArray: [[String:Any]]?) throws -> String {
         let exceptionModel = try CrashesUtil.toExceptionModel(exceptionObject)
         let properties = propertiesObject as? [String: String] ?? nil
         let attachments = CrashesUtil.toErrorAttachmentLogs(attachmentsArray ?? [])

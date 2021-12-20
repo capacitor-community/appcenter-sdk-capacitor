@@ -1,3 +1,9 @@
+declare module '@capacitor/core' {
+  interface PluginRegistry {
+    Crashes: CrashesPlugin;
+  }
+}
+
 export enum UserConfirmation {
   DONT_SEND = 0,
   SEND = 1,
@@ -202,7 +208,8 @@ export interface CrashesPlugin {
    * @returns {Promise<{value: boolean}>}
    * @since 0.1.0
    * @example
-   * import Crashes from '@capacitor-community/appcenter-crashes';
+   * import { Plugins } from '@capacitor/core';
+   * const { Crashes } = Plugins;
    *
    * const { value: enabled } = await Crashes.isEnabled();
    */
@@ -214,7 +221,8 @@ export interface CrashesPlugin {
    * @param {enable: boolean} options
    * @since 0.1.0
    * @example
-   * import Crashes from '@capacitor-community/appcenter-crashes';
+   * import { Plugins } from '@capacitor/core';
+   * const { Crashes } = Plugins;
    *
    * await Crashes.enable({enable: true});
    */
@@ -224,7 +232,8 @@ export interface CrashesPlugin {
    * Generate a test crash for easy testing of the SDK. This API can only be used in test/beta apps and won't do anything in production apps.
    * @since 0.2.0
    * @example
-   * import Crashes from '@capacitor-community/appcenter-crashes';
+   * import { Plugins } from '@capacitor/core';
+   * const { Crashes } = Plugins;
    *
    * await Crashes.generateTestCrash();
    */
@@ -235,7 +244,8 @@ export interface CrashesPlugin {
    * @returns {Promise<{value: boolean}>}
    * @since 0.2.0
    * @example
-   * import Crashes from '@capacitor-community/appcenter-crashes';
+   * import { Plugins } from '@capacitor/core';
+   * const { Crashes } = Plugins;
    *
    * const { value: gotMemWarning } = await Crashes.hasReceivedMemoryWarningInLastSession();
    */
@@ -246,7 +256,8 @@ export interface CrashesPlugin {
    * @returns {Promise<{value: boolean}>}
    * @since 0.3.0
    * @example
-   * import Crashes from '@capacitor-community/appcenter-crashes';
+   * import { Plugins } from '@capacitor/core';
+   * const { Crashes } = Plugins;
    *
    * const { value: hasCrashed } = await Crashes.hasCrashedInLastSession();
    */
@@ -257,7 +268,8 @@ export interface CrashesPlugin {
    * @returns {Promise<{value: ErrorReport}>}
    * @since 0.3.0
    * @example
-   * import Crashes from '@capacitor-community/appcenter-crashes';
+   * import { Plugins } from '@capacitor/core';
+   * const { Crashes } = Plugins;
    *
    * const { value: crashReport } = await Crashes.lastSessionCrashReport();
    */
@@ -268,7 +280,9 @@ export interface CrashesPlugin {
    * @returns {Promise<{ errorReportId: string }>}
    * @since 0.6.0
    * @example
-   * import Crashes, { ExceptionModel, ErrorAttachmentLog } from '@capacitor-community/appcenter-crashes';
+   * import { Plugins } from '@capacitor/core';
+   * import { ExceptionModel, ErrorAttachmentLog } from '@capacitor-community/appcenter-crashes';
+   * const { Crashes } = Plugins;
    *
    * const error = ExceptionModel.createFromError(new Error("test error"));
    * const attachments = [
