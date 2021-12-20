@@ -59,7 +59,7 @@ public class AppCenterPlugin: CAPPlugin {
     }
 
     @objc func setNetworkRequestsAllowed(_ call: CAPPluginCall) {
-        implementation.setNetworkRequestsAllowed(call.getBool("isAllowed", true))
+        implementation.setNetworkRequestsAllowed(call.getBool("isAllowed") ?? true)
         call.resolve()
     }
 

@@ -3,13 +3,13 @@ package com.getcapacitor.plugin.appcenter;
 // import android.app.Application;
 
 import com.getcapacitor.JSObject;
+import com.getcapacitor.NativePlugin;
 import com.getcapacitor.Plugin;
 import com.getcapacitor.PluginCall;
 import com.getcapacitor.PluginMethod;
-import com.getcapacitor.annotation.CapacitorPlugin;
 import com.microsoft.appcenter.reactnative.shared.AppCenterReactNativeShared;
 
-@CapacitorPlugin(name = "AppCenter")
+@NativePlugin()
 public class AppCenterPlugin extends Plugin {
 
     private AppCenterBase implementation = new AppCenterBase();

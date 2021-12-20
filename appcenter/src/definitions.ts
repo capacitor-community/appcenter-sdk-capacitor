@@ -1,3 +1,9 @@
+declare module '@capacitor/core' {
+  interface PluginRegistry {
+    AppCenter: AppCenterPlugin;
+  }
+}
+
 export enum LogLevel {
   /* Logging will be very chatty */
   VERBOSE = 2,
@@ -81,7 +87,8 @@ export interface AppCenterPlugin {
    * @returns {Promise<{value: string}>} install id
    * @since 0.0.1
    * @example
-   * import AppCenter from '@capacitor-community/appcenter';
+   * import { Plugins } from '@capacitor/core';
+   * const { AppCenter } = Plugins
 
    * const { value: installId } = await AppCenter.getInstallId();
    */
@@ -92,7 +99,8 @@ export interface AppCenterPlugin {
    * @returns {Promise<void>}
    * @since 0.0.1
    * @example
-   * import AppCenter from '@capacitor-community/appcenter';
+   * import { Plugins } from '@capacitor/core';
+   * const { AppCenter } = Plugins
 
    * await AppCenter.setUserId({userId: 'your-user-id'})
    */
@@ -102,7 +110,8 @@ export interface AppCenterPlugin {
    * @returns {Promise<{value: string}>} sdk version
    * @since 0.0.1
    * @example
-   * import AppCenter from '@capacitor-community/appcenter';
+   * import { Plugins } from '@capacitor/core';
+   * const { AppCenter } = Plugins
 
    * const { value: sdkVersion } = await AppCenter.getSdkVersion();
    */
@@ -112,7 +121,8 @@ export interface AppCenterPlugin {
    * @returns {Promise<{value: boolean}>}
    * @since 0.0.1
    * @example
-   * import AppCenter from '@capacitor-community/appcenter';
+   * import { Plugins } from '@capacitor/core';
+   * const { AppCenter } = Plugins
 
    * const { value: sdkEnabled } = await AppCenter.isEnabled();
    */
@@ -122,7 +132,8 @@ export interface AppCenterPlugin {
    * @param {{enabled: boolean}} options
    * @since 0.7.0
    * @example
-   * import AppCenter from '@capacitor-community/appcenter';
+   * import { Plugins } from '@capacitor/core';
+   * const { AppCenter } = Plugins
 
    * await AppCenter.setEnable({enabled: true});
    */
@@ -133,7 +144,9 @@ export interface AppCenterPlugin {
    * @param {{properties: CustomProperties}} options
    * @since 0.2.0
    * @example
-   * import AppCenter, { CustomProperties } from '@capacitor-community/appcenter';
+   * import { Plugins } from '@capacitor/core';
+   * import { CustomProperties } from '@capacitor-community/appcenter';
+   * const { AppCenter } = Plugins
    *
    * const properties = new CustomProperties();
    * properties.set('color', 'blue').set('score', 10);
@@ -145,8 +158,10 @@ export interface AppCenterPlugin {
    * @returns {Promise<{value: LogLevel}>} AppCenter LogLevel
    * @since 0.2.0
    * @example
-   * import AppCenter from '@capacitor-community/appcenter';
-   *
+   * import { Plugins } from '@capacitor/core';
+   * import { LogLevel } from '@capacitor-community/appcenter';
+   * const { AppCenter } = Plugins
+  
    * const {value: logLevel} = await AppCenter.getLogLevel()
    */
   getLogLevel(): Promise<{ value: LogLevel }>;
@@ -157,7 +172,9 @@ export interface AppCenterPlugin {
    * @param {logLevel: LogLevel} options
    * @since 0.2.0
    * @example
-   * import AppCenter, { LogLevel } from '@capacitor-community/appcenter';
+   * import { Plugins } from '@capacitor/core';
+   * import { LogLevel } from '@capacitor-community/appcenter';
+   * const { AppCenter } = Plugins
    *
    * await AppCenter.setLogLevel({logLevel: LogLevel.DEBUG})
    */
@@ -168,7 +185,8 @@ export interface AppCenterPlugin {
    * @returns {Promise<void>}
    * @since 0.6.0
    * @example
-   * import AppCenter from '@capacitor-community/appcenter';
+   * import { Plugins } from '@capacitor/core';
+   * const { AppCenter } = Plugins
    *
    * await AppCenter.setNetworkRequestsAllowed({isAllowed: true})
    */
@@ -178,7 +196,8 @@ export interface AppCenterPlugin {
    * @returns {Promise<{value: boolean}>}
    * @since 0.6.0
    * @example
-   * import AppCenter from '@capacitor-community/appcenter';
+   * import { Plugins } from '@capacitor/core';
+   * const { AppCenter } = Plugins
 
    * const { value: networkRequestsAllowed } = await AppCenter.isNetworkRequestsAllowed();
    */
