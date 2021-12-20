@@ -24,6 +24,7 @@ jobs:
           node-version: '14'
       - run: npm i
       - run: npm run lint
+      - run: pod lib lint
       
   verify-android:
     runs-on: ubuntu-latest
