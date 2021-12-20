@@ -10,6 +10,6 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '12.0'
   s.swift_version = '5.1'
   s.source_files = 'AppCenterCapacitorShared/ios/AppCenterCapacitorShared/*.swift'
-  s.dependency 'AppCenter/Core', ' ~> 4.4.0'
+  s.dependency 'AppCenter/Core', '~> 4.4.0'
   s.static_framework = true
 end
