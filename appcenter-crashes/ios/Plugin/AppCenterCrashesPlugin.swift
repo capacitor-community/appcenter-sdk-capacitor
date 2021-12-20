@@ -44,7 +44,7 @@ public class CrashesPlugin: CAPPlugin {
     }
 
     @objc func setEnabled(_ call: CAPPluginCall) {
-        implementation.enable(call.getBool("shouldEnable") ?? false)
+        implementation.enable(call.getBool("enable") ?? false)
         call.resolve()
     }
 
