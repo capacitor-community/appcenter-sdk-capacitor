@@ -68,4 +68,14 @@ public class AnalyticsPlugin: CAPPlugin {
 
         call.resolve()
     }
+
+    @objc func enableManualSessionTracker(_ call: CAPPluginCall) {
+        implementation.enableManualSessionTracker()
+        call.resolve()
+    }
+
+    @objc func startSession(_ call: CAPPluginCall) {
+        implementation.startSession()
+        call.resolve()
+    }
 }

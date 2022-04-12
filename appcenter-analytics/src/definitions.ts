@@ -48,4 +48,18 @@ export interface AnalyticsPlugin {
    * @since 0.1.0
    */
   trackEvent(options: AnalyticsEvent): Promise<void>;
+
+  /**
+   * Enable manual session tracker. Call this method before Analytics starts.
+   * @returns {Promise<void>}
+   * @since 2.0.0
+   */
+  enableManualSessionTracker(): Promise<void>;
+
+  /**
+   * Start a new session if manual session tracker is enabled, otherwise do nothing.
+   * @returns {Promise<void>}
+   * @since 2.0.0
+   */
+  startSession(): Promise<void>;
 }

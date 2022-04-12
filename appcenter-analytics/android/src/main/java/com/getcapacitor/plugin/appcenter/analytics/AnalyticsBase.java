@@ -47,4 +47,12 @@ public class AnalyticsBase {
     public boolean isEnabled() {
         return Analytics.isEnabled().get();
     }
+
+    public void enableManualSessionTracker() {
+        Analytics.enableManualSessionTracker();
+    }
+
+    public void startSession() {
+        Analytics.startSession();
+    }
 }

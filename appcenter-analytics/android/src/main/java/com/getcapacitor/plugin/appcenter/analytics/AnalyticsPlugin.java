@@ -75,6 +75,18 @@ public class AnalyticsPlugin extends Plugin {
         implementation.trackEvent(name, properties, flag);
     }
 
+    @PluginMethod(returnType = PluginMethod.RETURN_NONE)
+    public void enableManualSessionTracker(PluginCall call) {
+        implementation.enableManualSessionTracker();
+        call.resolve();
+    }
+
+    @PluginMethod(returnType = PluginMethod.RETURN_NONE)
+    public void startSession(PluginCall call) {
+        implementation.startSession();
+        call.resolve();
+    }
+
     private static Map<String, String> mapFromJSON(JSONObject jsonObject) {
         if (jsonObject == null) {
             return null;

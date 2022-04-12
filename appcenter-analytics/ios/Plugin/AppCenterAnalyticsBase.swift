@@ -43,4 +43,12 @@ import AppCenterAnalytics
         return Analytics.enabled
     }
 
+    public func enableManualSessionTracker() {
+        Analytics.enableManualSessionTracker()
+    }
+
+    public func startSession() {
+        Analytics.startSession()
+    }
+
 }

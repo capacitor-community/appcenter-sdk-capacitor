@@ -1,5 +1,11 @@
 # Change Log
 
+## [1.1.0](https://github.com/capacitor-community/appcenter-sdk-capacitor/compare/@capacitor-community/appcenter-analyics@1.0.0...@capacitor-community/appcenter-analyics@1.0.1)
+
+### Features
+
+* **ios/android**: Add `Analytics.enableManualSessionTracker` and `Analytics.startSession`
+
 ## [1.0.0](https://github.com/capacitor-community/appcenter-sdk-capacitor/compare/@capacitor-community/appcenter-analyics@0.3.4...@capacitor-community/appcenter-analyics@1.0.0)
 
 ### Chore
