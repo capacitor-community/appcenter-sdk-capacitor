@@ -50,7 +50,7 @@ repositories {
 
 dependencies {
     //api project(':AppCenterReactNativeShared')   // For testing with TestApp
-    api 'com.microsoft.appcenter.reactnative:appcenter-react-native:4.2.0' // change to own version
+    api 'com.microsoft.appcenter.reactnative:appcenter-react-native:4.4.+' // change to own version
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation project(':capacitor-android')
     implementation "androidx.appcompat:appcompat:$androidxAppCompatVersion"

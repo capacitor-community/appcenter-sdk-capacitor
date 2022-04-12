@@ -23,6 +23,7 @@ interface ICustomProperties {
 /**
  * App Center allows you to define custom properties as key value pairs in your app. You may use custom properties for various purposes.
  * For instance, you can use custom properties to segment your users, and then send push notifications to a specific audience.
+ * @deprecated No longer supported going forward.
  */
 export class CustomProperties implements ICustomProperties {
   [key: string]: any;
@@ -130,8 +131,9 @@ export interface AppCenterPlugin {
   /**
    * App Center allows you to define custom properties as key value pairs in your app. You may use custom properties for various purposes.
    * For instance, you can use custom properties to segment your users, and then send push notifications to a specific audience.
+   * @deprecated No longer supported going forward.
    * @param {{properties: CustomProperties}} options
-   * @since 0.2.0
+   * @since 2.0.0
    * @example
    * import AppCenter, { CustomProperties } from '@capacitor-community/appcenter';
    *
@@ -183,7 +185,17 @@ export interface AppCenterPlugin {
    * const { value: networkRequestsAllowed } = await AppCenter.isNetworkRequestsAllowed();
    */
   isNetworkRequestsAllowed(): Promise<{ value: boolean }>;
-
+  /**
+   * Set the two-letter ISO country code. Android only
+   * @param {{countryCode: string}} options the two-letter ISO country code. See <code>https://www.iso.org/obp/ui/#search</code> for more information.
+   * @returns {Promise<void>}
+   * @since 2.0.0
+   * @example
+   * import AppCenter from '@capacitor-community/appcenter';
+   *
+   * await AppCenter.setCountryCode({countryCode: 'US'})
+   */
+  setCountryCode(options: { countryCode: string }): Promise<void>;
   // move to confg setting in appcenter-analytics
   // setMaxStorageSize
 }

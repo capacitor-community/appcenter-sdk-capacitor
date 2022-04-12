@@ -14,4 +14,5 @@ CAP_PLUGIN(AppCenterPlugin, "AppCenter",
            CAP_PLUGIN_METHOD(setLogLevel, CAPPluginReturnNone);
            CAP_PLUGIN_METHOD(setNetworkRequestsAllowed, CAPPluginReturnNone);
            CAP_PLUGIN_METHOD(isNetworkRequestsAllowed, CAPPluginReturnPromise);
+           CAP_PLUGIN_METHOD(setCountryCode, CAPPluginReturnNone);
 )

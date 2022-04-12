@@ -1,5 +1,15 @@
 # Change Log
 
+## [2.0.0](https://github.com/capacitor-community/appcenter-sdk-capacitor/compare/@capacitor-community/appcenter@1.0.0...@capacitor-community/appcenter@2.0.0)
+
+### Breaking Changes
+
+* **ios/android** Remove `AppCenter.setCustomProperties` API.
+
+### Features
+
+* **android**: Add `AppCenter.setCountryCode` API.
+
 ## [1.0.0](https://github.com/capacitor-community/appcenter-sdk-capacitor/compare/@capacitor-community/appcenter@0.7.2...@capacitor-community/appcenter@1.0.0)
 
 ### Chores

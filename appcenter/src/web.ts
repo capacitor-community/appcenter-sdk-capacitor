@@ -3,6 +3,9 @@ import { WebPlugin } from '@capacitor/core';
 import type { AppCenterPlugin, LogLevel } from './definitions';
 
 export class AppCenterWeb extends WebPlugin implements AppCenterPlugin {
+  setCountryCode(): Promise<void> {
+    throw this.unimplemented('Not supported on web.');
+  }
   setEnabled(): Promise<void> {
     throw this.unimplemented('Not supported on web.');
   }
