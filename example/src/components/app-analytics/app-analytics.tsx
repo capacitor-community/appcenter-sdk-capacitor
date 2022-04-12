@@ -11,6 +11,8 @@ export class AppAnalytics {
   @State() enabled: boolean = false
   /* Flag to pause/resume Analytics service */
   @State() paused: boolean = false;
+  /* Flag to enable manual session tracking */
+  @State() manualSessionTrackerEnabled: boolean = false;
   /* Custom Event fields */
   @State() eventName: string = "";
   @State() propertyName: string = "";
@@ -19,6 +21,7 @@ export class AppAnalytics {
   constructor() {
     this.toggleAnalytics = this.toggleAnalytics.bind(this);
     this.toggleLogs = this.toggleLogs.bind(this);
+    this.toggleManualSessionTracker = this.toggleManualSessionTracker.bind(this);
     this.trackEvent = this.trackEvent.bind(this);
   }
 
@@ -68,6 +71,22 @@ export class AppAnalytics {
     }
   }
 
+  async toggleManualSessionTracker() {
+    try {
+      await Analytics.enableManualSessionTracker()
+    } catch (error) {
+      console.error(error)
+    }
+  }
+
+  async startManualSession() {
+    try {
+      await Analytics.startSession();
+    } catch (error) {
+      console.error(error)
+    }
+  }
+
   async trackEvent() {
     try {
       await Analytics.trackEvent({name: this.eventName, properties: {[this.propertyName]: this.propertyValue}});
@@ -96,6 +115,17 @@ export class AppAnalytics {
           <ion-item>
             <ion-label>Pause Analytics</ion-label>
             <ion-toggle disabled={!this.enabled} checked={this.paused} onIonChange={e => this.toggleLogs(e)}/>
+          </ion-item>
+          <ion-list-header lines="full">
+            <ion-label>
+              Manual Sessions
+            </ion-label>
+          </ion-list-header>
+          <ion-item>
+            <ion-button onClick={this.toggleManualSessionTracker}>Enable Manual Session Tracking</ion-button>
+          </ion-item>
+          <ion-item>
+            <ion-button onClick={this.startManualSession} expand="block">Start Manual Session</ion-button>
           </ion-item>
           <ion-list-header lines="full">
             <ion-label>

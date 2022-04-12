@@ -1,5 +1,5 @@
 import { Component, h, State } from '@stencil/core';
-import AppCenter, { CustomProperties, LogLevel } from '@capacitor-community/appcenter';
+import AppCenter, { LogLevel } from '@capacitor-community/appcenter';
 
 @Component({
   tag: 'app-home',
@@ -10,8 +10,6 @@ export class AppHome {
   installId: String = 'unknown'
   /* App Center SDK Version */
   sdkVersion: String = 'unknown'
-  /* App Center Custom Properties */
-  customProperties: CustomProperties
   /* App Center userId */
   userId: string;
   /* Flag to toggle App Center SDK */
@@ -37,19 +35,22 @@ export class AppHome {
     const { value: sdkVersion } = await AppCenter.getSdkVersion()
     const { value: logLevel } = await AppCenter.getLogLevel()
 
+    try {
+      await AppCenter.setCountryCode({countryCode: 'US'})
+      console.log("Country code set to US")
+
+    } catch (error) {
+      console.log("something went wrong setting country code")
+      console.log(error)
+    }
+
     this.installId = installId
     this.sdkVersion = sdkVersion
     this.enabled = sdkEnabled
     this.logLevel = logLevel
     this.networkReqAllowed = reqAllowed
 
-    console.debug(logLevel)
-
-    // this.customProperties = new CustomProperties()
-    // this.customProperties.set('color', 'blue').set('score', 10).set('result', true).set("timestamp", new Date())
-    // console.debug(this.customProperties)
-
-    // AppCenter.setCustomProperties({properties: this.customProperties});    
+    console.debug(logLevel)   
   }
 
   componentDidLoad() {
@@ -111,13 +112,6 @@ export class AppHome {
     } catch (error) {
       console.error(error);
     }
-
-    // also test custom properties
-    this.customProperties = new CustomProperties()
-    this.customProperties.set('color', 'blue').set('score', 10).set('result', true).set("timestamp", new Date())
-    console.debug(this.customProperties)
-
-    AppCenter.setCustomProperties({properties: this.customProperties});  
   }
   
   render() {
