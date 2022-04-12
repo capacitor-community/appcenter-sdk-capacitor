@@ -2,6 +2,12 @@
 
 ## [1.0.1](https://github.com/capacitor-community/appcenter-sdk-capacitor/compare/@capacitor-community/appcenter-crashes@1.0.0...@capacitor-community/appcenter-crashes@1.0.1)
 
+### Chore
+
+* updating sdk to latest 4.4.x
+
+## [1.0.1](https://github.com/capacitor-community/appcenter-sdk-capacitor/compare/@capacitor-community/appcenter-crashes@1.0.0...@capacitor-community/appcenter-crashes@1.0.1)
+
 ### Fixes
 
 * **android**: change `setEnable` to `setEnabled`
