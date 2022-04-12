@@ -47,15 +47,16 @@ public class AppCenterPlugin: CAPPlugin {
     }
 
     @objc func setCustomProperties(_ call: CAPPluginCall) {
-        guard let properties = call.options["properties"] as? [String: [String: Any]] else {
-            implementation.setCustomProperties([:])
-            call.resolve()
-            return
-        }
-        
-        implementation.setCustomProperties(properties)
-
-        call.resolve()
+        call.unavailable("Not available in appcenter@2.0.0 or later.")
+        //        guard let properties = call.options["properties"] as? [String: [String: Any]] else {
+        //            implementation.setCustomProperties([:])
+        //            call.resolve()
+        //            return
+        //        }
+        //
+        //        implementation.setCustomProperties(properties)
+        //
+        //        call.resolve()
     }
 
     @objc func setNetworkRequestsAllowed(_ call: CAPPluginCall) {
@@ -65,5 +66,10 @@ public class AppCenterPlugin: CAPPlugin {
 
     @objc func isNetworkRequestsAllowed(_ call: CAPPluginCall) {
         call.resolve(["value": implementation.isNetWorkRequestsAllowed()])
+    }
+
+    @objc func setCountryCode(_ call: CAPPluginCall) {
+        implementation.setCountryCode(call.getString("countryCode") ?? "")
+        call.resolve()
     }
 }

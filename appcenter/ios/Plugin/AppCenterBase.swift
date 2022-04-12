@@ -40,29 +40,34 @@ import AppCenter
         return AppCenter.enabled
     }
 
-    public func setCustomProperties(_ properties: [String: [String: Any]]) {
-        let customProperties = CustomProperties()
-
-        for (propName, propData) in properties {
-
-            if let type = propData["type"] as? String {
-                
-                if type == "string", let value = propData["value"] as? String {
-                    customProperties.set(value, forKey: propName)
-                } else if type == "number", let value = propData["value"] as? NSNumber {
-                    customProperties.set(value, forKey: propName)
-                } else if type == "boolean", let value = propData["value"] as? Bool {
-                    customProperties.set(value, forKey: propName)
-                } else if type == "date-time", let value = propData["value"] as? Double {
-                    let date = Date.init(timeIntervalSince1970: value)
-                    customProperties.set(date, forKey: propName)
-                } else if type == "clear" {
-                    customProperties.clearProperty(forKey: propName)
-                }
-            }
-        }
-
-        AppCenter.setCustomProperties(customProperties)
+    public func setCountryCode(_ countryCode: String) {
+        AppCenter.countryCode = countryCode
     }
+
+    //    @available(*, deprecated, message: "No longer supported in AppCenter 4.4.0")
+    //    public func setCustomProperties(_ properties: [String: [String: Any]]) {
+    //        let customProperties = CustomProperties()
+    //
+    //        for (propName, propData) in properties {
+    //
+    //            if let type = propData["type"] as? String {
+    //
+    //                if type == "string", let value = propData["value"] as? String {
+    //                    customProperties.set(value, forKey: propName)
+    //                } else if type == "number", let value = propData["value"] as? NSNumber {
+    //                    customProperties.set(value, forKey: propName)
+    //                } else if type == "boolean", let value = propData["value"] as? Bool {
+    //                    customProperties.set(value, forKey: propName)
+    //                } else if type == "date-time", let value = propData["value"] as? Double {
+    //                    let date = Date.init(timeIntervalSince1970: value)
+    //                    customProperties.set(date, forKey: propName)
+    //                } else if type == "clear" {
+    //                    customProperties.clearProperty(forKey: propName)
+    //                }
+    //            }
+    //        }
+    //
+    //        AppCenter.setCustomProperties(customProperties)
+    //    }
 
 }

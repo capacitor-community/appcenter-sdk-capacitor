@@ -70,6 +70,7 @@ const appCenterInfo = async () => {
 * [`setLogLevel(...)`](#setloglevel)
 * [`setNetworkRequestsAllowed(...)`](#setnetworkrequestsallowed)
 * [`isNetworkRequestsAllowed()`](#isnetworkrequestsallowed)
+* [`setCountryCode(...)`](#setcountrycode)
 * [Enums](#enums)
 
 </docgen-index>
@@ -175,7 +176,7 @@ For instance, you can use custom properties to segment your users, and then send
 
 **Returns:** <code>any</code>
 
-**Since:** 0.2.0
+**Since:** 2.0.0
 
 --------------------
 
@@ -246,6 +247,25 @@ Check whether sending data in the App Center SDK is allowed or not.
 **Returns:** <code>any</code>
 
 **Since:** 0.6.0
+
+--------------------
+
+
+### setCountryCode(...)
+
+```typescript
+setCountryCode(options: { countryCode: string; }) => any
+```
+
+Set the two-letter ISO country code. Android only
+
+| Param         | Type                                  | Description                                                                                                            |
+| ------------- | ------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| **`options`** | <code>{ countryCode: string; }</code> | the two-letter ISO country code. See &lt;code&gt;https://www.iso.org/obp/ui/#search&lt;/code&gt; for more information. |
+
+**Returns:** <code>any</code>
+
+**Since:** 2.0.0
 
 --------------------
 

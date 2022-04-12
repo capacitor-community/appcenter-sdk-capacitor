@@ -39,6 +39,8 @@ Once you add App Center Analytics to your app and the SDK is started, it will au
 * [`pause()`](#pause)
 * [`resume()`](#resume)
 * [`trackEvent(...)`](#trackevent)
+* [`enableManualSessionTracker()`](#enablemanualsessiontracker)
+* [`startSession()`](#startsession)
 * [Interfaces](#interfaces)
 
 </docgen-index>
@@ -117,6 +119,32 @@ Track an event with optional custom properties to know what's happening in your 
 | **`options`** | <code><a href="#analyticsevent">AnalyticsEvent</a></code> |
 
 **Since:** 0.1.0
+
+--------------------
+
+
+### enableManualSessionTracker()
+
+```typescript
+enableManualSessionTracker() => Promise<void>
+```
+
+Enable manual session tracker.
+
+**Since:** 2.0.0
+
+--------------------
+
+
+### startSession()
+
+```typescript
+startSession() => Promise<void>
+```
+
+Start a new session if manual session tracker is enabled, otherwise do nothing.
+
+**Since:** 2.0.0
 
 --------------------
 

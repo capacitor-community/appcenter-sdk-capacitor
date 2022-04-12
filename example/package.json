@@ -19,7 +19,7 @@
     "@stencil/core": "^2.8.0"
   },
   "dependencies": {
-    "@capacitor-community/appcenter": "^1.0.0",
+    "@capacitor-community/appcenter": "^2.0.0",
     "@capacitor-community/appcenter-analytics": "^1.0.0",
     "@capacitor-community/appcenter-crashes": "^1.0.0",
     "@capacitor/android": "^3.0.0",

@@ -9,8 +9,8 @@ end
 
 target 'Plugin' do
   capacitor_pods
-  pod 'AppCenterCapacitorShared', '~> 1.0.0'
-  pod 'AppCenter/Crashes', '4.3.0'
+  pod 'AppCenterCapacitorShared', '~> 2.0'
+  pod 'AppCenter/Crashes', ' ~> 4.4.0'
 end
 
 target 'PluginTests' do

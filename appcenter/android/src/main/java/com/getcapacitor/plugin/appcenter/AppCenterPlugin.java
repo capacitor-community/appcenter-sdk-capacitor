@@ -72,8 +72,9 @@ public class AppCenterPlugin extends Plugin {
 
     @PluginMethod(returnType = PluginMethod.RETURN_NONE)
     public void setCustomProperties(PluginCall call) {
-        implementation.setCustomProperties(call.getObject("properties", new JSObject()));
-        call.resolve();
+        // implementation.setCustomProperties(call.getObject("properties", new JSObject()));
+        // call.resolve();
+        call.unavailable("Not available in appcenter 2.0.0 or later.");
     }
 
     @PluginMethod(returnType = PluginMethod.RETURN_NONE)
@@ -87,5 +88,11 @@ public class AppCenterPlugin extends Plugin {
         JSObject ret = new JSObject();
         ret.put("value", implementation.isNetworkRequestsAllowed());
         call.resolve(ret);
+    }
+
+    @PluginMethod(returnType = PluginMethod.RETURN_NONE)
+    public void setCountryCode(PluginCall call) {
+        implementation.setCountryCode(call.getString("countryCode", null));
+        call.resolve();
     }
 }

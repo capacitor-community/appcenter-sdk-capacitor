@@ -9,4 +9,6 @@ CAP_PLUGIN(AnalyticsPlugin, "Analytics",
            CAP_PLUGIN_METHOD(pause, CAPPluginReturnNone);
            CAP_PLUGIN_METHOD(resume, CAPPluginReturnNone);
            CAP_PLUGIN_METHOD(trackEvent, CAPPluginReturnNone);
+           CAP_PLUGIN_METHOD(enableManualSessionTracker, CAPPluginReturnNone);
+           CAP_PLUGIN_METHOD(startSession, CAPPluginReturnNone);
 )
