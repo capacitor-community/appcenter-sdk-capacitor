@@ -1,6 +1,6 @@
 # Change Log
 
-## [1.0.1](https://github.com/capacitor-community/appcenter-sdk-capacitor/compare/@capacitor-community/appcenter-crashes@1.0.0...@capacitor-community/appcenter-crashes@1.0.1)
+## [1.0.2](https://github.com/capacitor-community/appcenter-sdk-capacitor/compare/@capacitor-community/appcenter-crashes@1.0.1...@capacitor-community/appcenter-crashes@1.0.2)
 
 ### Chore
 
