@@ -129,7 +129,7 @@ Track an event with optional custom properties to know what's happening in your 
 enableManualSessionTracker() => Promise<void>
 ```
 
-Enable manual session tracker.
+Enable manual session tracker. Call this method before Analytics starts.
 
 **Since:** 2.0.0
 
