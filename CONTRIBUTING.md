@@ -15,7 +15,7 @@ The repo uses GitHub [issues](https://github.com/capacitor-community/appcenter-s
     * To show off cool stuff.
     * To propose ideas for improvement.
     * If you think you found a bug, but may need help to further uncover it.
-    * Anything else! :rainbow:
+    * Anything else!
 
 ### Creating a Code Reproduction
 
@@ -32,7 +32,7 @@ To create a code reproduction:
 
 ### Directory Structure
 
-This monorepo contains various core App Center components and helper repos. The current directory structure looks like this:
+This monorepo contains various core App Center components and one shared lib. The current directory structure looks like this:
 
 * `appcenter`: Appcenter Capacitor Plugin
 * `appcenter-analytics`: Analytics Capacitor Plugin
@@ -57,8 +57,32 @@ This monorepo contains various core App Center components and helper repos. The 
 
 ### Scripts
 
-#### `npm run lint`
+The following commands can be run globally or withing each plugin.
 
+#### `npm run lint`
 Lint all the plugin web assets.
 
-More coming soon...
+#### `npm run fmt`
+Formats the codebase after linting.
+
+#### `npm run build`
+Builds the JS assets and docgen.
+
+#### `npm run verify`
+Builds native projects.
+
+#### `npm run verify:ios`
+Builds iOS project.
+
+#### `npm run verify:android`
+Builds Android project.
+
+### Example App
+This repo includes an example capacitor app which implements all of the plugins. By default it uses the latest minor release of the plugins from npm. When testing locally it can be helpful to have example app point to your local plugin rather than the one from npm. To do this add the plugin via lerna:
+
+Run this command from within `/example` dir.
+
+```bash
+# Adds @capacitor-community/appcenter to example app
+lerna add @capacitor-community/appcenter --scope=example
+```

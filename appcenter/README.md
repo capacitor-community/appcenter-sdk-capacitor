@@ -81,12 +81,12 @@ const appCenterInfo = async () => {
 ### getInstallId()
 
 ```typescript
-getInstallId() => any
+getInstallId() => Promise<{ value: string; }>
 ```
 
 Returns AppCenter unique installation identifier.
 
-**Returns:** <code>any</code>
+**Returns:** <code>Promise&lt;{ value: string; }&gt;</code>
 
 **Since:** 0.0.1
 
@@ -96,7 +96,7 @@ Returns AppCenter unique installation identifier.
 ### setUserId(...)
 
 ```typescript
-setUserId(options: { userId: string; }) => any
+setUserId(options: { userId: string; }) => Promise<void>
 ```
 
 Set a user ID that's used to augment crash reports.
@@ -104,8 +104,6 @@ Set a user ID that's used to augment crash reports.
 | Param         | Type                             | Description        |
 | ------------- | -------------------------------- | ------------------ |
 | **`options`** | <code>{ userId: string; }</code> | Ex. "your-user-id" |
-
-**Returns:** <code>any</code>
 
 **Since:** 0.0.1
 
@@ -115,12 +113,12 @@ Set a user ID that's used to augment crash reports.
 ### getSdkVersion()
 
 ```typescript
-getSdkVersion() => any
+getSdkVersion() => Promise<{ value: string; }>
 ```
 
 Get the version of the native App Center SDK
 
-**Returns:** <code>any</code>
+**Returns:** <code>Promise&lt;{ value: string; }&gt;</code>
 
 **Since:** 0.0.1
 
@@ -130,12 +128,12 @@ Get the version of the native App Center SDK
 ### isEnabled()
 
 ```typescript
-isEnabled() => any
+isEnabled() => Promise<{ value: boolean; }>
 ```
 
 Check if App Center is enabled or not as a whole.
 
-**Returns:** <code>any</code>
+**Returns:** <code>Promise&lt;{ value: boolean; }&gt;</code>
 
 **Since:** 0.0.1
 
@@ -145,7 +143,7 @@ Check if App Center is enabled or not as a whole.
 ### setEnabled(...)
 
 ```typescript
-setEnabled(options: { enabled: boolean; }) => any
+setEnabled(options: { enabled: boolean; }) => Promise<void>
 ```
 
 Toggle all App Center services at runtime. When disabled, the SDK won't forward any information to App Center.
@@ -153,8 +151,6 @@ Toggle all App Center services at runtime. When disabled, the SDK won't forward 
 | Param         | Type                               |
 | ------------- | ---------------------------------- |
 | **`options`** | <code>{ enabled: boolean; }</code> |
-
-**Returns:** <code>any</code>
 
 **Since:** 0.7.0
 
@@ -164,7 +160,7 @@ Toggle all App Center services at runtime. When disabled, the SDK won't forward 
 ### setCustomProperties(...)
 
 ```typescript
-setCustomProperties(options: { properties: CustomProperties; }) => any
+setCustomProperties(options: { properties: CustomProperties; }) => Promise<void>
 ```
 
 App Center allows you to define custom properties as key value pairs in your app. You may use custom properties for various purposes.
@@ -174,8 +170,6 @@ For instance, you can use custom properties to segment your users, and then send
 | ------------- | ---------------------------------------------- |
 | **`options`** | <code>{ properties: CustomProperties; }</code> |
 
-**Returns:** <code>any</code>
-
 **Since:** 2.0.0
 
 --------------------
@@ -184,12 +178,12 @@ For instance, you can use custom properties to segment your users, and then send
 ### getLogLevel()
 
 ```typescript
-getLogLevel() => any
+getLogLevel() => Promise<{ value: LogLevel; }>
 ```
 
 Returns currently set <a href="#loglevel">LogLevel</a>.
 
-**Returns:** <code>any</code>
+**Returns:** <code>Promise&lt;{ value: <a href="#loglevel">LogLevel</a>; }&gt;</code>
 
 **Since:** 0.2.0
 
@@ -199,7 +193,7 @@ Returns currently set <a href="#loglevel">LogLevel</a>.
 ### setLogLevel(...)
 
 ```typescript
-setLogLevel(options: { logLevel: LogLevel; }) => any
+setLogLevel(options: { logLevel: LogLevel; }) => Promise<void>
 ```
 
 You can control the amount of log messages that show up from App Center in the console. Log messages show in the console on iOS and LogCat on Android.
@@ -210,8 +204,6 @@ Note: `setLogLevel` API can't increase logging for app startup code, before Java
 | ------------- | ------------------------------------------------------------ |
 | **`options`** | <code>{ logLevel: <a href="#loglevel">LogLevel</a>; }</code> |
 
-**Returns:** <code>any</code>
-
 **Since:** 0.2.0
 
 --------------------
@@ -220,7 +212,7 @@ Note: `setLogLevel` API can't increase logging for app startup code, before Java
 ### setNetworkRequestsAllowed(...)
 
 ```typescript
-setNetworkRequestsAllowed(options?: { isAllowed: boolean; } | undefined) => any
+setNetworkRequestsAllowed(options?: { isAllowed: boolean; } | undefined) => Promise<void>
 ```
 
 Set whether SDK can send network requests.
@@ -228,8 +220,6 @@ Set whether SDK can send network requests.
 | Param         | Type                                 |
 | ------------- | ------------------------------------ |
 | **`options`** | <code>{ isAllowed: boolean; }</code> |
-
-**Returns:** <code>any</code>
 
 **Since:** 0.6.0
 
@@ -239,12 +229,12 @@ Set whether SDK can send network requests.
 ### isNetworkRequestsAllowed()
 
 ```typescript
-isNetworkRequestsAllowed() => any
+isNetworkRequestsAllowed() => Promise<{ value: boolean; }>
 ```
 
 Check whether sending data in the App Center SDK is allowed or not.
 
-**Returns:** <code>any</code>
+**Returns:** <code>Promise&lt;{ value: boolean; }&gt;</code>
 
 **Since:** 0.6.0
 
@@ -254,7 +244,7 @@ Check whether sending data in the App Center SDK is allowed or not.
 ### setCountryCode(...)
 
 ```typescript
-setCountryCode(options: { countryCode: string; }) => any
+setCountryCode(options: { countryCode: string; }) => Promise<void>
 ```
 
 Set the two-letter ISO country code. Android only
@@ -262,8 +252,6 @@ Set the two-letter ISO country code. Android only
 | Param         | Type                                  | Description                                                                                                            |
 | ------------- | ------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
 | **`options`** | <code>{ countryCode: string; }</code> | the two-letter ISO country code. See &lt;code&gt;https://www.iso.org/obp/ui/#search&lt;/code&gt; for more information. |
-
-**Returns:** <code>any</code>
 
 **Since:** 2.0.0
 
