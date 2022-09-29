@@ -1,6 +1,6 @@
 {
   "name": "@capacitor-community/appcenter-crashes",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "Capacitor plugin for Microsoft's App Center Crashes",
   "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",
