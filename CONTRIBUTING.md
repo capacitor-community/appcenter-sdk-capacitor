@@ -21,12 +21,14 @@ The repo uses GitHub [issues](https://github.com/capacitor-community/appcenter-s
 
 When reporting bugs, we ask you to provide a minimal sample application that demonstrates the issue. Without a reliable code reproduction, it is unlikely we will be able to resolve the issue, leading to it being closed.
 
-To create a code reproduction:
+To create a code reproduction create a new Capacitor app:
 
 * Create a new application using `npm init @capacitor/app` (or `ionic start --capacitor`).
 * Add the minimum amount of code necessary to recreate the issue you're experiencing.
 * Push the code reproduction to a public GitHub repository and include a link when you create a bug report.
 * Be sure to include steps to reproduce the issue.
+
+Or fork this repo and try reproducing with the included app in`/example`.
 
 ## Developing
 
