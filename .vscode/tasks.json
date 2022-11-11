@@ -1,0 +1,51 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "npm",
+			"script": "fmt",
+			"problemMatcher": [],
+			"label": "npm: fmt",
+			"detail": "lerna run fmt --ignore example"
+		},
+		{
+			"type": "npm",
+			"script": "lint",
+			"problemMatcher": [],
+			"label": "npm: lint",
+			"detail": "lerna run lint --ignore example"
+		},
+		{
+			"type": "npm",
+			"script": "build",
+			"group": "build",
+			"problemMatcher": [],
+			"label": "npm: build",
+			"detail": "lerna run build --ignore example"
+		},
+		{
+			"type": "npm",
+			"script": "verify",
+			"group": "build",
+			"problemMatcher": [],
+			"label": "npm: verify",
+			"detail": "lerna run verify --ignore example"
+		},
+		{
+			"type": "npm",
+			"script": "verify:ios",
+			"group": "build",
+			"problemMatcher": [],
+			"label": "npm: verify:ios",
+			"detail": "lerna run verify:ios --ignore example"
+		},
+		{
+			"type": "npm",
+			"script": "verify:android",
+			"group": "build",
+			"problemMatcher": [],
+			"label": "npm: verify:android",
+			"detail": "lerna run verify:android --ignore example"
+		}
+	]
+}
