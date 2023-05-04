@@ -6,6 +6,7 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { ErrorReportItem } from "./components/app-crashes/error-report-items-modal";
+export { ErrorReportItem } from "./components/app-crashes/error-report-items-modal";
 export namespace Components {
     interface AppAnalytics {
     }
