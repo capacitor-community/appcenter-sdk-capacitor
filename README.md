@@ -3,7 +3,7 @@
 <img src="https://img.shields.io/maintenance/yes/2023?style=flat-square" /> <a href="https://github.com/capacitor-community/appcenter-sdk-capacitor"><img alt="GitHub Workflow Status" src="https://img.shields.io/github/actions/workflow/status/capacitor-community/appcenter-sdk-capacitor/main.yml?branch=master"></a>
  [![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lerna.js.org/)
  <br>
- <img src="https://img.shields.io/badge/Capacitor%20V4%20Support-yes-green?logo=Capacitor&style=flat-square" /> 
+ <img src="https://img.shields.io/badge/Capacitor%20V5%20Support-yes-green?logo=Capacitor&style=flat-square" /> 
 
 
 App Center is mission control for mobile apps. Get faster release cycles, higher-quality apps, and the insights to build what users want.
