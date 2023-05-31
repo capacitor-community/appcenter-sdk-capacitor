@@ -17,6 +17,7 @@ The Capacitor App Center SDK consists of a several plugins so you can use any or
 | `@capacitor-community/appcenter` | [`./appcenter`](https://github.com/capacitor-community/appcenter-sdk-capacitor/tree/master/appcenter) | [![npm badge](https://img.shields.io/npm/v/@capacitor-community/appcenter?style=flat-square)](https://www.npmjs.com/package/@capacitor-community/appcenter) | [![npm badge](https://img.shields.io/npm/dw/@capacitor-community/appcenter?style=flat-square)](https://www.npmjs.com/package/@capacitor-community/appcenter)
 | `@capacitor-community/appcenter-analytics` | [`./appcenter-analytics`](https://github.com/capacitor-community/appcenter-sdk-capacitor/tree/master/appcenter-analytics) | [![npm badge](https://img.shields.io/npm/v/@capacitor-community/appcenter-analytics?style=flat-square)](https://www.npmjs.com/package/@capacitor-community/appcenter-analytics) | [![npm badge](https://img.shields.io/npm/dw/@capacitor-community/appcenter-analytics?style=flat-square)](https://www.npmjs.com/package/@capacitor-community/appcenter-analytics)
 | `@capacitor-community/appcenter-crashes` | [`./appcenter-crashes`](https://github.com/capacitor-community/appcenter-sdk-capacitor/tree/master/appcenter-crashes) | [![npm badge](https://img.shields.io/npm/v/@capacitor-community/appcenter-crashes?style=flat-square)](https://www.npmjs.com/package/@capacitor-community/appcenter-crashes) | [![npm badge](https://img.shields.io/npm/dw/@capacitor-community/appcenter-crashes?style=flat-square)](https://www.npmjs.com/package/@capacitor-community/appcenter-crashes)
+| `@capacitor-community/appcenter-distribute` | [`./appcenter-distribute`](https://github.com/capacitor-community/appcenter-sdk-capacitor/tree/master/appcenter-distribute) | [![npm badge](https://img.shields.io/npm/v/@capacitor-community/appcenter-distribute?style=flat-square)](https://www.npmjs.com/package/@capacitor-community/appcenter-distribute) | [![npm badge](https://img.shields.io/npm/dw/@capacitor-community/appcenter-distribute?style=flat-square)](https://www.npmjs.com/package/@capacitor-community/appcenter-distribute)
 
 ## 📱 Example Mobile App
 
@@ -27,7 +28,7 @@ You can get familiar with SDK quickly by cloning this repository and running the
 Add the App Center plugin(s) that fit your needs directly from the CLI:
 
 ```bash
-npm i @capacitor-community/appcenter @capacitor-community/appcenter-analytics @capacitor-community/appcenter-crashes --save-exact
+npm i @capacitor-community/appcenter @capacitor-community/appcenter-analytics @capacitor-community/appcenter-crashes @capacitor-community/appcenter-distribute --save-exact
 npx cap sync
 ```
 

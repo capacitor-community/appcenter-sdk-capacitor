@@ -3,6 +3,7 @@
     "appcenter",
     "appcenter-analytics",
     "appcenter-crashes",
+    "appcenter-distribute",
     "example"
   ],
   "command": {
