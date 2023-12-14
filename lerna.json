@@ -1,15 +1,3 @@
 {
-  "packages": [
-    "appcenter",
-    "appcenter-analytics",
-    "appcenter-crashes",
-    "example"
-  ],
-  "command": {
-    "bootstrap": {
-      "ci": false,
-      "npmClientArgs": ["--no-package-lock"]
-    }
-  },
   "version": "independent"
 }
