@@ -8,12 +8,12 @@
   ],
   "private": true,
   "scripts": {
-    "fmt": "lerna run fmt --ignore example",
+    "fmt": "lerna run fmt  --ignore example",
     "lint": "lerna run lint --ignore example",
     "build": "lerna run build --ignore example",
     "verify": "lerna run verify --ignore example",
     "verify:ios": "lerna run verify:ios --ignore example",
-    "verify:android": "lerna run verify:android --ignore example"
+    "verify:android": "lerna run verify:android --concurrency=1 --ignore example"
   },
   "devDependencies": {
     "lerna": "^8.0.0"
