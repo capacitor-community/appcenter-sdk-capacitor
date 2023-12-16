@@ -45,17 +45,20 @@ This monorepo contains various core App Center components and one shared lib. Th
 ### Local Setup
 
 1. Fork and clone the repo.
+1. Use NodeJS 16 or higher.
 1. Install the dependencies.
 
     ```shell
     npm install
     ```
 
-1. Install SwiftLint if you're on macOS.
+1. Install `swiftlint` & `cocoapods` if you're on macOS.
 
     ```shell
     brew install swiftlint
+    brew install cocoapods
     ```
+1. You will also need `android-commandlinetools` / `Android Studio`
 
 ### Scripts
 
