@@ -17,7 +17,7 @@
   "devDependencies": {
     "@capacitor/cli": "5.0.0",
     "@ionic/core": "^7.0.5",
-    "@stencil/core": "^3.2.2"
+    "@stencil/core": "^4.8.2"
   },
   "dependencies": {
     "@capacitor-community/appcenter": "^4.0.0",
