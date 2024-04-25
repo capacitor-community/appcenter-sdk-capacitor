@@ -100,8 +100,7 @@ export class AppCrashes {
 
         <ion-list lines="full" class="ion-no-margin">
           <ion-item>
-            <ion-label>Enable Crashes</ion-label>
-            <ion-toggle checked={this.enabled} onIonChange={e => this.toggleCrashes(e)} />
+            <ion-toggle justify='space-between' checked={this.enabled} onIonChange={e => this.toggleCrashes(e)}>Enable Crashes</ion-toggle>
           </ion-item>
           <ion-item>
             <ion-label>Memory Warning</ion-label>

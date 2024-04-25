@@ -109,12 +109,10 @@ export class AppAnalytics {
       <ion-content class="ion-padding">
         <ion-list lines="full" class="ion-no-margin">
           <ion-item>
-            <ion-label>Enable Analytics</ion-label>
-            <ion-toggle checked={this.enabled} onIonChange={e => this.toggleAnalytics(e)} />
+            <ion-toggle justify='space-between' checked={this.enabled} onIonChange={e => this.toggleAnalytics(e)}>Enable Analytics</ion-toggle>
           </ion-item>
           <ion-item>
-            <ion-label>Pause Analytics</ion-label>
-            <ion-toggle disabled={!this.enabled} checked={this.paused} onIonChange={e => this.toggleLogs(e)}/>
+            <ion-toggle justify='space-between' disabled={!this.enabled} checked={this.paused} onIonChange={e => this.toggleLogs(e)}>Pause Analytics</ion-toggle>
           </ion-item>
           <ion-list-header lines="full">
             <ion-label>

@@ -127,16 +127,14 @@ export class AppHome {
         <p>Welcome! Tap on the links below to test various features of the Appcenter SDK</p>
         <ion-list lines="full" class="ion-no-margin">
           <ion-item>
-            <ion-label>Enable All Services</ion-label>
-            <ion-toggle checked={this.enabled} onIonChange={(event) => this.toggleSdk(event)} />
+            <ion-toggle justify="space-between" checked={this.enabled} onIonChange={(event) => this.toggleSdk(event)}>Enable All Services</ion-toggle>
           </ion-item>
           <ion-item>
             <ion-label>App Center SDK</ion-label>
             <ion-note slot="end">{this.sdkVersion}</ion-note>
           </ion-item>
           <ion-item>
-            <ion-label>Allow Network Requests</ion-label>
-            <ion-toggle checked={this.networkReqAllowed} onIonChange={(event) => this.toggleNetwork(event)} />
+            <ion-toggle justify="space-between" checked={this.networkReqAllowed} onIonChange={(event) => this.toggleNetwork(event)}>Allow Network Requests</ion-toggle>
           </ion-item>
           <ion-item>
             <ion-label>Log Level</ion-label>
