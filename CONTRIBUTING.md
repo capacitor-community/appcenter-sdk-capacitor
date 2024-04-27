@@ -85,9 +85,13 @@ Builds Android project.
 ### Example App
 This repo includes an example capacitor app which implements all of the plugins. By default it uses the latest minor release of the plugins from npm. When testing locally it can be helpful to have example app point to your local plugin rather than the one from npm. To do this add the plugin via lerna:
 
-Run this command from within `/example` dir.
+Run thess commands from within `/example` dir.
+
+
 
 ```bash
-# Adds @capacitor-community/appcenter to example app
-lerna add @capacitor-community/appcenter --scope=example
+# Adds @capacitor-community/<plugin> to example app
+npm install @capacitor-community/appcenter @capacitor-community/appcenter-analytics @capacitor-community/appcenter-crashes -w example
 ```
+
+https://lerna.js.org/docs/legacy-package-management
