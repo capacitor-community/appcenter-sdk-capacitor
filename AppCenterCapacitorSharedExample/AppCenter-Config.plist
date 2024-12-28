@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+   AppCenter-Config.plist
+   AppCenterCapacitorSharedExample
+
+   Created by John Borges on 12/28/24.
+   Copyright (c) 2024 ___ORGANIZATIONNAME___. All rights reserved.
+-->
+<plist version="1.0">
+    <dict>
+        <key>AnalyticsTransmissionInterval</key>
+        <integer>10</integer>
+        <key>AnalyticsEnableInJs</key>
+        <true/>
+        <key>AppSecret</key>
+        <string>fb3a28d5-1ed9-401c-b06a-0379f66c8650</string>
+        <key>LogLevel</key>
+        <integer>2</integer>
+    </dict>
+</plist>
