@@ -1,30 +1,32 @@
-// swift-tools-version: 5.9
+// swift-tools-version: 6.0
+// The swift-tools-version declares the minimum version of Swift required to build this package.
+
 import PackageDescription
 
 let package = Package(
     name: "AppCenterCapacitorShared",
-    platforms: [.iOS(.v14)],
     products: [
+        // Products define the executables and libraries a package produces, making them visible to other packages.
         .library(
             name: "AppCenterCapacitorShared",
             targets: ["AppCenterCapacitorShared"]),
     ],
     dependencies: [
-        .package(name: "AppCenter", url: "https://github.com/microsoft/appcenter-sdk-apple.git", from: "5.0.0")
+        .package(url: "https://github.com/microsoft/appcenter-sdk-apple.git", .upToNextMajor(from: "5.0.5")),
     ],
     targets: [
+        // Targets are the basic building blocks of a package, defining a module or a test suite.
+        // Targets can depend on other targets in this package and products from dependencies.
         .target(
             name: "AppCenterCapacitorShared",
             dependencies: [
-                .product(name: "AppCenterAnalytics", package: "AppCenter"),
-                .product(name: "AppCenterCrashes", package: "AppCenter"),
-                .product(name: "AppCenterDistribute", package: "AppCenter")
-            ],
-            path: "Sources"),
+                .product(name: "AppCenterCrashes", package: "appcenter-sdk-apple"),
+                .product(name: "AppCenterAnalytics", package: "appcenter-sdk-apple"),
+            ]
+        ),
         .testTarget(
             name: "AppCenterCapacitorSharedTests",
-            dependencies: ["AppCenterCapacitorShared"],
-            path: "Tests"
-        )
+            dependencies: ["AppCenterCapacitorShared"]
+        ),
     ]
 )

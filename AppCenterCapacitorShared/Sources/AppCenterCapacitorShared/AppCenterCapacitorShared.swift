@@ -3,16 +3,16 @@ import AppCenter
 
 public class AppCenterCapacitorShared: NSObject {
 
-    static var startAutomatically: Bool = true
-    static var configuration: NSDictionary = [:]
-    static var appSecret: String?
-    static var logLevel: UInt?
-    static var wrapperSdk: WrapperSdk?
+    nonisolated(unsafe) static var startAutomatically: Bool = true
+    nonisolated(unsafe) static var configuration: NSDictionary = [:]
+    nonisolated(unsafe) static var appSecret: String?
+    nonisolated(unsafe) static var logLevel: UInt?
+    nonisolated(unsafe) static var wrapperSdk: WrapperSdk?
     // plist keys
-    static var kAppCenterSecretKey = "AppSecret"
-    static var kAppCenterStartAutomaticallyKey = "StartAutomatically"
-    static var kAppCenterLogLevelKey = "LogLevel"
-    static var kAppCenterConfigResource = "AppCenter-Config"
+    static let kAppCenterSecretKey = "AppSecret"
+    static let kAppCenterStartAutomaticallyKey = "StartAutomatically"
+    static let kAppCenterLogLevelKey = "LogLevel"
+    static let kAppCenterConfigResource = "AppCenter-Config"
 
     public static func isSdkConfigured() -> Bool {
         return AppCenter.isConfigured
@@ -41,6 +41,7 @@ public class AppCenterCapacitorShared: NSObject {
         if let actualWrapperSdk = tempWrapperSdk {
             setWrapperSdk(actualWrapperSdk)
         }
+        
         getSdkConfig()
 
         if startAutomatically {

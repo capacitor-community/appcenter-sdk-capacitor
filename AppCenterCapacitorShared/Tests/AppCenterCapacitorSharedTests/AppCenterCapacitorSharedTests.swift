@@ -58,7 +58,7 @@ class AppCenterCapacitorSharedTests: XCTestCase {
                                     liveUpdateReleaseLabel: nil,
                                     liveUpdateDeploymentKey: nil,
                                     liveUpdatePackageHash: nil)
-        AppCenterCapacitorShared.setWrapperSdk(wrapperSdk)
+        AppCenterCapacitorShared.setWrapperSdk(wrapperSdk ?? <#default value#>)
         XCTAssertEqual(AppCenterCapacitorShared.getWrapperSdk(), wrapperSdk)
     }
 }
