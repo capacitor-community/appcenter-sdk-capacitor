@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6C25DA482D20573500E2C7B5 /* AppCenterCapacitorShared in Frameworks */ = {isa = PBXBuildFile; productRef = 6C25DA472D20573500E2C7B5 /* AppCenterCapacitorShared */; };
 		6C25DA4A2D2059C000E2C7B5 /* AppCenter-Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6C25DA492D2059C000E2C7B5 /* AppCenter-Config.plist */; };
+		6CC5CC5D2D209D070023D809 /* AppCenterCapacitorShared in Frameworks */ = {isa = PBXBuildFile; productRef = 6CC5CC5C2D209D070023D809 /* AppCenterCapacitorShared */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,7 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6C25DA482D20573500E2C7B5 /* AppCenterCapacitorShared in Frameworks */,
+				6CC5CC5D2D209D070023D809 /* AppCenterCapacitorShared in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -120,7 +120,7 @@
 			);
 			name = AppCenterCapacitorSharedExample;
 			packageProductDependencies = (
-				6C25DA472D20573500E2C7B5 /* AppCenterCapacitorShared */,
+				6CC5CC5C2D209D070023D809 /* AppCenterCapacitorShared */,
 			);
 			productName = AppCenterCapacitorSharedExample;
 			productReference = 6C25DA192D20571D00E2C7B5 /* AppCenterCapacitorSharedExample.app */;
@@ -205,7 +205,7 @@
 			mainGroup = 6C25DA102D20571D00E2C7B5;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				6C25DA462D20573500E2C7B5 /* XCLocalSwiftPackageReference "../AppCenterCapacitorShared" */,
+				6CC5CC5B2D209D070023D809 /* XCLocalSwiftPackageReference "../../appcenter-sdk-capacitor" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 6C25DA1A2D20571D00E2C7B5 /* Products */;
@@ -567,14 +567,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCLocalSwiftPackageReference section */
-		6C25DA462D20573500E2C7B5 /* XCLocalSwiftPackageReference "../AppCenterCapacitorShared" */ = {
+		6CC5CC5B2D209D070023D809 /* XCLocalSwiftPackageReference "../../appcenter-sdk-capacitor" */ = {
 			isa = XCLocalSwiftPackageReference;
-			relativePath = ../AppCenterCapacitorShared;
+			relativePath = "../../appcenter-sdk-capacitor";
 		};
 /* End XCLocalSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		6C25DA472D20573500E2C7B5 /* AppCenterCapacitorShared */ = {
+		6CC5CC5C2D209D070023D809 /* AppCenterCapacitorShared */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = AppCenterCapacitorShared;
 		};

@@ -1,10 +1,14 @@
 # App Center SDK for Capacitor
 
-<img src="https://img.shields.io/maintenance/yes/2023?style=flat-square" /> <a href="https://github.com/capacitor-community/appcenter-sdk-capacitor"><img alt="GitHub Workflow Status" src="https://img.shields.io/github/actions/workflow/status/capacitor-community/appcenter-sdk-capacitor/main.yml?branch=master"></a>
+<img src="https://img.shields.io/maintenance/yes/2025?style=flat-square" /> <a href="https://github.com/capacitor-community/appcenter-sdk-capacitor"><img alt="GitHub Workflow Status" src="https://img.shields.io/github/actions/workflow/status/capacitor-community/appcenter-sdk-capacitor/main.yml?branch=master"></a>
  [![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lerna.js.org/)
  <br>
  <img src="https://img.shields.io/badge/Capacitor%20V5%20Support-yes-green?logo=Capacitor&style=flat-square" /> 
 
+> [!IMPORTANT]
+> Visual Studio App Center is scheduled for retirement on **March 31, 2025**. You can continue to use these plugins until it is fully retired.
+> 
+> [Learn more about support timelines and alternatives.](https://aka.ms/appcenter/retire)
 
 App Center is mission control for mobile apps. Get faster release cycles, higher-quality apps, and the insights to build what users want.
 

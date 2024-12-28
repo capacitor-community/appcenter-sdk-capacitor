@@ -22,11 +22,13 @@ let package = Package(
             dependencies: [
                 .product(name: "AppCenterCrashes", package: "appcenter-sdk-apple"),
                 .product(name: "AppCenterAnalytics", package: "appcenter-sdk-apple"),
-            ]
+            ],
+            path: "AppCenterCapacitorShared/Sources/AppCenterCapacitorShared"
         ),
         .testTarget(
             name: "AppCenterCapacitorSharedTests",
-            dependencies: ["AppCenterCapacitorShared"]
+            dependencies: ["AppCenterCapacitorShared"],
+            path: "AppCenterCapacitorShared/Tests/AppCenterCapacitorSharedTests"
         ),
     ]
 )
